@@ -4,17 +4,17 @@
 
 Have you thought about customization of the standard access request on your site? Currently, SharePoint provides simple message as a solution. The option is available in the *Access Request Settings*.
 
-![Access Requests Settings](../../images/accessRequestsSettings.jpg)
+![Access Requests Settings](images/accessRequestsSettings.jpg)
 
 Current access request message is a little bit limited. In case when a user requests access to a site, an owner of the resource will get the notification (represented by an adaptive card) to add the user y to two default groups (members, visitors).
 
-![Request Message](../../images/RequestMessage1.jpg)
+![Request Message](images/RequestMessage1.jpg)
 
 In case of a request to a certain list or item without inherited permission, a notification will have different structure and will allow providing unique access to the resource.
 
-![Request Message](../../images/RequestMessage2.jpg)
+![Request Message](images/RequestMessage2.jpg)
 
-![Request Message](../../images/RequestMessage3.jpg)
+![Request Message](images/RequestMessage3.jpg)
 
 # Test Case Scenario
 
@@ -28,14 +28,14 @@ In case of a request to a certain list or item without inherited permission, a n
 > We can achieve all of the requirements in a few steps:
 - Enable Allow access requests option and set any it accounts to receive the standard messages.
 
-![Access Requests Settings](../../images/accessRequestsSettings.jpg)
+![Access Requests Settings](images/accessRequestsSettings.jpg)
 
 -	Create flow/logicapp which will receive the http request.
 -	Add event receiver on Access Requests list
 Add-PnPEventReceiver -List "Access Requests" -Name "TestEventReceiver" -Url "<LogicAppURL>" -EventReceiverType ItemAdded -Synchronization Synchronous
 -	Update the created flow/logicapp
 
-![First Flow](../../images/Flow1Overview.jpg)
+![First Flow](images/Flow1Overview.jpg)
 
 ConvertToJson action:
 
@@ -363,11 +363,11 @@ An example of a final request object.
 ```
 
 
-![Adaptive Card](../../images/AdaptiveCards1.jpg)
+![Adaptive Card](images/AdaptiveCards1.jpg)
 
 Second Flow which will be triggered after clicking one of the button.
 
-![Second Flow](../../images/SecondFlow.jpg)
+![Second Flow](images/SecondFlow.jpg)
 
 ---
 
