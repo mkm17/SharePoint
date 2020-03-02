@@ -18,20 +18,20 @@ In case of a request to a certain list or item without inherited permission, a n
 
 ## Test Case Scenario
 
-#### The business owner requirements
+#### Requirements
 
-- the access request message should be the same in both represented cases.
+- the access request message should be the same in both represented cases
 - the message should have different structure
 - notification should be defined as an adaptive card
-- the owner should be able to add a user to 3 custom groups
+- the owner should be able to add a user to 2 custom groups
 
 #### We can achieve all of the requirements in a few steps:
-- Enable Allow access requests option and set any it accounts to receive the standard messages.
+- Enable *Allow access requests* option and set it to any account to receive the standard messages (otherwise the access requests feature will be disabled) 
 
 ![Access Requests Settings](../images/accessRequestsSettings.jpg)
 
--	Create flow/logicapp which will receive the http request.
--	Add event receiver on Access Requests list
+-	Create a flow/logicapp which will receive the http request.
+-	Add a PnP event receiver on Access Requests list
 ```
 Add-PnPEventReceiver -List "Access Requests" -Name "TestEventReceiver" -Url "<LogicAppURL>" -EventReceiverType ItemAdded -
 Synchronization Synchronous
@@ -234,7 +234,7 @@ json(xml(replace(triggerBody(), '<?xml version="1.0" encoding="UTF-8"?>', '')))
 }
 ```
 
-All properties are in the array we can convert them into one JSON object by using the following function inside the apply to each action.
+All properties from the request are stored in an array. We can convert them into one JSON object by using the following function inside the apply to each action.
 
 ```javascript
 addProperty(variables('AccessRequestObject'),item()?['a:Key'], item()?['a:Value']?['#text'])
@@ -270,6 +270,7 @@ addProperty(variables('AccessRequestObject'),item()?['a:Key'], item()?['a:Value'
   "RequestedBy": "<Login of a requestor>"
 }
 ```
+The request includes a lot of useful information. In the next steps we will use some of them like, *RequestedByDisplayName*, *RequestedObjectTitle*, *Conversation* and *RequestedWebId*
 
 ####	An example of a message with adaptive card:
 ```html
@@ -283,7 +284,7 @@ addProperty(variables('AccessRequestObject'),item()?['a:Key'], item()?['a:Value'
     "body": [
         {
             "type": "TextBlock",
-            "text": "Access Request to Client Site",
+            "text": "An access request to a Client Site",
             "weight": "Bolder",
             "size": "Medium"
         },
@@ -367,12 +368,31 @@ addProperty(variables('AccessRequestObject'),item()?['a:Key'], item()?['a:Value'
 </html>
 ```
 
+The Http Action in the adaptive card allows triggering another flow, where we can handle a decision made by an user.
+
+An example of the request body.
+```
+{ 'decision':'Approve2',
+  'userId':'@{body('Parse_JSON')?['RequestedForUserId']}',
+  'webId':'@{body('Parse_JSON')?['RequestedWebId']}',
+  'RequestId':'@{body('Parse_JSON')?['RequestId']}'
+}``
+```
 
 ![Adaptive Card](../images/AdaptiveCards1.jpg)
 
-Second Flow which will be triggered after clicking one of the button.
+Second Flow which will be triggered after clicking one of the buttons.
 
 ![Second Flow](../images/SecondFlow.jpg)
+
+In the decision flow, you can handle the request in many ways. Some examples:
+- Custom list with data about the access request (we can store information like, who requested the access, who accept it and when)
+- Enhanced adaptive card messages
+- Introducing multi-stage approval
+
+## Cleanup
+
+
 
 >It may happen that the Access Request list is not available. To be sure that the structure is created, you need to create one access request by the user with insufficient permissions to the site or one of the child component.
 
