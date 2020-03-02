@@ -16,6 +16,8 @@ In case of a request to a certain list or item without inherited permission, a n
 
 ![Request Message](../images/RequestMessage3.jpg)
 
+>It may happen that the Access Request list is not available. To be sure that the structure is created, you need to create one access request by the user with insufficient permissions to the site or one of the child component.
+
 ## Test Case Scenario
 
 #### Requirements
@@ -392,12 +394,35 @@ In the decision flow, you can handle the request in many ways. Some examples:
 
 ## Cleanup
 
+As we implemented the new process, we should remove additional items on default *Access Requests* list.
+To do so we should extend the initial flow and use one of a property of the trigger request.
 
+'''
+body('ConvertTojson')?['s:Envelope']?['s:Body']?['ProcessEvent']?['properties']?['ItemEventProperties']
+'''
 
->It may happen that the Access Request list is not available. To be sure that the structure is created, you need to create one access request by the user with insufficient permissions to the site or one of the child component.
+'''javascript
+"ItemEventProperties":{
+       "AfterProperties":{},
+       "AfterUrl":{},
+       "BeforeProperties":{},
+       "BeforeUrl":null,
+       "CurrentUserId":"1073741823",
+       "ExternalNotificationMessage":{},
+       "IsBackgroundSave":"false",
+       **"ListId":"<LIST_ID>",**
+       **"ListItemId":"<ID>",**
+       "ListTitle":"Access Requests",
+       "UserDisplayName":"System Account",
+       "UserLoginName":"SHAREPOINT\\system",
+       "Versionless":"false",
+       **"WebUrl":"<WebUrl>"**
+ }
+  '''
+  
+  These values allow us to create a simple rest request to remove an item.
+
 
 ---
 
-Principal author: Michał Kornet
-
-LinkedIn: https://www.linkedin.com/in/micha%C5%82-kornet-sharepoint-dev/
+Author: Michał Kornet [LinkedIn!](https://www.linkedin.com/in/micha%C5%82-kornet-sharepoint-dev/)
