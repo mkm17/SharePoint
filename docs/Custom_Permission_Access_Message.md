@@ -1,6 +1,6 @@
 # How to create custom access request messages
 
-## Current situation
+## Out of the box features
 
 Have you thought about customization of the standard access request on your site? Currently, SharePoint provides simple message as a solution. The option is available in the *Access Request Settings*.
 
@@ -16,16 +16,16 @@ In case of a request to a certain list or item without inherited permission, a n
 
 ![Request Message](../images/RequestMessage3.jpg)
 
-# Test Case Scenario
+## Test Case Scenario
 
-> The business owner requirements
+#### The business owner requirements
 
 - the access request message should be the same in both represented cases.
 - the message should have different structure
 - notification should be defined as an adaptive card
 - the owner should be able to add a user to 3 custom groups
 
-> We can achieve all of the requirements in a few steps:
+#### We can achieve all of the requirements in a few steps:
 - Enable Allow access requests option and set any it accounts to receive the standard messages.
 
 ![Access Requests Settings](../images/accessRequestsSettings.jpg)
@@ -37,13 +37,13 @@ Add-PnPEventReceiver -List "Access Requests" -Name "TestEventReceiver" -Url "<Lo
 
 ![First Flow](../images/Flow1Overview.jpg)
 
-ConvertToJson action:
+#### ConvertToJson action:
 
 ```javascript
 json(xml(replace(triggerBody(), '<?xml version="1.0" encoding="UTF-8"?>', '')))
 ```
 
-Schema of the converted xml of a request
+#### Schema of the converted xml of a request
 
 ```javascript
 {
@@ -233,9 +233,11 @@ Schema of the converted xml of a request
 
 All properties are in the array we can convert them into one JSON object by using the following function inside the apply to each action.
 
+```javascript
 addProperty(variables('AccessRequestObject'),item()?['a:Key'], item()?['a:Value']?['#text'])
+```
 
-An example of a final request object.
+#### An example of a final request object.
 
 ```javascript
 {
@@ -266,7 +268,7 @@ An example of a final request object.
 }
 ```
 
-•	An example of a message with adaptive card:
+####	An example of a message with adaptive card:
 ```html
 <html>
 <head>
@@ -368,6 +370,8 @@ An example of a final request object.
 Second Flow which will be triggered after clicking one of the button.
 
 ![Second Flow](../images/SecondFlow.jpg)
+
+>It may happen that the Access Request list is not available. To be sure that the structure is created, you need to create one access request by the user with insufficient permissions to the site or one of the child component.
 
 ---
 
