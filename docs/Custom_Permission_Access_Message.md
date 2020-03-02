@@ -32,7 +32,10 @@ In case of a request to a certain list or item without inherited permission, a n
 
 -	Create flow/logicapp which will receive the http request.
 -	Add event receiver on Access Requests list
-Add-PnPEventReceiver -List "Access Requests" -Name "TestEventReceiver" -Url "<LogicAppURL>" -EventReceiverType ItemAdded -Synchronization Synchronous
+```
+Add-PnPEventReceiver -List "Access Requests" -Name "TestEventReceiver" -Url "<LogicAppURL>" -EventReceiverType ItemAdded -
+Synchronization Synchronous
+```
 -	Update the created flow/logicapp
 
 ![First Flow](../images/Flow1Overview.jpg)
