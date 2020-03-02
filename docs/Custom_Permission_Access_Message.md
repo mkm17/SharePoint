@@ -397,11 +397,11 @@ In the decision flow, you can handle the request in many ways. Some examples:
 As we implemented the new process, we should remove additional items on default *Access Requests* list.
 To do so we should extend the initial flow and use one of a property of the trigger request.
 
-'''
+```
 body('ConvertTojson')?['s:Envelope']?['s:Body']?['ProcessEvent']?['properties']?['ItemEventProperties']
-'''
+```
 
-'''javascript
+```javascript
 "ItemEventProperties":{
        "AfterProperties":{},
        "AfterUrl":{},
@@ -418,11 +418,11 @@ body('ConvertTojson')?['s:Envelope']?['s:Body']?['ProcessEvent']?['properties']?
        "Versionless":"false",
        **"WebUrl":"<WebUrl>"**
  }
-  '''
+ ```
   
   These values allow us to create a simple rest request to remove an item.
 
 
 ---
 
-Author: Michał Kornet [LinkedIn!](https://www.linkedin.com/in/micha%C5%82-kornet-sharepoint-dev/)
+Author: Michał Kornet [LinkedIn](https://www.linkedin.com/in/micha%C5%82-kornet-sharepoint-dev/)
