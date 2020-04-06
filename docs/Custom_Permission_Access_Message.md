@@ -6,7 +6,7 @@ Have you thought about customization of the standard access request on your site
 
 ![Access Requests Settings](../images/accessRequestsSettings.jpg)
 
-Current access request message is a little bit limited. In case when a user requests access to a site, an owner of the resource will get the notification (represented by an adaptive card) to add the user y to two default groups (members, visitors).
+Current access request message is a little bit limited. In case when a user requests access to a site, an owner of the resource will get the notification (represented by an adaptive card) to add the user to two default groups (members, visitors).
 
 ![Request Message](../images/RequestMessage1.jpg)
 
