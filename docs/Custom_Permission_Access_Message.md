@@ -16,7 +16,9 @@ In case of sending a request to get access to a certain list or item with no inh
 
 ![Request Message](../images/RequestMessage3.jpg)
 
->It may happen that the *Access Request list* is not available on a site. To be sure that the object is created, you need to create at least one access request by the user with insufficient permissions to the site or one of the child component.
+The whole process of sending access requests is handled on the default *Access Request list* hidden on a site.  
+
+>It may happen that the *Access Request list* is not available on a site. To be sure that it is reachable, a user with insufficient permissions to the site or one of the child components needs to issue the access request.
 
 ## Test Case Scenario
 
@@ -26,7 +28,7 @@ In case of sending a request to get access to a certain list or item with no inh
 - a structure of messages should be definable 
 - a notification should use Microsoft Adaptive Cards 
 - an opportunity to add a user to any of two predefined custom groups
-- posting of messages on MS Teams application should be possible
+- a possibility of posting messages on MS Teams application
 
 #### The solution meeting all the requirements can be achieved in a few steps:
 - Enter the *Access Request Settings* interface and enable *Allow access requests* option. Select an account to receive standard messages. Otherwise, the access requests feature is disabled. 
@@ -391,7 +393,7 @@ The second flow will be triggered automatically, after clicking one of the provi
 
 In the following part of *the decision flow*, you can handle the received request in many ways, adapting the process to the specific needs and requirements of your organization. Here are some actions that can be used to complement the workflow:
 - Storing dataset about the access request on a custom list 
-- Generating enhanced Adaptive Card messages with undertaken decision 
+- Generating enhanced Adaptive Card messages with undertaken decision on MS Outlook or MS Teams 
 - Introducing multi-stage approval route 
 
 ## Make a clean-up 
