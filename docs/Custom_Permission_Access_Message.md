@@ -1,44 +1,45 @@
-# How to create custom access request messages
+# Managing permissions: How to create custom messages for access request
 
-## Out of the box features
+## Out of the box feature 
 
-Have you thought about customization of the standard access request on your site? Currently, SharePoint provides simple message as a solution. The option is available in the *Access Request Settings*.
+Have you thought about any customization of the standard access request on your site? Currently, SharePoint platform provides generating a simple defined message as a solution. Management of this option is available in the pop-out window under the *Access Request Settings* button of the *Permissions* interface. 
 
 ![Access Requests Settings](../images/accessRequestsSettings.jpg)
 
-Current access request message is a little bit limited. In case when a user requests access to a site, an owner of the resource will get the notification (represented by an adaptive card) to add the user to two default groups (members, visitors).
+A default format of the message for access request has its limitations. When a user requests access to a site, an owner of the resource gets the notification, represented by a compound Adaptive Card, to add the user to one of the two default groups (Members, Visitors), or to reject the request. 
 
 ![Request Message](../images/RequestMessage1.jpg)
 
-In case of a request to a certain list or item without inherited permission, a notification will have different structure and will allow providing unique access to the resource.
+In case of sending a request to get access to a certain list or item with no inherited permissions, a notification has an adapted structure and allows for providing unique access to the called resource. 
 
 ![Request Message](../images/RequestMessage2.jpg)
 
 ![Request Message](../images/RequestMessage3.jpg)
 
->It may happen that the Access Request list is not available. To be sure that the structure is created, you need to create one access request by the user with insufficient permissions to the site or one of the child component.
+>It may happen that the *Access Request list* is not available on a site. To be sure that the object is created, you need to create at least one access request by the user with insufficient permissions to the site or one of the child component.
 
 ## Test Case Scenario
 
-#### Requirements
+#### Business Requirements:
 
-- the access request message should be the same in both represented cases
-- the message should have different structure
-- notification should be defined as an adaptive card
-- the owner should be able to add a user to 2 custom groups
+- messages for access request should be standardized 
+- a structure of messages should be definable 
+- a notification should use Microsoft Adaptive Cards 
+- an opportunity to add a user to any of two predefined custom groups
+- posting of messages on MS Teams application should be possible
 
-#### We can achieve all of the requirements in a few steps:
-- Enable *Allow access requests* option and set it to any account to receive the standard messages (otherwise the access requests feature will be disabled) 
+#### The solution meeting all the requirements can be achieved in a few steps:
+- Enter the *Access Request Settings* interface and enable *Allow access requests* option. Select an account to receive standard messages. Otherwise, the access requests feature is disabled. 
 
 ![Access Requests Settings](../images/accessRequestsSettings.jpg)
 
--	Create a flow/logicapp which will receive the http request.
--	Add a PnP event receiver on Access Requests list
+-	Create a Power Automate or Logic Apps workflow which will receive a HTTP request. 
+-	Add a PnP event receiver to Access Requests list using the following code: 
 ```
 Add-PnPEventReceiver -List "Access Requests" -Name "TestEventReceiver" -Url "<LogicAppURL>" -EventReceiverType ItemAdded -
 Synchronization Synchronous
 ```
--	Update the created flow/logicapp
+-	Update the created workflow according to the scheme and action parameters below: 
 
 ![First Flow](../images/Flow1Overview.jpg)
 
@@ -48,7 +49,7 @@ Synchronization Synchronous
 json(xml(replace(triggerBody(), '<?xml version="1.0" encoding="UTF-8"?>', '')))
 ```
 
-#### Schema of the converted xml of a request
+#### Schema of converted XML element of the request: 
 
 ```javascript
 {
@@ -236,13 +237,13 @@ json(xml(replace(triggerBody(), '<?xml version="1.0" encoding="UTF-8"?>', '')))
 }
 ```
 
-All properties from the request are stored in an array. We can convert them into one JSON object by using the following function inside the apply to each action.
+All properties from the request are stored in an array element. We can convert them into one JSON object using the following function inside the *Apply to each* action.
 
 ```javascript
 addProperty(variables('AccessRequestObject'),item()?['a:Key'], item()?['a:Value']?['#text'])
 ```
 
-#### An example of a final request object.
+#### An example of the final request object: 
 
 ```javascript
 {
@@ -272,9 +273,9 @@ addProperty(variables('AccessRequestObject'),item()?['a:Key'], item()?['a:Value'
   "RequestedBy": "<Login of a requestor>"
 }
 ```
-The request includes a lot of useful information. In the next steps we will use some of them like, *RequestedByDisplayName*, *RequestedObjectTitle*, *Conversation* and *RequestedWebId*
+As you can see, the request processes a lot of useful information. In the next steps, we will make use of this data, querying i.e. *RequestedByDisplayName*, *RequestedObjectTitle*, *Conversation*, and *RequestedWebId*. 
 
-####	An example of a message with adaptive card:
+####	An example of a message structure with Adaptive Card solution: 
 ```html
 <html>
 <head>
@@ -370,11 +371,12 @@ The request includes a lot of useful information. In the next steps we will use 
 </html>
 ```
 
-The Http Action in the adaptive card allows triggering another flow, where we can handle a decision made by an user.
+The HTTP action inside the Adaptive Card item allows for triggering another flow, through which we can handle a decision choice made by an authorized user. 
 
-An example of the request body.
+An example of the request body: 
 ```
-{ 'decision':'Approve2',
+{ 
+  'decision':'Approve2',
   'userId':'@{body('Parse_JSON')?['RequestedForUserId']}',
   'webId':'@{body('Parse_JSON')?['RequestedWebId']}',
   'RequestId':'@{body('Parse_JSON')?['RequestId']}'
@@ -383,19 +385,18 @@ An example of the request body.
 
 ![Adaptive Card](../images/AdaptiveCards1.jpg)
 
-Second Flow which will be triggered after clicking one of the buttons.
+The second flow will be triggered automatically, after clicking one of the provided buttons. 
 
 ![Second Flow](../images/SecondFlow.jpg)
 
-In the decision flow, you can handle the request in many ways. Some examples:
-- Custom list with data about the access request (we can store information like, who requested the access, who accept it and when)
-- Enhanced adaptive card messages
-- Introducing multi-stage approval
+In the following part of *the decision flow*, you can handle the received request in many ways, adapting the process to the specific needs and requirements of your organization. Here are some actions that can be used to complement the workflow:
+- Storing dataset about the access request on a custom list 
+- Generating enhanced Adaptive Card messages with undertaken decision 
+- Introducing multi-stage approval route 
 
-## Cleanup
+## Make a clean-up 
 
-As we implemented the new process, we should remove additional items on default *Access Requests* list.
-To do so we should extend the initial flow and use one of a property of the trigger request.
+Having the new process implemented, we should remove all additional items on the default *Access Requests* list. To do so, we need to append the initially created flow with Delete actions using *ListId*, *ListItemId* and *WebUrl* properties of the set flow trigger: 
 
 ```
 body('ConvertTojson')?['s:Envelope']?['s:Body']?['ProcessEvent']?['properties']?['ItemEventProperties']
@@ -420,9 +421,10 @@ body('ConvertTojson')?['s:Envelope']?['s:Body']?['ProcessEvent']?['properties']?
  }
  ```
   
-  These values allow us to create a simple rest request to remove an item.
+  These values allow us to create a simple REST request to remove unnecessary items. 
 
 
 ---
 
 Author: Michał Kornet [LinkedIn](https://www.linkedin.com/in/micha%C5%82-kornet-sharepoint-dev/)
+Co-Author: Olga Staszek [LinkedIn](https://www.linkedin.com/in/olga-staszek-2ba909b2/)
