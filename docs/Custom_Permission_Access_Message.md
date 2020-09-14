@@ -45,7 +45,27 @@ Synchronization Synchronous
 
 ![First Flow](../images/Flow1Overview.jpg)
 
-#### ConvertToJson action:
+#### AccessRequestObject variable Initialization:
+
+``` javascript
+{
+   Name: 'AccessRequestObject',
+   Type: 'Object',
+   Value: {}
+}
+```
+
+#### tempObject  variable Initialization
+
+``` javascript
+{
+   Name: 'tempObject',
+   Type: 'Object',
+   Value: {}
+}
+```
+
+#### ConvertToJson action (Compose):
 
 ```javascript
 json(xml(replace(triggerBody(), '<?xml version="1.0" encoding="UTF-8"?>', '')))
@@ -242,10 +262,17 @@ json(xml(replace(triggerBody(), '<?xml version="1.0" encoding="UTF-8"?>', '')))
 All properties from the request are stored in an array element. We can convert them into one JSON object using the following function inside the *Apply to each* action.
 
 ```javascript
+//Apply for each input
+outputs('ConvertTojson')?['s:Envelope']?['s:Body']?['ProcessEvent']?['properties']?['ItemEventProperties']?['AfterProperties']?['a:KeyValueOfstringanyType']
+
+//Velue of a "Set tempObject variable" action under the Apply for each
 addProperty(variables('AccessRequestObject'),item()?['a:Key'], item()?['a:Value']?['#text'])
+
+//Value of a "Set AccessRequestObject variable" action under the Apply for each
+variables('tempObject')
 ```
 
-#### An example of the final request object: 
+#### An example of the final request object used as sample for data schema of a Parse JSON action: 
 
 ```javascript
 {
