@@ -16,7 +16,7 @@ To remedy this, I decided to focus on becoming comfortable with the most common 
 
 This idea inspired me to create a diary app that could analyze my texts to identify incorrect words, which would then be stored in my personal database. This way, I could continuously learn and track my progress in mastering new vocabulary. By focusing on the most common words first and creating more and more complicated texts, I will able to quickly expand my vocabulary and improve my language skills.
 
-In the tool I write texts in the desired languages as much as I can filling all the gaps in my native language. The tool will analyze the text and will suggest me the correct words. I can also add new words to the dictionary.
+In the tool, I can practice writing texts in my desired languages and fill in any gaps with words from my native language. The tool analyzes my text and suggests corrections for individual words, as well as providing suggestion for the entire text. I can also add new words to my personal dictionary.
 
 ![The Language Tool](../images/languageTool/AppPresentation.gif)
 
