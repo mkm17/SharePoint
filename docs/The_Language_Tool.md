@@ -1,7 +1,7 @@
 # My Language Learning Platform.
 
 1. [Introduction](#introduction)
-2. [Description of Components Used](#description-of-components-used)
+2. [Description of Components Used](#components-used)
 3. [MS Word App](#ms-word-app)
 4. [Connection to Language Services](#connection-to-language-services)
 5. [PWA App](#pwa-app)
@@ -20,7 +20,7 @@ In the tool I write texts in the desired languages as much as I can filling all 
 
 ![The Language Tool](../images/languageTool/AppPresentation.gif)
 
-## Components uses 
+## Components used 
 
 With a clear plan in mind, I set out to explore the various possibilities offered by Microsoft 365.  My first step was to explore the **Office JS app for MS Word**. However, as I wanted to utilize my current job scope and a solution that I was familiar with, I chose the **SPFx app**. 
 
@@ -158,7 +158,7 @@ npm i -save-dev @types/office-js to the solution
 
 ### 4. Add the addin manifest to AppCatalog
 
-[App Catalog for Office Apps](../images/languageTool/AppCatalog.jpg)
+![App Catalog for Office Apps](../images/languageTool/AppCatalog.jpg)
 
 ### 5. Add the SPFx webpart on a desired page with SingleApp layout
 
@@ -238,7 +238,7 @@ public async checkSpelling(text: string, language: string): Promise<ITextCheckRe
                 suggestedText: result.suggested_correction
             };
         } catch (error) {
-            return Promise.reject(error);
+            console.error('Error in checkSpelling', e);
         }
     }
 ```
@@ -288,7 +288,6 @@ I used the following code to connect to the OpenAI API and get corrected text.
                 (word) => {
                     if (!!word.translation) { return word; }
                     const translationItem = find(result, (item) => item.word === word.title);
-                    console.log(translationItem)
                     return { ...word, translation: translationItem ? translationItem.translation : null } as IWordToAnalyze;
                 });
 
@@ -301,7 +300,7 @@ I used the following code to connect to the OpenAI API and get corrected text.
 ```
 
 
-## PWA 
+## PWA App
 
 
 To aid in my language learning journey, I decided to create a simple flashcards app that I could access easily from my phone. I used a service worker script and PWA solution, which allowed me to create a convenient shortcut on my phone's home screen. The article [Progressive WebApp in SharePoint - the supported way](http://www.msclouddeveloper.com/progressive-webapp-in-sharepoint/) was very helpful in this regard. For full extension code, please see the [GitHub repository](https://github.com/mkm17/pwa-extension).
@@ -371,10 +370,6 @@ const PRECACHE_URLS = [
 
 // The install handler takes care of precaching the resources we always need.
 self.addEventListener('install', event => {
-	console.log('install');
-
-  console.log(PRECACHE_URLS)
-
   event.waitUntil(
     caches.open(PRECACHE)
       .then(cache => cache.addAll(PRECACHE_URLS))
@@ -384,7 +379,6 @@ self.addEventListener('install', event => {
 
 // The activate handler takes care of cleaning up old caches.
 self.addEventListener('activate', event => {
-	console.log('activate');
   const currentCaches = [PRECACHE, CACHE_NAME];
   event.waitUntil(
     caches.keys().then(cacheNames => {
@@ -402,10 +396,8 @@ self.addEventListener('fetch', event => {
       caches.match(event.request)
         .then(response => {
           if (response) {
-            console.log('Serving from cache:', event.request.url);
             return response;
           } else {
-            console.log('Fetching from network:', event.request.url);
             return fetch(event.request)
               .then(response => {
                 const clonedResponse = response.clone();
@@ -427,7 +419,7 @@ self.addEventListener('fetch', event => {
   });
 ```
 
-![Mobile Button](../images/languageTool/MobileButton.jpg)
+<img src="../images/languageTool/MobileButton.jpg" alt= "Mobile Button"  height="560">
 
 While this solution worked well for the most part, I encountered an issue when trying to use the app offline, such as during longer flights. Despite my efforts, I was unable to create an app that was fully offline-capable. 
 
