@@ -3,7 +3,7 @@
 1. [Introduction](#introduction)
 2. [Description of Components Used](#components-used)
 3. [MS Word App](#ms-word-app)
-4. [Connection to Language Services](#connection-to-language-services)
+4. [Connection to Language Services](#connection-to-the-language-services)
 5. [PWA App](#the-pwa-app)
 
 ## Introduction
