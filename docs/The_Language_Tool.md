@@ -1,45 +1,46 @@
-# My Language Learning Platform.
+# My Language Learning Platform
 
 1. [Introduction](#introduction)
 2. [Description of Components Used](#components-used)
 3. [MS Word App](#ms-word-app)
 4. [Connection to Language Services](#connection-to-language-services)
-5. [PWA App](#pwa-app)
+5. [PWA App](#the-pwa-app)
 
 ## Introduction
 
-Some time ago, I set a goal to learn new languages, recognizing that having basic communication skills in the native language of a visited country can make the entire trip a unique experience. I quickly discovered that acquiring a broad vocabulary of common words and understanding basic grammar is essential. 
+Some time ago, I set myself a goal to learn new languages, recognizing that carrying basis of a native language of any visited country makes the entire trip a truly unique experience. For such communication skills, acquiring a fundamental vocabulary and understanding grammar rules are essential. 
 
-I began my language-learning journey many years ago by using popular language apps to learn Spanish. While these apps are a great starting point, I realized that I lacked a broad range of vocabulary, which hindered my ability to have basic conversations. 
+I began my language-learning journey many years ago by using popular language apps to learn Spanish. While these apps are a great starting point, I realized that I lacked some range of vocabulary, which hindered my ability to have basic, day-to-day conversations. 
 
-To remedy this, I decided to focus on becoming comfortable with the most common words first (e.g., 1000 words) before expanding to more advanced vocabulary. While there are many word lists available online, I found that creating my own personalized list could be more effective. We all have our common language structures that we use more frequently. Sometime this style of language is something that define us. 
+To remedy this, I decided to focus on becoming acquainted with the most common words first (e.g. a set of top 1000 popular words) before jumping into more advanced vocabulary. While there are many glossaries available online, I found that creating my own personalized list of words I utilize on a daily basis could be way more effective. We all have our own language structures that make us unique and allow to address the topics we care the most about. 
 
-This idea inspired me to create a diary app that could analyze my texts to identify incorrect words, which would then be stored in my personal database. This way, I could continuously learn and track my progress in mastering new vocabulary. By focusing on the most common words first and creating more and more complicated texts, I will able to quickly expand my vocabulary and improve my language skills.
+This idea inspired me to create a diary app that analyses my texts to identify incorrect words which are then stored in my personal database. This way, I am able to learn on a regular basis and track my progress in mastering new words in a foreign language. By focusing on the most common words first and creating more and more complicated texts with time, my vocabulary is quickly expanded and my general language skills visually improved.
 
-In the tool, I can practice writing texts in my desired languages and fill in any gaps with words from my native language. The tool analyzes my text and suggests corrections for individual words, as well as providing suggestion for the entire text. I can also add new words to my personal dictionary.
+In the tool, you can practice writing whole texts in any eligible language and fill in any unknown expressions with words or phrases from the other language - even your native one! The tool analyzes the input and suggests corrections for individual words, as well as the entire text. Furthermore, any new words can be added to a personal dictionary for a later review.
 
 ![The Language Tool](../images/languageTool/AppPresentation.gif)
+[Link to the Solution]()
 
 ## Components used 
 
-With a clear plan in mind, I set out to explore the various possibilities offered by Microsoft 365.  My first step was to explore the **Office JS app for MS Word**. However, as I wanted to utilize my current job scope and a solution that I was familiar with, I chose the **SPFx app**. 
+With the clear plan in mind, I set out to explore services offered by Microsoft 365. I started with the **Office JS app for MS Word** and the **SPFx app**. 
 
-Since I did not require a sophisticated database, I opted to store my data on **SharePoint Lists** in my tenant. By leveraging this approach, I was able to easily store and access my data without needing to invest significant time and effort in setting up a more complex system. 
+Since the solution did not require a sophisticated database, I decided to store my data on a **SharePoint List** in my tenant site. Following this approach, I was able to gather and access my data without a need to invest significant time and effort in setting up a complex system. 
 
 ![The source list](../images/languageTool/sourceList.jpg)
 
 ## MS Word App 
 
-During my research, I discovered that while an [SPFx app was available for MS Outlook](https://www.youtube.com/watch?v=46J3SVzZem8), it was not available for other MS Office apps. However, after further investigation, I found a solution that would allow me to render a SharePoint page with an SPFx web part using Sideload of Office JS solutions. 
+During my research, I discovered that while an [SPFx app was available for MS Outlook](https://www.youtube.com/watch?v=46J3SVzZem8), it was not for other MS Office apps. However, after further investigation, I found another solution that would allow me to render a SharePoint page with an SPFx web part using sideloading of Office JS solutions. 
 
-With this new understanding, I was able to implement the correct steps and successfully integrate the SPFx app into other MS Office apps beyond MS Outlook. This allowed me to leverage the benefits of the SPFx framework across multiple Microsoft tools.
+Thus, following the steps listed below, I was able to successfully integrate the SPFx app across multiple tools from the Microsoft Office stack.
 
-To implement this solution, I followed these steps. 
+To use SPFx SharePoint app on MS Word, you need to:
 
-### 1. Configure Manifest as following 
-Replace TENANT_NAME with name of your tenant
-Replace PAGE_URL with URL to your page (/sites/SiteName/SitePages/Test.aspx)
-Replace ICONS_LIBRARY with Url to icons library (sites/SiteName/Shared%20Documents)
+### 1. Configure Manifest 
+Replace TENANT_NAME with a name of your tenant
+Replace PAGE_URL with a URL to your page (/sites/SiteName/SitePages/Test.aspx)
+Replace ICONS_LIBRARY with a Url to the icons library (sites/SiteName/Shared%20Documents)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -136,7 +137,7 @@ Replace ICONS_LIBRARY with Url to icons library (sites/SiteName/Shared%20Documen
 </OfficeApp>
 ```
 
-### 2. Add OfficeJS script to SPFx solution. 
+### 2. Add OfficeJS script to SPFx solution 
 
 ``` javascript
 
@@ -152,41 +153,46 @@ await SPComponentLoader.loadScript('https://appsforoffice.microsoft.com/lib/1/ho
 
 ```
 
-### 3. Install Typings
+### 3. Install Typings to SPFx solution
 
 npm i -save-dev @types/office-js to the solution
 
-### 4. Add the addin manifest to AppCatalog
+### 4. Add the addin Manifest to the App Catalog
 
 ![App Catalog for Office Apps](../images/languageTool/AppCatalog.jpg)
 
-### 5. Add the SPFx webpart on a desired page with SingleApp layout
+### 5. Add the SPFx web part to any page with the SingleApp layout
 
-## Connection to language services 
+Update your PAGE_URL value in the manifest file with the URL of the page where you added the web part.
 
-When selecting a platform for my language learning project, I chose **MS Word** for its native language checker functionality. This feature automatically highlights any incorrect words, adding an additional class (*SpellingErrorV2Themed*) that made it easy for me to grab a list of elements with this class using an OfficeJS function [body.getHtml()](https://learn.microsoft.com/en-us/javascript/api/word/word.body?view=word-js-preview#word-word-body-gethtml-member(1)) . 
+## Connection to the language services 
 
-However, I encountered a roadblock when this method [stopped working](https://github.com/OfficeDev/office-js/issues/2898#issuecomment-1279839683) in a new release. Despite trying other services, I was unable to find a satisfactory solution until I discovered **OpenAI**. 
+When selecting a main platform to carry my language learning project, I chose **MS Word** because of its native functionality of a language checker. This feature automatically highlights any incorrect words, adding an additional class (*SpellingErrorV2Themed*) that made it easy for me to grab a list of elements with this class using an OfficeJS function [body.getHtml()](https://learn.microsoft.com/en-us/javascript/api/word/word.body?view=word-js-preview#word-word-body-gethtml-member(1)) . 
 
-With this powerful tool, I was able to detect incorrect words, receive suggestions for correcting them, and even get suggestions for the entire text. Additionally I use the same tool to get translations to selected words.
+Nonetheless, I encountered a roadblock when this method [stopped working](https://github.com/OfficeDev/office-js/issues/2898#issuecomment-1279839683) in a new release. Despite trying other services, I was unable to find a satisfactory solution, until I discovered **OpenAI**. 
 
-In both cases I make a query to get a result in stable JSON format. Fortunately OpenAI handles this kind of requests very well. 
-You can test your queries [here](https://platform.openai.com/playground).
+With this powerful tool, I was able to detect incorrect words, receive suggestions for correcting them, and even get suggestions for the entire text introduced. Additionally, I could use the same tool to get translations of selected words.
+
+In both cases, the same query gets a result in a stable JSON format. Fortunately, OpenAI handles such requests well. Feel free to test your own queries [here](https://platform.openai.com/playground). The important thing is to use the correct syntax of results. To achieve this, I used the following text at the end of the query.
+*`how result in JSON format {incorrect_words:[ x:{ 'text', suggestions: []}], suggested_correction:'text' }`*.  
+
+To get the apiKey, you need to create an account on the OpenAI website and create a new one on the [page](https://platform.openai.com/account/api-keys). 
+![OpenAI API Key](../images/languageTool/getOpenAIApiKey.png)
 
 ### Query for incorrect words
-In the code I replace the *language* property with a name of the Language, and the *text* property with written text in the Word document.
+In the code, I replace the *language* property with a name of language used, and the *text* property with a written text in the Word document.
 `find incorrect ${language} words, find maximum 3 suggestions for them, show result in JSON format {incorrect_words:[ x:{ 'text', suggestions: []}], suggested_correction:'text' }, without any additional data: ${text}`
 
 ![Get words query](../images/languageTool/getWordsQuery.jpg)
 
 
 ### Translations query
-In the code I replace the *wordsToTranslate* property with selected words separated by comma.
+Also the *wordsToTranslate* property is replaced with selected words separated by comma.
 `get translations from Portuguese to English for words in json format [{"word":"","translation":""}]: ${wordsToTranslate}`
 
 ![Get Translations](../images/languageTool/getTranslations.jpg)
 
-I used the following code to connect to the OpenAI API and get suggestions for the text. 
+I use the following code to connect to the OpenAI API, get suggestions and corrected text. 
 
 ``` javascript
 public async checkSpelling(text: string, language: string): Promise<ITextCheckResult> {
@@ -244,7 +250,7 @@ public async checkSpelling(text: string, language: string): Promise<ITextCheckRe
 ```
 
 
-I used the following code to connect to the OpenAI API and get corrected text. 
+I used the following code to connect to the OpenAI API and get translations for selected words. 
 
 ``` javascript
  public async getTranslationsForWords(words: IWordToAnalyze[]): Promise<IWordToAnalyze[]> {
@@ -300,10 +306,10 @@ I used the following code to connect to the OpenAI API and get corrected text.
 ```
 
 
-## PWA App
+## The PWA app
 
 
-To aid in my language learning journey, I decided to create a simple flashcards app that I could access easily from my phone. I used a service worker script and PWA solution, which allowed me to create a convenient shortcut on my phone's home screen. The article [Progressive WebApp in SharePoint - the supported way](http://www.msclouddeveloper.com/progressive-webapp-in-sharepoint/) was very helpful in this regard. For full extension code, please see the [GitHub repository](https://github.com/mkm17/pwa-extension).
+As an additional aid in my language learning journey, I decided to create a simple flashcard app I could access easily on my phone. I used a service worker script and the PWA solution, which allowed me to create a convenient shortcut on the mobile home screen. The article [Progressive WebApp in SharePoint - the supported way](http://www.msclouddeveloper.com/progressive-webapp-in-sharepoint/) was very helpful in this regard. For the full extension code, please see the [GitHub repository](https://github.com/mkm17/pwa-extension).
 
 **manifest.webmanifest file**
 ``` javascript
@@ -421,14 +427,14 @@ self.addEventListener('fetch', event => {
 
 <img src="../images/languageTool/MobileButton.jpg" alt= "Mobile Button"  height="560">
 
-While this solution worked well for the most part, I encountered an issue when trying to use the app offline, such as during longer flights. Despite my efforts, I was unable to create an app that was fully offline-capable. 
+While this solution worked pretty well, I encountered an issue when trying to use the app offline and in the flight mode.
 
 ![The flashcards app](../images/languageTool/FlashCards.gif)
 
-However, I did find a partial solution that involved rendering the flashcards page first and then caching the necessary requests. This allowed me to view the flashcards without requiring additional requests without Internet connections. 
+Up till now, I have only found a partial solution to this case, involving rendering the flashcards page first and then caching all necessary requests. This allows me to view the flashcards without additional requests requiring Internet connections. 
 
 
 ---
 
-I hope you enjoyed this article and found it useful. If you have any questions or comments, please feel free to reach out to me on [Linkedin](https://www.linkedin.com/in/micha%C5%82-kornet-sharepoint-dev/) .
+I hope you enjoyed this article and found it useful for your case. If you have any questions or comments, reach out to me on [Linkedin](https://www.linkedin.com/in/micha%C5%82-kornet-sharepoint-dev/) .
 
