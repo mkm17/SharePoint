@@ -19,7 +19,7 @@ This idea inspired me to create a diary app that analyses my texts to identify i
 In the tool, you can practice writing whole texts in any eligible language and fill in any unknown expressions with words or phrases from the other language - even your native one! The tool analyzes the input and suggests corrections for individual words, as well as the entire text. Furthermore, any new words can be added to a personal dictionary for a later review.
 
 ![The Language Tool](../images/languageTool/AppPresentation.gif)
-[Link to the Solution]()
+[Link to the Solution](https://github.com/mkm17/sp-language-diary)
 
 ## Components used 
 
