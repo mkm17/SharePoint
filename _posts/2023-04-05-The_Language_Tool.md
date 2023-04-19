@@ -1,10 +1,10 @@
 ---
-layout: page
-permalink: /my_learning_platform/
-oldStructure: true
+layout: post
+title:  "My Language Learning Platform"
+date:   2023-04-05 00:00:00 +0200
+tags: ["SharePoint", "SPFx", "Office365", "OfficeJS", "MS Word", "OpenAI", "ChatGPT" ]
+photo: "/images/languageTool/header.png"
 ---
-
-# My Language Learning Platform
 
 1. [Introduction](#introduction)
 2. [Description of Components Used](#components-used)
@@ -24,7 +24,7 @@ This idea inspired me to create a diary app that analyses my texts to identify i
 
 In the tool, you can practice writing whole texts in any eligible language and fill in any unknown expressions with words or phrases from the other language - even your native one! The tool analyzes the input and suggests corrections for individual words, as well as the entire text. Furthermore, any new words can be added to a personal dictionary for a later review.
 
-![The Language Tool](../images/languageTool/AppPresentation.gif)
+![The Language Tool](/images/languageTool/AppPresentation.gif)
 [Link to the Solution](https://github.com/mkm17/sp-language-diary)
 
 ## Components used 
@@ -33,7 +33,7 @@ With the clear plan in mind, I set out to explore services offered by Microsoft 
 
 Since the solution did not require a sophisticated database, I decided to store my data on a **SharePoint List** in my tenant site. Following this approach, I was able to gather and access my data without a need to invest significant time and effort in setting up a complex system. 
 
-![The source list](../images/languageTool/sourceList.jpg)
+![The source list](/images/languageTool/sourceList.jpg)
 
 ## MS Word App 
 
@@ -165,7 +165,7 @@ npm i -save-dev @types/office-js to the solution
 
 ### 4. Add the addin Manifest to the App Catalog
 
-![App Catalog for Office Apps](../images/languageTool/AppCatalog.jpg)
+![App Catalog for Office Apps](/images/languageTool/AppCatalog.jpg)
 
 ### 5. Add the SPFx web part to any page with the SingleApp layout
 
@@ -183,20 +183,20 @@ In both cases, the same query gets a result in a stable JSON format. Fortunately
 *`how result in JSON format {incorrect_words:[ x:{ 'text', suggestions: []}], suggested_correction:'text' }`*.  
 
 To get the apiKey, you need to create an account on the OpenAI website and create a new one on the [page](https://platform.openai.com/account/api-keys). 
-![OpenAI API Key](../images/languageTool/getOpenAIApiKey.png)
+![OpenAI API Key](/images/languageTool/getOpenAIApiKey.png)
 
 ### Query for incorrect words
 In the code, I replace the *language* property with a name of language used, and the *text* property with a written text in the Word document.
 `find incorrect ${language} words, find maximum 3 suggestions for them, show result in JSON format {incorrect_words:[ x:{ 'text', suggestions: []}], suggested_correction:'text' }, without any additional data: ${text}`
 
-![Get words query](../images/languageTool/getWordsQuery.jpg)
+![Get words query](/images/languageTool/getWordsQuery.jpg)
 
 
 ### Translations query
 Also the *wordsToTranslate* property is replaced with selected words separated by comma.
 `get translations from Portuguese to English for words in json format [{"word":"","translation":""}]: ${wordsToTranslate}`
 
-![Get Translations](../images/languageTool/getTranslations.jpg)
+![Get Translations](/images/languageTool/getTranslations.jpg)
 
 I use the following code to connect to the OpenAI API, get suggestions and corrected text. 
 
@@ -431,11 +431,11 @@ self.addEventListener('fetch', event => {
   });
 ```
 
-<img src="../images/languageTool/MobileButton.jpg" alt= "Mobile Button"  height="560">
+<img src="/images/languageTool/MobileButton.jpg" alt= "Mobile Button"  height="560">
 
 While this solution worked pretty well, I encountered an issue when trying to use the app offline and in the flight mode.
 
-![The flashcards app](../images/languageTool/FlashCards.gif)
+![The flashcards app](/images/languageTool/FlashCards.gif)
 
 Up till now, I have only found a partial solution to this case, involving rendering the flashcards page first and then caching all necessary requests. This allows me to view the flashcards without additional requests requiring Internet connections. 
 

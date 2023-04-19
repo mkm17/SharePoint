@@ -1,0 +1,17 @@
+.post-item {
+  display: flex;
+}
+
+.post-image {
+  width: 240px;
+  height: 111px;
+  margin-right: 10px;
+}
+
+.image-class {
+  height: 100%;
+}
+
+.post-data {
+  width: 80%;
+}

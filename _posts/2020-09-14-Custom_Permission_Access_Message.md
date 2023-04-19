@@ -1,26 +1,26 @@
 ---
-layout: page
-permalink: /custom_permission_access_message/
-oldStructure: true
+layout: post
+title:  "Managing permissions: How to create custom messages for access request"
+date:   2020-09-14 00:00:00 +0200
+tags: ["Power Automate", "SharePoint", "Adaptive Cards"]
+photo: "/images/header.png"
 ---
-
-# Managing permissions: How to create custom messages for access request
 
 ## Out of the box feature 
 
 Have you thought about any customization of the standard access request on your site? Currently, SharePoint platform provides generating a simple defined message as a solution. Management of this option is available in the pop-out window under the *Access Request Settings* button of the *Permissions* interface. 
 
-![Access Requests Settings](../images/accessRequestsSettings.jpg)
+![Access Requests Settings](/images/accessRequestsSettings.jpg)
 
 A default format of the message for access request has its limitations. When a user requests access to a site, an owner of the resource gets the notification, represented by a compound Adaptive Card, to add the user to one of the two default groups (Members, Visitors), or to reject the request. 
 
-![Request Message](../images/RequestMessage1.jpg)
+![Request Message](/images/RequestMessage1.jpg)
 
 In case of sending a request to get access to a certain list or item with no inherited permissions, a notification has an adapted structure and allows for providing unique access to the called resource. 
 
-![Request Message](../images/RequestMessage2.jpg)
+![Request Message](/images/RequestMessage2.jpg)
 
-![Request Message](../images/RequestMessage3.jpg)
+![Request Message](/images/RequestMessage3.jpg)
 
 The whole process of sending access requests is handled on the default *Access Request list* hidden on a site.  
 
@@ -39,7 +39,7 @@ The whole process of sending access requests is handled on the default *Access R
 #### The solution meeting all the requirements can be achieved in a few steps:
 - Enter the *Access Request Settings* interface and enable *Allow access requests* option. Select an account to receive standard messages. Otherwise, the access requests feature is disabled. 
 
-![Access Requests Settings](../images/accessRequestsSettings.jpg)
+![Access Requests Settings](/images/accessRequestsSettings.jpg)
 
 -	Create a Power Automate or Logic Apps workflow which will receive a HTTP request. 
 -	Add a PnP event receiver to Access Requests list using the following code: 
@@ -49,7 +49,7 @@ Synchronization Synchronous
 ```
 -	Update the created workflow according to the scheme and action parameters below: 
 
-![First Flow](../images/Flow1Overview.jpg)
+![First Flow](/images/Flow1Overview.jpg)
 
 #### AccessRequestObject variable Initialization:
 
@@ -418,11 +418,11 @@ An example of the request body:
 }``
 ```
 
-![Adaptive Card](../images/AdaptiveCards1.jpg)
+![Adaptive Card](/images/AdaptiveCards1.jpg)
 
 The second flow will be triggered automatically, after clicking one of the provided buttons. 
 
-![Second Flow](../images/SecondFlow.jpg)
+![Second Flow](/images/SecondFlow.jpg)
 
 In the following part of *the decision flow*, you can handle the received request in many ways, adapting the process to the specific needs and requirements of your organization. Here are some actions that can be used to complement the workflow:
 - Storing dataset about the access request on a custom list 
