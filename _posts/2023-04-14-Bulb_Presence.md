@@ -49,6 +49,13 @@ My investigation started with some existing solutions on the same note: [The sta
 
 ## Power Automate
 
+To keep a subscription valid every 60 minutes, we can create a flow that is triggered by a Schedule trigger. The flow will utilize a custom connector to perform the same request as we did in MS Graph Explorer, thereby updating the subscription.
+
+![Subscription Update Flow](/images/bulb/SubscriptionUpdate.png)
+
+The process of creation a Custom Connector for MS Graph is described [here](https://medium.com/rapha%C3%ABl-pothin/create-a-custom-connector-for-microsoft-graph-581676585529).
+
+
 Power Automate was a simple yet powerful solution to design an effective workflow triggered on the user's availability change and performing certain following actions accordingly.
 
 ![Flow](/images/bulb/fullFlow.png)
