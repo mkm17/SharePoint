@@ -97,6 +97,13 @@ contains(triggerOutputs(),'queries') is equal to true
 
 If the condition is met, the flow will respond with the required value to the **Microsoft Graph API** ato confirm the subscription. Otherwise, it will proceed to the next steps.
 
+* Check if the request addresses the current tenant - to secure a process, we validate the secret value coming from the request. In a standard case, we can use a method described in this [blog post](https://elnathsoft.pl/steal-data-with-ms-flow/). As we do not control the request body, instead, we can check if the request is coming from the tenant specified in the tenantId property of the object variable with the bulb data. Otherwise, it will cancel the workflow.
+![Tenant](/images/bulb/TenantIdCheck.png)
+
+```javascript
+triggerOutputs()?['body']?['value'][0]?['tenantId']  is equal to  '<<TENANT ID>>'
+```
+
 * For this particular project, I incorporated the **Yeelight Colorful Bulb** device, which is an affordable smart bulb controlled remotely within a Wi-Fi connection.
   To get more information about the device use the Discover and Query actions of the Yeelight service provided by Xiaomi. The output of the query contains the "spectrumRGB" property to be set in a variable within the next action.
 ![Discovery action](/images/bulb/DiscoverBulb.png)
@@ -107,13 +114,6 @@ To set up the integration, you will need to register an account with Xiaomi and 
 
 ```javascript
 length(triggerOutputs()?['body']?['value']) is not equal to 0
-```
-
-* Check if the request addresses the current tenant - to secure a process, we validate the secret value coming from the request. In a standard case, we can use a method described in this [blog post](https://elnathsoft.pl/steal-data-with-ms-flow/). As we do not control the request body, instead, we can check if the request is coming from the tenant specified in the tenantId property of the object variable with the bulb data. Otherwise, it will cancel the workflow.
-![Tenant](/images/bulb/TenantIdCheck.png)
-
-```javascript
-triggerOutputs()?['body']?['value'][0]?['tenantId']  is equal to  '<<TENANT ID>>'
 ```
 
 * Set the bulb colour based on the identified user activity - the Switch action to override the varNewBulbColor with the user activity indicator:
