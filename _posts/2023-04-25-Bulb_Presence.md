@@ -64,7 +64,7 @@ Power Automate was a natural choice for a simple yet powerful solution to design
 #### Main actions
  * Initialize the object variable used to store the set of values to provide before the first run. It includes the bulb data - you will take the "did", "region" and "type" properties from the test query in the Discover step described below.
   
-  ![DiscoverAction](../_site/images/bulb/DiscoverOnly.png)
+  ![DiscoverAction](/images/bulb/DiscoverOnly.png)
 
  *did*: This property refers to the unique identifier of the Yeelight Colorful Bulb.
 
@@ -83,7 +83,7 @@ Power Automate was a natural choice for a simple yet powerful solution to design
 }
 ```
 
-![InitVariable](../_site/images/bulb/initdata.png)
+![InitVariable](/images/bulb/initdata.png)
 
  * The integer variables come in handy in storing the information on target and current light colors.
   
@@ -118,7 +118,7 @@ length(triggerOutputs()?['body']?['value']) is not equal to 0
 
 * Set the bulb colour based on the identified user activity - the Switch action to override the varNewBulbColor with the user activity indicator:
 
-![switch](../_site/images/bulb/switchStatement.png)
+![switch](/images/bulb/switchStatement.png)
 
 ```javascript
 triggerOutputs()?['body']?['value'][0]?['resourceData']?['activity']
