@@ -3,7 +3,7 @@ layout: post
 title:  "My Language Learning Platform"
 date:   2023-04-05 00:00:00 +0200
 tags: ["SharePoint", "SPFx", "Office365", "OfficeJS", "MS Word", "OpenAI", "ChatGPT" ]
-photo: "/images/languageTool/header.png"
+image: "/images/languageTool/header.png"
 ---
 
 1. [Introduction](#introduction)

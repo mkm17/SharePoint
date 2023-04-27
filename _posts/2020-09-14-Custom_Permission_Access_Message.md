@@ -3,7 +3,7 @@ layout: post
 title:  "Managing permissions: How to create custom messages for access request"
 date:   2020-09-14 00:00:00 +0200
 tags: ["Power Automate", "SharePoint", "Adaptive Cards"]
-photo: "/images/header.png"
+image: "/images/header.png"
 ---
 
 ## Out of the box feature 
