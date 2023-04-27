@@ -52,7 +52,7 @@ My investigation started with some existing solutions on the same note: [The Sta
 
 Power Automate was a natural choice for a simple yet powerful solution to design an effective workflow triggered by the user's availability change and performing consequent actions to switch the bulb color accordingly. The graph below presents the flow design.
 
-![Flow](/images/bulb/PresenceDisplayFlow.png)
+![Flow](/images/bulb/PresenceDisplayFlow.PNG)
 
 #### Trigger
 * The flow fires on the HTTP request. Use the HTTP trigger to initialize the subscription request from the **Microsoft Graph API**. 
@@ -105,7 +105,7 @@ If the condition is met, the flow will respond with the required value to the **
 triggerOutputs()?['body']?['value'][0]?['tenantId']  is equal to  '<<TENANT ID>>'
 ```
 
-![Check Tenant Id](images/bulb/checktenantid.png)
+![Check Tenant Id](/images/bulb/checktenantid.png)
 
 * For this particular project, I incorporated the **Yeelight Colorful Bulb** device, which is an affordable smart bulb controlled remotely within a Wi-Fi connection.
   To get more information about the device use the Discover and Query actions of the Yeelight service provided by Xiaomi. The output of the query contains the "spectrumRGB" property to be set in a variable within the next action.
