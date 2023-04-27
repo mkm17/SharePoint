@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Use a bulb to indicate presence in Microsoft Teams"
-date:   2023-04-17 11:08:54 +0200
+date:   2023-04-27 11:08:54 +0200
 tags: ["Power Automate", "Xiaomi Yeelight", "MS Graph"]
 photo: "/images/bulb/header.png"
 ---
@@ -51,6 +51,7 @@ My investigation started with some existing solutions on the same note: [The Sta
 ## Power Automate
 
 Power Automate was a natural choice for a simple yet powerful solution to design an effective workflow triggered by the user's availability change and performing consequent actions to switch the bulb color accordingly. The graph below presents the flow design.
+
 ![Flow](/images/bulb/PresenceDisplayFlow.png)
 
 #### Trigger
