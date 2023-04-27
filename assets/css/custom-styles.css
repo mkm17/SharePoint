@@ -28,8 +28,9 @@
   }
 
   .image-class {
-    height: auto;
-    max-height: 289px;
+    /*height: auto;
+   // max-height: 289px;*/
+    object-fit: contain;
   }
 
   .post-data {
