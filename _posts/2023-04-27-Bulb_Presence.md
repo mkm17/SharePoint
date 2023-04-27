@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Use a bulb to indicate presence in Microsoft Teams"
-date:   2023-04-27 11:08:54 +0200
+date:   2023-04-27 00:00:00 +0200
 tags: ["Power Automate", "Xiaomi Yeelight", "MS Graph"]
 photo: "/images/bulb/header.png"
 ---
@@ -77,10 +77,10 @@ Power Automate was a natural choice for a simple yet powerful solution to design
 
 ```javascript
 {
-  "redColor": 16711680,
-  "greenColor": 65280,
-  "yellowColor": 16776960,
-  "whiteColor": 16777215,
+  "redColor": "16711680",
+  "greenColor": "65280",
+  "yellowColor": "16776960",
+  "whiteColor": "16777215",
 }
 ```
 
@@ -104,6 +104,8 @@ If the condition is met, the flow will respond with the required value to the **
 ```javascript
 triggerOutputs()?['body']?['value'][0]?['tenantId']  is equal to  '<<TENANT ID>>'
 ```
+
+![Check Tenant Id](images/bulb/checktenantid.png)
 
 * For this particular project, I incorporated the **Yeelight Colorful Bulb** device, which is an affordable smart bulb controlled remotely within a Wi-Fi connection.
   To get more information about the device use the Discover and Query actions of the Yeelight service provided by Xiaomi. The output of the query contains the "spectrumRGB" property to be set in a variable within the next action.
@@ -138,6 +140,9 @@ Away - yellowColor
 ```
 
 * Check if the target color is different than the current one - the condition checks if the current color of the bulb is different from the target color. If the condition is false, the flow will terminate.
+
+![Color change condition](/images/bulb/colorChangeCondition.png)
+
 
 * To change the color of the bulb using Power Automate, populating the following properties in all the final Color action is essential:
 
