@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Use a bulb to indicate presence in Microsoft Teams"
-date:   2023-04-27 00:00:00 +0200
+date:   2023-04-26 00:00:00 +0200
 tags: ["Power Automate", "Xiaomi Yeelight", "MS Graph"]
 image: "/images/bulb/header.png"
 ---
