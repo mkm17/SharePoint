@@ -20,6 +20,7 @@
   .post-item {
     display: flex;
     flex-direction: column;
+    max-height: 355px;
   }
 
   .post-image {
@@ -30,6 +31,7 @@
   .image-class {
     /*height: auto;
    // max-height: 289px;*/
+    width: 100%;
     object-fit: contain;
   }
 
