@@ -39,3 +39,28 @@
     width: 100%;
   }
 }
+
+
+.action-copy-header {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-top: 1rem;
+}
+
+.action-copy-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #222;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.action-copy-button:hover {
+  background-color: #444;
+}
