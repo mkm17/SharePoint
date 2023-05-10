@@ -1,7 +1,7 @@
 var buttonClick = (object) => {
   let nextElem = object.parentElement.nextElementSibling;
 
-  while (nextElem && !nextElem.classList.contains("code")) {
+  while (nextElem && !nextElem.classList.contains("powerAutomateCode")) {
     nextElem = nextElem.nextElementSibling;
   }
 
