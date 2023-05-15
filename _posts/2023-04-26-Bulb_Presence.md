@@ -142,7 +142,117 @@ length(triggerOutputs()?['body']?['value']) is not equal to 0
 
 {% include codeHeader.html %}
 <div class="powerAutomateCode" style="display:none">
-{ "type": "Switch", "expression": "@triggerOutputs()?['body']?['value'][0]?['resourceData']?['activity']", "cases": { "OffWork": { "case": "OffWork", "actions": { "Set_WhiteColor": { "type": "SetVariable", "inputs": { "name": "NewBulbColor", "value": "@variables(''varBulbData')?['whiteColor']" }, "runAfter": {} } } }, "Available": { "case": "Available", "actions": { "Set_Green_Color": { "type": "SetVariable", "inputs": { "name": "NewBulbColor", "value": "@variables(''varBulbData')?['greenColor']" }, "runAfter": {} } } }, "Busy": { "case": "Busy", "actions": { "Set_Red_Color_1": { "type": "SetVariable", "inputs": { "name": "NewBulbColor", "value": "@variables(''varBulbData')?['redColor']" }, "runAfter": {} } } }, "DoNotDisturb": { "case": "DoNotDisturb", "actions": { "Set_Red_Color": { "type": "SetVariable", "inputs": { "name": "NewBulbColor", "value": "@variables(''varBulbData')?['redColor']" }, "runAfter": {} } } }, "BeRightBack": { "case": "BeRightBack", "actions": { "Set_Yellow_Color": { "type": "SetVariable", "inputs": { "name": "NewBulbColor", "value": "@variables(''varBulbData')?['yellowColor']" }, "runAfter": {} } } }, "Away": { "case": "Away", "actions": { "Set_Yellow_Color1": { "type": "SetVariable", "inputs": { "name": "NewBulbColor", "value": "@variables(''varBulbData')?['yellowColor']" }, "runAfter": {} } } }, "Offline": { "case": "Offline", "actions": { "Set_variable": { "type": "SetVariable", "inputs": { "name": "NewBulbColor", "value": "@variables(''varBulbData')?['whiteColor']" }, "runAfter": {} } } } }, "default": { "actions": {} }, "runAfter": { "Is_trigger_value_array_length_equals_0": [ "Succeeded" ] }, "metadata": { "operationMetadataId": "eddaf68d-de21-48d6-9d31-dc3674e17763" } }
+{
+    "id": "a9abf920-e736-4b15-ae5e-463c366da02b",
+    "brandColor": "#007ee5",
+    "icon": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KIDxwYXRoIGQ9Im0wIDBoMzJ2MzJoLTMyeiIgZmlsbD0iIzQ4NEY1OCIvPg0KIDxnIGZpbGw9IiNmZmYiPg0KICA8cGF0aCBkPSJtMjUuNiAxOS42di03LjJoLTE5LjJ2Ny4yem0tMS4yLTEuMmgtMTYuODAxdi00LjhoMTYuOHY0Ljh6Ii8+DQogIDxwYXRoIGQ9Ik0xMS44IDE3LjJ2LTEuMmgtLjZ2LTEuMmgtMS4ydjEuMmgtLjZ2MS4yeiIvPg0KICA8cGF0aCBkPSJNMTUuNCAxNy4ydi0xLjJoLS42di0xLjJoLTEuMnYxLjJoLS42djEuMnoiLz4NCiAgPHBhdGggZD0iTTE5IDE3LjJ2LTEuMmgtLjZ2LTEuMmgtMS4ydjEuMmgtLjZ2MS4yeiIvPg0KICA8cGF0aCBkPSJNMjIuNiAxNy4ydi0xLjJoLS42di0xLjJoLTEuMnYxLjJoLS42djEuMnoiLz4NCiA8L2c+DQo8L3N2Zz4NCg==",
+    "isTrigger": false,
+    "operationName": "Set the bulb colour based on the identified user activity",
+    "operationDefinition": {
+        "type": "Switch",
+        "expression": "@triggerOutputs()?['body']?['value'][0]?['resourceData']?['activity']",
+        "cases": {
+            "OffWork": {
+                "case": "OffWork",
+                "actions": {
+                    "Set_varNewBulbColor_to_white": {
+                        "type": "SetVariable",
+                        "inputs": {
+                            "name": "varNewBulbColor",
+                            "value": "@variables('varBulbData')?['whiteColor']"
+                        },
+                        "runAfter": {}
+                    }
+                }
+            },
+            "Available": {
+                "case": "Available",
+                "actions": {
+                    "Set_varNewBulbColor_to_green": {
+                        "type": "SetVariable",
+                        "inputs": {
+                            "name": "varNewBulbColor",
+                            "value": "@variables('varBulbData')?['greenColor']"
+                        },
+                        "runAfter": {}
+                    }
+                }
+            },
+            "Busy": {
+                "case": "Busy",
+                "actions": {
+                    "Set_varNewBulbColor_to_red": {
+                        "type": "SetVariable",
+                        "inputs": {
+                            "name": "varNewBulbColor",
+                            "value": "@variables('varBulbData')?['redColor']"
+                        },
+                        "runAfter": {}
+                    }
+                }
+            },
+            "DoNotDisturb": {
+                "case": "DoNotDisturb",
+                "actions": {
+                    "Set_varNewBulbColor_to_red_2": {
+                        "type": "SetVariable",
+                        "inputs": {
+                            "name": "varNewBulbColor",
+                            "value": "@variables('varBulbData')?['redColor']"
+                        },
+                        "runAfter": {}
+                    }
+                }
+            },
+            "BeRightBack": {
+                "case": "BeRightBack",
+                "actions": {
+                    "Set_varNewBulbColor_to_yellow": {
+                        "type": "SetVariable",
+                        "inputs": {
+                            "name": "varNewBulbColor",
+                            "value": "@variables('varBulbData')?['yellowColor']"
+                        },
+                        "runAfter": {}
+                    }
+                }
+            },
+            "Away": {
+                "case": "Away",
+                "actions": {
+                    "Set_varNewBulbColor_to_yellow_2": {
+                        "type": "SetVariable",
+                        "inputs": {
+                            "name": "varNewBulbColor",
+                            "value": "@variables('varBulbData')?['yellowColor']"
+                        },
+                        "runAfter": {}
+                    }
+                }
+            },
+            "Offline": {
+                "case": "Offline",
+                "actions": {
+                    "Set_varNewBulbColor_to_white_2": {
+                        "type": "SetVariable",
+                        "inputs": {
+                            "name": "varNewBulbColor",
+                            "value": "@variables('varBulbData')?['whiteColor']"
+                        },
+                        "runAfter": {}
+                    }
+                }
+            }
+        },
+        "default": {
+            "actions": {}
+        },
+        "runAfter": {},
+        "metadata": {
+            "operationMetadataId": "eddaf68d-de21-48d6-9d31-dc3674e17763"
+        }
+    }
+}
 </div>
 
 ![switch](/images/bulb/switchStatement.png)
