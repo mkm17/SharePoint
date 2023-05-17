@@ -8,6 +8,7 @@ var buttonClick = (object) => {
   if (nextElem) {
     var tempTextarea = document.createElement("textarea");
     tempTextarea.value = nextElem.innerText;
+    tempTextarea.className = 'copyTextareaPowerAutomateCode';
     document.body.appendChild(tempTextarea);
     tempTextarea.select();
     document.execCommand("copy");
