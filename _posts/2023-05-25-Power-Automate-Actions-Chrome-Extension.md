@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Power Automate Actions - Chrome Extension"
-date:   2023-05-22 00:00:00 +0200
+date:   2023-05-25 00:00:00 +0200
 tags: ["Power Automate", "SharePoint", "MS Graph", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 ---
