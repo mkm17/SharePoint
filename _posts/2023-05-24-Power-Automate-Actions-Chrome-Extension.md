@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Power Automate Actions - Chrome Extension"
-date:   2023-05-25 00:00:00 +0200
+date:   2023-05-24 00:00:00 +0200
 tags: ["Power Automate", "SharePoint", "MS Graph", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 ---
@@ -47,7 +47,7 @@ If we want to reuse any action, copying it to **“My Clipboard”** may come in
 <br />
 
 ### **3. Coping actions from community blogs**
-It's great to find inspiring solutions presented on blogs. Most frequently, to mimic following Power Automate actions, we create a row of new actions and one by one, manually, place the content from the page with peeking the code. With the aforementioned Chrome Extension, it is possible to copy all predefined in a correct manner actions (please check [**our article about bulb presence**](https://michalkornet.com/2023/04/25/Bulb_Presence.html) as a reference) - even simultaneously, using the copy button at the top of the window.
+It's great to find inspiring solutions presented on blogs. Most frequently, to mimic following Power Automate actions, we create a row of new actions and one by one, manually, place the content from the page with peeking the code. With the aforementioned Chrome Extension, it is possible to copy all predefined in a correct manner actions (please check **[our article about bulb presence](https://michalkornet.com/2023/04/25/Bulb_Presence.html)** as a reference) - even simultaneously, using the copy button at the top of the window.
 
 ![Copy Actions from blog](/images/powerAutomateExtension/CopyItemsFromBlogAndSaveOnFlow.gif)
 
@@ -73,9 +73,11 @@ With a single button in the **Chrome Extension**, all selected actions can be co
 
 <strong id="how-to-install-the-tool">How to install the tool?</strong>
 
-As for now, you need to install the extension manually - please unpack the *[ApplicationBuild](https://github.com/mkm17/powerautomate-actions-extension/blob/main/ApplicationBuild.zip)* zip file and follow the steps described [here](https://support.google.com/chrome/a/answer/2714278?hl=en) to install the package locally. 
+The tool is available on the **[Chrome Store](https://chrome.google.com/webstore/detail/power-automate-actions-ha/eoeddkppcaagdeafjfiopeldffkhjodl?hl=pl&authuser=0)**.
 
-In the future, I will update the article with a link to the **Chrome Store**.
+If you would like to install the extension manually - please unpack the *[ApplicationBuild](https://github.com/mkm17/powerautomate-actions-extension/blob/main/ApplicationBuild.zip)* zip file and follow the steps described [here](https://support.google.com/chrome/a/answer/2714278?hl=en) to install the package locally. 
+
+
 
 <br />
 <br />
