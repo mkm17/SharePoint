@@ -28,6 +28,10 @@ github_username:  mkm17
 
 tag_page_dir: tags
 
+languages:
+  - en
+  - es
+  - br
 
 # Build settings
 theme: minima

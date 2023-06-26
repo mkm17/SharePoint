@@ -1,6 +1,7 @@
 ---
-layout: base
+layout: baseES
 selected_language: "{{ page.url | extract_language }}"
+permalink: /es/
 ---
 
 <div class="home">
@@ -10,21 +11,13 @@ selected_language: "{{ page.url | extract_language }}"
 
   {{ content }}
 
-  {% assign selectedLanguage = selected_language | default: "en" %}
-
-  <script>
-    console.log("{{ selected_language }}");
-    console.log("{{ page.url }}");
-    console.log("{{ selectedLanguage }}");
-  </script>
+  {% assign selectedLanguage = "es" %}
   
   {% if site.paginate %}
   {% assign posts = paginator.posts | where_exp: "post", "post.language == selectedLanguage" | paginate: paginate %}
   {% else %}
   {% assign posts = site.posts | where: "language", selectedLanguage %}
   {% endif %}
-
- 
 
   {%- if posts.size > 0 -%}
   {%- if page.list_title -%}
@@ -33,7 +26,6 @@ selected_language: "{{ page.url | extract_language }}"
   <ul class="post-list">
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     {%- for post in posts -%}
-    
     <li class="post-item">
       <div class="post-image">
         {%- if post.image -%}

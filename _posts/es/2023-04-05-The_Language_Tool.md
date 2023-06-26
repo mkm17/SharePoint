@@ -1,53 +1,54 @@
 ---
-layout: post
-title:  "My Language Learning Platform"
+layout: postES
+title:  "Mi Plataforma de Aprendizaje de Idiomas"
 date:   2023-04-05 00:00:00 +0200
 tags: ["SharePoint", "SPFx", "Office365", "OfficeJS", "MS Word", "OpenAI", "ChatGPT" ]
 image: "/images/languageTool/header.png"
-language: en
+language: es
+permalink: /2023/04/05/es/The_Language_tool.html
 ---
 
-1. [Introduction](#introduction)
-2. [Description of Components Used](#components-used)
-3. [MS Word App](#ms-word-app)
-4. [Connection to Language Services](#connection-to-the-language-services)
-5. [PWA App](#the-pwa-app)
+1. [Introducción](#introducción)
+2. [Descripción de los Componentes Utilizados](#componentes-utilizados)
+3. [Aplicación de MS Word](#aplicación-de-ms-word)
+4. [Conexión a los Servicios de Idiomas](#conexión-a-los-servicios-de-idiomas)
+5. [Aplicación PWA](#la-aplicación-pwa)
 
-## Introduction
+## Introducción
 
-Some time ago, I set myself a goal to learn new languages, recognizing that carrying basis of a native language of any visited country makes the entire trip a truly unique experience. For such communication skills, acquiring a fundamental vocabulary and understanding grammar rules are essential. 
+Hace algún tiempo, me propuse el objetivo de aprender nuevos idiomas, reconociendo que tener conocimientos básicos del idioma nativo de cualquier país visitado hace que todo el viaje sea una experiencia verdaderamente única. Para estas habilidades de comunicación, adquirir un vocabulario fundamental y comprender las reglas gramaticales es esencial.
 
-I began my language-learning journey many years ago by using popular language apps to learn Spanish. While these apps are a great starting point, I realized that I lacked some range of vocabulary, which hindered my ability to have basic, day-to-day conversations. 
+Comencé mi viaje de aprendizaje de idiomas hace muchos años utilizando aplicaciones populares de idiomas para aprender español. Si bien estas aplicaciones son un buen punto de partida, me di cuenta de que me faltaba cierto rango de vocabulario, lo que dificultaba mi capacidad de tener conversaciones básicas en el día a día.
 
-To remedy this, I decided to focus on becoming acquainted with the most common words first (e.g. a set of top 1000 popular words) before jumping into more advanced vocabulary. While there are many glossaries available online, I found that creating my own personalized list of words I utilize on a daily basis could be way more effective. We all have our own language structures that make us unique and allow to address the topics we care the most about. 
+Para remediar esto, decidí centrarme en familiarizarme primero con las palabras más comunes (por ejemplo, un conjunto de las 1000 palabras más populares) antes de adentrarme en un vocabulario más avanzado. Si bien existen muchos glosarios disponibles en línea, descubrí que crear mi propia lista personalizada de palabras que utilizo a diario podría ser mucho más efectivo. Todos tenemos nuestras propias estructuras de lenguaje que nos hacen únicos y nos permiten abordar los temas que más nos interesan.
 
-This idea inspired me to create a diary app that analyses my texts to identify incorrect words which are then stored in my personal database. This way, I am able to learn on a regular basis and track my progress in mastering new words in a foreign language. By focusing on the most common words first and creating more and more complicated texts with time, my vocabulary is quickly expanded and my general language skills visually improved.
+Esta idea me inspiró a crear una aplicación de diario que analiza mis textos para identificar palabras incorrectas que luego se almacenan en mi base de datos personal. De esta manera, puedo aprender de forma regular y hacer un seguimiento de mi progreso en el dominio de nuevas palabras en un idioma extranjero. Al centrarme primero en las palabras más comunes y crear textos cada vez más complicados con el tiempo, mi vocabulario se expande rápidamente y mis habilidades lingüísticas en general mejoran visualmente.
 
-In the tool, you can practice writing whole texts in any eligible language and fill in any unknown expressions with words or phrases from the other language - even your native one! The tool analyzes the input and suggests corrections for individual words, as well as the entire text. Furthermore, any new words can be added to a personal dictionary for a later review.
+En la herramienta, puedes practicar escribir textos completos en cualquier idioma elegible y completar cualquier expresión desconocida con palabras o frases del otro idioma, ¡incluso el tuyo nativo! La herramienta analiza la entrada y sugiere correcciones para palabras individuales, así como para todo el texto. Además, se pueden agregar nuevas palabras a un diccionario personal para revisarlas más tarde.
 
-![The Language Tool](/images/languageTool/AppPresentation.gif)
-[Link to the Solution](https://github.com/mkm17/sp-language-diary)
+![La Herramienta de idiomas](/images/languageTool/AppPresentation.gif)
+[Enlace a la Solución](https://github.com/mkm17/sp-language-diary)
 
-## Components used 
+## Descripción de los Componentes Utilizados
 
-With the clear plan in mind, I set out to explore services offered by Microsoft 365. I started with the **Office JS app for MS Word** and the **SPFx app**. 
+Con un plan claro en mente, me propuse explorar los servicios ofrecidos por Microsoft 365. Comencé con la **aplicación de Office JS** para **MS Word** y **la aplicación SPFx**.
 
-Since the solution did not require a sophisticated database, I decided to store my data on a **SharePoint List** in my tenant site. Following this approach, I was able to gather and access my data without a need to invest significant time and effort in setting up a complex system. 
+Dado que la solución no requería una base de datos sofisticada, decidí almacenar mis datos en una **lista de SharePoint** en mi sitio de arrendatario. Siguiendo este enfoque, pude recopilar y acceder a mis datos sin necesidad de invertir mucho tiempo y esfuerzo en configurar un sistema complejo.
 
-![The source list](/images/languageTool/sourceList.jpg)
+![La lista de origen](/images/languageTool/sourceList.jpg)
 
-## MS Word App 
+## Aplicación de MS Word 
 
-During my research, I discovered that while an [SPFx app was available for MS Outlook](https://www.youtube.com/watch?v=46J3SVzZem8), it was not for other MS Office apps. However, after further investigation, I found another solution that would allow me to render a SharePoint page with an SPFx web part using sideloading of Office JS solutions. 
+Durante mi investigación, descubrí que si bien había una [aplicación SPFx disponible para MS Outlook](https://www.youtube.com/watch?v=46J3SVzZem8), no existía para otras aplicaciones de MS Office. Sin embargo, después de una investigación adicional, encontré otra solución que me permitiría mostrar una página de SharePoint con una parte web SPFx mediante la carga lateral de soluciones de Office JS.
 
-Thus, following the steps listed below, I was able to successfully integrate the SPFx app across multiple tools from the Microsoft Office stack.
+Así, siguiendo los pasos que se enumeran a continuación, pude integrar con éxito la aplicación SPFx en varias herramientas de la suite de Microsoft Office.
 
-To use SPFx SharePoint app on MS Word, you need to:
+Para usar la aplicación de SharePoint SPFx en MS Word, debes::
 
-### 1. Configure Manifest 
-Replace TENANT_NAME with a name of your tenant
-Replace PAGE_URL with a URL to your page (/sites/SiteName/SitePages/Test.aspx)
-Replace ICONS_LIBRARY with a Url to the icons library (sites/SiteName/Shared%20Documents)
+### 1. Configurar el Manifiesto
+Reemplaza TENANT_NAME por el nombre de tu arrendatario.
+Reemplaza PAGE_URL por la URL de tu página (/sites/SiteName/SitePages/Test.aspx)
+Reemplaza ICONS_LIBRARY por una URL a la biblioteca de iconos (sites/SiteName/Shared%20Documents)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -144,7 +145,7 @@ Replace ICONS_LIBRARY with a Url to the icons library (sites/SiteName/Shared%20D
 </OfficeApp>
 ```
 
-### 2. Add OfficeJS script to SPFx solution 
+### 2. Agregar el script de OfficeJS a la solución SPFx
 
 ``` javascript
 
@@ -160,46 +161,45 @@ await SPComponentLoader.loadScript('https://appsforoffice.microsoft.com/lib/1/ho
 
 ```
 
-### 3. Install Typings to SPFx solution
+### 3. Instalar Typings en la solución SPFx
 
 npm i -save-dev @types/office-js to the solution
 
-### 4. Add the addin Manifest to the App Catalog
+### 4. Agregar el Manifiesto del complemento al App Catalog
 
 ![App Catalog for Office Apps](/images/languageTool/AppCatalog.jpg)
 
-### 5. Add the SPFx web part to any page with the SingleApp layout
+### 5. Agregar el elemento web SPFx a cualquier página con el diseño SingleApp
 
-Update your PAGE_URL value in the manifest file with the URL of the page where you added the web part.
+Actualice el valor de PAGE_URL en el archivo de manifiesto con la URL de la página donde agregó el web part.
 
-## Connection to the language services 
+## Conexión a los servicios de idiomas
 
-When selecting a main platform to carry my language learning project, I chose **MS Word** because of its native functionality of a language checker. This feature automatically highlights any incorrect words, adding an additional class (*SpellingErrorV2Themed*) that made it easy for me to grab a list of elements with this class using an OfficeJS function [body.getHtml()](https://learn.microsoft.com/en-us/javascript/api/word/word.body?view=word-js-preview#word-word-body-gethtml-member(1)) . 
+Al seleccionar una plataforma principal para llevar a cabo mi proyecto de aprendizaje de idiomas, elegí **MS Word** debido a su funcionalidad nativa de verificación de idioma. Esta característica resalta automáticamente cualquier palabra incorrecta, agregando una clase adicional (*SpellingErrorV2Themed*) que me facilitó la tarea de obtener una lista de elementos con esta clase utilizando una función de OfficeJS [body.getHtml()](https://learn.microsoft.com/en-us/javascript/api/word/word.body?view=word-js-preview#word-word-body-gethtml-member(1)) . 
 
-Nonetheless, I encountered a roadblock when this method [stopped working](https://github.com/OfficeDev/office-js/issues/2898#issuecomment-1279839683) in a new release. Despite trying other services, I was unable to find a satisfactory solution, until I discovered **OpenAI**. 
+Sin embargo, me encontré con un obstáculo cuando este método [dejó de funcionar](https://github.com/OfficeDev/office-js/issues/2898#issuecomment-1279839683) en una nueva versión. A pesar de intentar otros servicios, no pude encontrar una solución satisfactoria, hasta que descubrí **OpenAI**.
 
-With this powerful tool, I was able to detect incorrect words, receive suggestions for correcting them, and even get suggestions for the entire text introduced. Additionally, I could use the same tool to get translations of selected words.
+Con esta poderosa herramienta, pude detectar palabras incorrectas, recibir sugerencias para corregirlas e incluso obtener sugerencias para todo el texto introducido. Además, pude utilizar la misma herramienta para obtener traducciones de palabras seleccionadas.
 
-In both cases, the same query gets a result in a stable JSON format. Fortunately, OpenAI handles such requests well. Feel free to test your own queries [here](https://platform.openai.com/playground). The important thing is to use the correct syntax of results. To achieve this, I used the following text at the end of the query.
-*`how result in JSON format {incorrect_words:[ x:{ 'text', suggestions: []}], suggested_correction:'text' }`*.  
+En ambos casos, la misma consulta devuelve un resultado en un formato JSON estable. Afortunadamente, OpenAI maneja bien este tipo de solicitudes. Siéntete libre de probar tus propias consultas [aquí](https://platform.openai.com/playground). Lo importante es utilizar la sintaxis correcta de los resultados. Para lograr esto, utilicé el siguiente texto al final de la consulta: 
+*`how result in JSON format {incorrect_words:[ x:{ 'text', suggestions: []}], suggested_correction:'text' }`*.
 
-To get the apiKey, you need to create an account on the OpenAI website and create a new one on the [page](https://platform.openai.com/account/api-keys). 
-![OpenAI API Key](/images/languageTool/getOpenAIApiKey.png)
+Para obtener la apiKey, debes crear una cuenta en el sitio web de OpenAI y crear una nueva en la [página](https://platform.openai.com/account/api-keys).
+![Clave de API de OpenAI](/images/languageTool/getOpenAIApiKey.png)
 
-### Query for incorrect words
-In the code, I replace the *language* property with a name of language used, and the *text* property with a written text in the Word document.
+### Consulta de palabras incorrectas
+En el código, reemplazo la propiedad *language* con el nombre del idioma utilizado y la propiedad *text* con el texto escrito en el documento de Word.
 `find incorrect ${language} words, find maximum 3 suggestions for them, show result in JSON format {incorrect_words:[ x:{ 'text', suggestions: []}], suggested_correction:'text' }, without any additional data: ${text}`
 
-![Get words query](/images/languageTool/getWordsQuery.jpg)
+![Consulta de palabras](/images/languageTool/getWordsQuery.jpg)
 
-
-### Translations query
-Also the *wordsToTranslate* property is replaced with selected words separated by comma.
+### Consulta de traducciones
+Además, la propiedad *wordsToTranslate* se reemplaza con las palabras seleccionadas separadas por comas.
 `get translations from Portuguese to English for words in json format [{"word":"","translation":""}]: ${wordsToTranslate}`
 
-![Get Translations](/images/languageTool/getTranslations.jpg)
+![Obtener traducciones](/images/languageTool/getTranslations.jpg)
 
-I use the following code to connect to the OpenAI API, get suggestions and corrected text. 
+Utilizo el siguiente código para conectarme a la API de OpenAI, obtener sugerencias y texto corregido.
 
 ``` javascript
 public async checkSpelling(text: string, language: string): Promise<ITextCheckResult> {
@@ -256,8 +256,7 @@ public async checkSpelling(text: string, language: string): Promise<ITextCheckRe
     }
 ```
 
-
-I used the following code to connect to the OpenAI API and get translations for selected words. 
+Utilicé el siguiente código para conectarme a la API de OpenAI y obtener traducciones para las palabras seleccionadas.
 
 ``` javascript
  public async getTranslationsForWords(words: IWordToAnalyze[]): Promise<IWordToAnalyze[]> {
@@ -313,10 +312,10 @@ I used the following code to connect to the OpenAI API and get translations for 
 ```
 
 
-## The PWA app
+## La aplicación PWA
 
+Como una ayuda adicional en mi proceso de aprendizaje de idiomas, decidí crear una aplicación de tarjetas de memoria sencilla a la que pudiera acceder fácilmente en mi teléfono. Utilicé un script de trabajador de servicio y la solución de PWA, lo que me permitió crear un acceso directo conveniente en la pantalla de inicio del móvil. El artículo [Progressive WebApp en SharePoint - la forma compatible](http://www.msclouddeveloper.com/progressive-webapp-in-sharepoint/) fue de gran ayuda en este sentido. Para ver el código completo de la extensión, consulta el [repositorio de GitHub](https://github.com/mkm17/pwa-extension).
 
-As an additional aid in my language learning journey, I decided to create a simple flashcard app I could access easily on my phone. I used a service worker script and the PWA solution, which allowed me to create a convenient shortcut on the mobile home screen. The article [Progressive WebApp in SharePoint - the supported way](http://www.msclouddeveloper.com/progressive-webapp-in-sharepoint/) was very helpful in this regard. For the full extension code, please see the [GitHub repository](https://github.com/mkm17/pwa-extension).
 
 **manifest.webmanifest file**
 ``` javascript
@@ -434,14 +433,14 @@ self.addEventListener('fetch', event => {
 
 <img src="/images/languageTool/MobileButton.jpg" alt= "Mobile Button"  height="560">
 
-While this solution worked pretty well, I encountered an issue when trying to use the app offline and in the flight mode.
+Si bien esta solución funcionó bastante bien, encontré un problema al intentar usar la aplicación sin conexión y en modo avión.
 
-![The flashcards app](/images/languageTool/FlashCards.gif)
+![La aplicación de tarjetas de memoria](/images/languageTool/FlashCards.gif)
 
-Up till now, I have only found a partial solution to this case, involving rendering the flashcards page first and then caching all necessary requests. This allows me to view the flashcards without additional requests requiring Internet connections. 
+Hasta ahora, solo he encontrado una solución parcial para este caso, que implica renderizar primero la página de tarjetas de memoria y luego almacenar en caché todas las solicitudes necesarias. Esto me permite ver las tarjetas de memoria sin necesidad de realizar solicitudes adicionales que requieran conexión a Internet.
 
 
 ---
 
-I hope you enjoyed this article and found it useful for your case. If you have any questions or comments, reach out to me on [Linkedin](https://www.linkedin.com/in/micha%C5%82-kornet-sharepoint-dev/) .
+Espero que hayas disfrutado este artículo y que te haya sido útil para tu caso. Si tienes alguna pregunta o comentario, no dudes en contactarme en [LinkedIn](https://www.linkedin.com/in/micha%C5%82-kornet-sharepoint-dev/).
 

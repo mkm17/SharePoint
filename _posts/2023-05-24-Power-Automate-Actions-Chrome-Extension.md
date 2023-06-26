@@ -4,6 +4,7 @@ title:  "Power Automate Actions - Chrome Extension"
 date:   2023-05-24 00:00:00 +0200
 tags: ["Power Automate", "SharePoint", "MS Graph", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
+language: en
 ---
 
 Have you ever had any issue with managing actions in **Power Automate**? Who hasn't? Here comes the tool I have created to make my work in Power Automate easier. It proves to optimize the following scenarios:

@@ -1,58 +1,60 @@
 ---
-layout: post
-title:  "Managing permissions: How to create custom messages for access request"
-date:   2020-09-14 00:00:00 +0200
+layout: postES
+title: "Gestión de permisos: Cómo crear mensajes personalizados para solicitudes de acceso"
+date: 2020-09-14 00:00:00 +0200
 tags: ["Power Automate", "SharePoint", "Adaptive Cards"]
 image: "/images/header.png"
-language: en
+language: es
+permalink: /2020/09/14/es/Custom_Permission_Access_Message.html
 ---
 
-## Out of the box feature 
+## Función integrada
 
-Have you thought about any customization of the standard access request on your site? Currently, SharePoint platform provides generating a simple defined message as a solution. Management of this option is available in the pop-out window under the *Access Request Settings* button of the *Permissions* interface. 
+¿Alguna vez has pensado en personalizar la solicitud de acceso estándar en tu sitio? Actualmente, la plataforma SharePoint ofrece la generación de un mensaje definido y simple como solución. La gestión de esta opción está disponible en la ventana emergente bajo el botón *Configuración de solicitud de acceso* de la interfaz de *Permisos*.
 
-![Access Requests Settings](/images/accessRequestsSettings.jpg)
+![Configuración de solicitudes de acceso](/images/accessRequestsSettings.jpg)
 
-A default format of the message for access request has its limitations. When a user requests access to a site, an owner of the resource gets the notification, represented by a compound Adaptive Card, to add the user to one of the two default groups (Members, Visitors), or to reject the request. 
+El formato predeterminado del mensaje para solicitudes de acceso tiene sus limitaciones. Cuando un usuario solicita acceso a un sitio, el propietario del recurso recibe una notificación representada por una Tarjeta Adaptativa compuesta, para agregar al usuario a uno de los dos grupos predeterminados (Miembros, Visitantes) o rechazar la solicitud.
 
-![Request Message](/images/RequestMessage1.jpg)
+![Mensaje de solicitud](/images/RequestMessage1.jpg)
 
-In case of sending a request to get access to a certain list or item with no inherited permissions, a notification has an adapted structure and allows for providing unique access to the called resource. 
+En caso de enviar una solicitud para obtener acceso a una lista o elemento específico sin permisos heredados, la notificación tiene una estructura adaptada y permite proporcionar un acceso único al recurso solicitado.
 
-![Request Message](/images/RequestMessage2.jpg)
+![Mensaje de solicitud](/images/RequestMessage2.jpg)
 
-![Request Message](/images/RequestMessage3.jpg)
+![Mensaje de solicitud](/images/RequestMessage3.jpg)
 
-The whole process of sending access requests is handled on the default *Access Request list* hidden on a site.  
+Todo el proceso de envío de solicitudes de acceso se maneja en la lista de *Solicitudes de acceso* predeterminada, oculta en un sitio.
 
->It may happen that the *Access Request list* is not available on a site. To be sure that it is reachable, a user with insufficient permissions to the site or one of the child components needs to issue the access request.
+> Puede ocurrir que la lista de *Solicitudes de acceso* no esté disponible en un sitio. Para asegurarse de que sea accesible, un usuario con permisos insuficientes para el sitio o alguno de los componentes secundarios debe emitir la solicitud de acceso.
 
-## Test Case Scenario
+## Escenario de prueba
 
-#### Business Requirements:
+#### Requisitos comerciales:
 
-- messages for access request should be standardized 
-- a structure of messages should be definable 
-- a notification should use Microsoft Adaptive Cards 
-- an opportunity to add a user to any of two predefined custom groups
-- a possibility of posting messages on MS Teams application
+- Los mensajes para solicitudes de acceso deben estandarizarse.
+- Debe ser posible definir la estructura de los mensajes.
+- La notificación debe utilizar Tarjetas Adaptativas de Microsoft.
+- Se debe tener la opción de agregar a un usuario a cualquiera de los dos grupos personalizados predefinidos.
+- Posibilidad de publicar mensajes en la aplicación MS Teams.
 
-#### The solution meeting all the requirements can be achieved in a few steps:
-- Enter the *Access Request Settings* interface and enable *Allow access requests* option. Select an account to receive standard messages. Otherwise, the access requests feature is disabled. 
+#### La solución que cumple con todos los requisitos se puede lograr en unos pocos pasos:
 
-![Access Requests Settings](/images/accessRequestsSettings.jpg)
+- Ingresar a la interfaz de *Configuración de solicitud de acceso* y habilitar la opción *Permitir solicitudes de acceso*. Seleccionar una cuenta para recibir mensajes estándar. De lo contrario, la función de solicitudes de acceso estará desactivada.
 
--	Create a Power Automate or Logic Apps workflow which will receive a HTTP request. 
--	Add a PnP event receiver to Access Requests list using the following code: 
+![Configuración de solicitudes de acceso](/images/accessRequestsSettings.jpg)
+
+- Crear un flujo de trabajo de Power Automate o Logic Apps que recibirá una solicitud HTTP.
+- Agregar un receptor de eventos PnP a la lista de Solicitudes de acceso usando el siguiente código:
 ```
 Add-PnPEventReceiver -List "Access Requests" -Name "TestEventReceiver" -Url "<LogicAppURL>" -EventReceiverType ItemAdded -
 Synchronization Synchronous
 ```
--	Update the created workflow according to the scheme and action parameters below: 
+- Actualiza el flujo de trabajo creado de acuerdo al esquema y los parámetros de acción que se muestran a continuación:
 
-![First Flow](/images/Flow1Overview.jpg)
+![Primer Flujo](/images/Flow1Overview.jpg)
 
-#### AccessRequestObject variable Initialization:
+#### Inicialización de la variable AccessRequestObject:
 
 ``` javascript
 {
@@ -62,7 +64,7 @@ Synchronization Synchronous
 }
 ```
 
-#### tempObject  variable Initialization
+#### Inicialización de la variable tempObject:
 
 ``` javascript
 {
@@ -72,13 +74,13 @@ Synchronization Synchronous
 }
 ```
 
-#### ConvertToJson action (Compose):
+#### Acción ConvertToJson (Compose):
 
 ```javascript
 json(xml(replace(triggerBody(), '<?xml version="1.0" encoding="UTF-8"?>', '')))
 ```
 
-#### Schema of converted XML element of the request: 
+#### Esquema del elemento XML convertido de la solicitud:
 
 ```javascript
 {
@@ -266,20 +268,20 @@ json(xml(replace(triggerBody(), '<?xml version="1.0" encoding="UTF-8"?>', '')))
 }
 ```
 
-All properties from the request are stored in an array element. We can convert them into one JSON object using the following function inside the *Apply to each* action.
+Todos las propiedades de la solicitud se almacenan en un elemento de matriz. Podemos convertirlas en un solo objeto JSON utilizando la siguiente función dentro de la acción Aplicar a cada uno (Apply to each).
 
 ```javascript
-//Apply for each input
+//Aplicar para cada entrada
 outputs('ConvertTojson')?['s:Envelope']?['s:Body']?['ProcessEvent']?['properties']?['ItemEventProperties']?['AfterProperties']?['a:KeyValueOfstringanyType']
 
-//Velue of a "Set tempObject variable" action under the Apply for each
+// Valor de una acción "Establecer variable tempObject" dentro de "Aplicar para cada"
 addProperty(variables('AccessRequestObject'),item()?['a:Key'], item()?['a:Value']?['#text'])
 
-//Value of a "Set AccessRequestObject variable" action under the Apply for each
+// Valor de una acción "Establecer variable AccessRequestObject" dentro de "Aplicar para cada"
 variables('tempObject')
 ```
 
-#### An example of the final request object used as sample for data schema of a Parse JSON action: 
+#### Un ejemplo del objeto de solicitud final utilizado como muestra para el esquema de datos de una acción Parse JSON:
 
 ```javascript
 {
@@ -309,9 +311,9 @@ variables('tempObject')
   "RequestedBy": "<Login of a requestor>"
 }
 ```
-As you can see, the request processes a lot of useful information. In the next steps, we will make use of this data, querying i.e. *RequestedByDisplayName*, *RequestedObjectTitle*, *Conversation*, and *RequestedWebId*. 
+Como puedes ver, la solicitud procesa una gran cantidad de información útil. En los próximos pasos, haremos uso de estos datos, consultando, por ejemplo, *RequestedByDisplayName*, *RequestedObjectTitle*, *Conversation*, y *RequestedWebId*. 
 
-####	An example of a message structure with Adaptive Card solution: 
+#### Un ejemplo de la estructura de un mensaje con una solución de Adaptive Card es la siguiente:
 ```html
 <html>
 <head>
@@ -407,9 +409,9 @@ As you can see, the request processes a lot of useful information. In the next s
 </html>
 ```
 
-The HTTP action inside the Adaptive Card item allows for triggering another flow, through which we can handle a decision choice made by an authorized user. 
+La acción HTTP dentro del elemento Adaptive Card permite activar otro flujo, a través del cual podemos manejar una elección de decisión realizada por un usuario autorizado.
 
-An example of the request body: 
+Un ejemplo del cuerpo de la solicitud sería:
 ```
 { 
   'decision':'Approve2',
@@ -421,18 +423,19 @@ An example of the request body:
 
 ![Adaptive Card](/images/AdaptiveCards1.jpg)
 
-The second flow will be triggered automatically, after clicking one of the provided buttons. 
+El segundo flujo se activará automáticamente después de hacer clic en uno de los botones proporcionados. 
 
-![Second Flow](/images/SecondFlow.jpg)
+![Segundo flujo](/images/SecondFlow.jpg)
 
-In the following part of *the decision flow*, you can handle the received request in many ways, adapting the process to the specific needs and requirements of your organization. Here are some actions that can be used to complement the workflow:
-- Storing dataset about the access request on a custom list 
-- Generating enhanced Adaptive Card messages with undertaken decision on MS Outlook or MS Teams 
-- Introducing multi-stage approval route 
+En la siguiente parte del flujo de decisión, puedes manejar la solicitud recibida de muchas formas, adaptando el proceso a las necesidades y requisitos específicos de tu organización. Aquí hay algunas acciones que se pueden utilizar para complementar el flujo de trabajo:
 
-## Make a clean-up 
+- Almacenar datos sobre la solicitud de acceso en una lista personalizada.
+- Generar mensajes mejorados de Adaptive Card con la decisión tomada en MS Outlook o MS Teams.
+- Introducir una ruta de aprobación de varias etapas. 
 
-Having the new process implemented, we should remove all additional items on the default *Access Requests* list. To do so, we need to append the initially created flow with Delete actions using *ListId*, *ListItemId* and *WebUrl* properties of the set flow trigger: 
+## Realizar una limpieza
+
+Una vez implementado el nuevo proceso, debemos eliminar todos los elementos adicionales en la lista predeterminada de Solicitudes de acceso. Para hacerlo, necesitamos agregar acciones de eliminación (Delete) al flujo creado inicialmente, utilizando las propiedades *ListId*, *ListItemId* y *WebUrl* del desencadenador de flujo establecido.: 
 
 ```
 body('ConvertTojson')?['s:Envelope']?['s:Body']?['ProcessEvent']?['properties']?['ItemEventProperties']
@@ -457,11 +460,10 @@ body('ConvertTojson')?['s:Envelope']?['s:Body']?['ProcessEvent']?['properties']?
  }
  ```
   
-  These values allow us to create a simple REST request to remove unnecessary items. 
-
+  Estos valores nos permiten crear una solicitud REST sencilla para eliminar elementos innecesarios.
 
 ---
 
-Author: Michał Kornet [LinkedIn](https://www.linkedin.com/in/micha%C5%82-kornet-sharepoint-dev/)
+Autor: Michał Kornet [LinkedIn](https://www.linkedin.com/in/micha%C5%82-kornet-sharepoint-dev/)
 
-Co-Author: Olga Staszek [LinkedIn](https://www.linkedin.com/in/olga-staszek-2ba909b2/)
+Co-Autor: Olga Staszek [LinkedIn](https://www.linkedin.com/in/olga-staszek-2ba909b2/)
