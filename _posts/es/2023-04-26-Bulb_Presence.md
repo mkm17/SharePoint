@@ -1,6 +1,6 @@
 ---
 layout: postES
-title:  "Usar una bombilla para indicar presencia en Microsoft Teams"
+title:  "Indicar estado de presencia usando la bombilla en Microsoft Teams"
 date:   2023-04-26 00:00:00 +0200
 tags: ["Power Automate", "Xiaomi Yeelight", "MS Graph"]
 image: "/images/bulb/header.png"
@@ -8,13 +8,13 @@ language: es
 permalink: /2023/04/26/es/Bulb_Presence.html
 ---
 
-¿Alguna vez te has preguntado qué tan fácilmente **Power Automate** puede conectarse a dispositivos externos?
+¿Alguna vez te has preguntado lo fácil que es en **Power Automate** conectarse a dispositivos externos?
 
-En este artículo, comparto mi idea de un sistema para informar visualmente sobre el estado de disponibilidad de alguien en Teams.
+En este artículo, comparto mi idea de un sistema para notificar visualmente el estado de disponibilidad de los participantes en Teams.
 
-Con la pandemia global obligándonos a trabajar de forma remota, se volvió crucial establecer nuevas reglas no solo en nuestros lugares de trabajo, sino también en casa con otros miembros del hogar. Todos hemos visto esos videos populares de alguien interrumpiendo involuntariamente una reunión importante en el momento menos conveniente. Esto me hizo pensar si había una manera de mostrar la disponibilidad de alguien a otros miembros del hogar o compañeros de trabajo que no tienen acceso al entorno de **Microsoft 365** del empleado.
+Con la pandemia global obligándonos a trabajar de forma remota, se volvió crucial establecer nuevas reglas no solo en nuestros lugares de trabajo, sino también en casa con otros miembros del hogar. Todos hemos visto videos virales de participantes interrumpiendo voluntariamente en reuniones importantes durante momentos menos convenientes. Esto me hizo pensar si había una manera de mostrar el estado de disponibilidad de los participantes a otros miembros del hogar o compañeros de trabajo que no tienen acceso al entorno de **Microsoft 365** del empleado.
 
-Mi investigación comenzó con algunas soluciones existentes en la misma línea: [The Status Cube publicado por John Klimister](https://www.blueboxes.co.uk/building-a-ms-teams-status-cube-with-the-graph-api-presence-subscriptions), [Ejemplo de bombilla Hue por Scott Hanselman](https://www.hanselman.com/blog/mirroring-your-presence-status-from-the-microsoft-graph-in-teams-to-lifx-or-hue-bias-lighting), [o la automatización basada en Raspberry Pi de Elio Struyf](https://www.eliostruyf.com/diy-building-busy-light-show-microsoft-teams-presence/). Si bien son inspiradores, cada uno presenta un escenario más complejo y requiere habilidades de programación avanzadas. Mi objetivo era utilizar la menor cantidad de programación posible para que más personas pudieran beneficiarse de la configuración personalizada en su propio entorno.
+Mi investigación comenzó con algunas soluciones ya existentes en la misma línea: [The Status Cube publicado por John Klimister](https://www.blueboxes.co.uk/building-a-ms-teams-status-cube-with-the-graph-api-presence-subscriptions), [Ejemplo de bombilla Hue por Scott Hanselman](https://www.hanselman.com/blog/mirroring-your-presence-status-from-the-microsoft-graph-in-teams-to-lifx-or-hue-bias-lighting), [o la automatización basada en Raspberry Pi de Elio Struyf](https://www.eliostruyf.com/diy-building-busy-light-show-microsoft-teams-presence/). Si bien son inspiradores, cada uno presenta escenarios más complejos y requiere habilidades avanzadas de programación. Mi objetivo era utilizar la menor cantidad de programación posible para que así más personas pudieran beneficiarse de la configuración personalizada en su propio entorno.
 
 ### Tabla de contenidos
 - [Presencia y suscripciones en MS Graph](#presencia-y-suscripciones-en-ms-graph)
@@ -27,9 +27,10 @@ Mi investigación comenzó con algunas soluciones existentes en la misma línea:
 
 ## [Presencia](https://learn.microsoft.com/es-es/graph/api/resources/presence?view=graph-rest-1.0) y [suscripciones](https://learn.microsoft.com/es-es/graph/api/resources/subscription?view=graph-rest-1.0) en MS Graph
 
-La información sobre el estado de disponibilidad del usuario se incluye en los datos generales del usuario y se puede capturar mediante MS Graph utilizando una suscripción. El tipo de recurso de suscripción se utiliza para recibir notificaciones cuando se crea, actualiza o elimina dicho recurso. Utilizaremos esta funcionalidad para monitorear los cambios en la presencia de cualquier usuario de Teams y activar un flujo de Power Automate cada vez que cambie el estado.
+La información sobre el estado de disponibilidad del usuario se incluye en los datos generales de este mismo y se puede capturar mediante MS Graph utilizando una suscripción. El tipo de recurso de suscripción se utiliza para recibir notificaciones cuando se crea, actualiza o elimina dicho recurso. Utilizaremos esta funcionalidad para monitorear cambios en la presencia de cualquier usuario de Teams y activar un flujo de Power Automate cada vez que cambie el estado.
 
 Aquí tienes un ejemplo de carga útil de solicitud de suscripción para el tipo de recurso de presencia:
+
 
 ```javascript
 {
@@ -41,11 +42,11 @@ Aquí tienes un ejemplo de carga útil de solicitud de suscripción para el tipo
     "latestSupportedTlsVersion": "v1_2"
 }
 ```
-*changeType*: El tipo de cambio en el recurso suscrito que genera una notificación. Los valores admitidos son created, updated y deleted.
+*changeType*: El tipo de cambio en el recurso suscrito que genera una notificación. Los valores admitidos son created, updated y deleted (creados, actualizados y eliminados)
 
 *notificationUrl*: La URL del punto final que recibe las notificaciones. Reemplázala con tu URL de API (en este caso, el desencadenador HTTP de Power Automate del punto 2 en la sección de Power Automate).
 
-*resource*: El recurso que la suscripción monitorea en busca de cambios. Este recurso se identifica mediante la ruta del recurso. Para un solo usuario, utiliza el endpoint */communications/presences/{id}*, donde *{id}* representa el ID del usuario. Utilizando la API de Microsoft Graph, también puedes hacer un seguimiento de una lista de usuarios con el siguiente endpoint: */communications/presences?$filter=id in ('{id}', '{id}', ...)*.
+*resource*: El recurso que la suscripción monitorea en busca de cambios. Este recurso se identifica mediante la ruta del recurso. Para un solo usuario, utiliza el endpoint */communications/presences/{id}*, donde *{id}* representa el ID del usuario. Utilizando la API de Microsoft Graph, también puedes hacer un seguimiento de una lista de usuarios con el siguiente endpoint: */communications/presences?$filter=id in (‘{id}’, ‘{id}’, …)*.
 
 *expirationDateTime*: La fecha y hora en que expira la suscripción. Ten en cuenta que el tiempo máximo de expiración para el endpoint de presencia es de 60 minutos, así que asegúrate de actualizar tu suscripción en consecuencia para garantizar que la funcionalidad persista. La fecha y la hora están en UTC y se representan en formato ISO 8601. Por ejemplo, la medianoche UTC del 1 de enero de 2024 se representa como 2024-01-01T00:00:00Z.
 
@@ -68,7 +69,7 @@ Power Automate fue una elección natural para una solución simple pero poderosa
 
 ### Acciones principales
 
-* Inicializa la variable de objeto utilizada para almacenar el conjunto de valores que se proporcionarán antes de la primera ejecución. Incluye los datos de la bombilla: tomarás las propiedades "did" (identificador), "region" (región) y "type" (tipo) de la consulta de prueba en el paso Descubrir que se describe a continuación.
+* Inicializa la variable de objeto utilizada para almacenar el conjunto de valores que se proporcionarán antes de la primera ejecución. Incluye los datos de la bombilla: tomarás las propiedades “did” (identificador), “region” (región) y “type” (tipo) de la consulta de prueba en el paso Descubrir que se describe a continuación.
 
  {% include codeHeader.html %}
 <div class="powerAutomateCode" style="display:none">
@@ -83,7 +84,7 @@ Power Automate fue una elección natural para una solución simple pero poderosa
 
 *type*: Se refiere al tipo o modelo de la bombilla Yeelight Colorful.
 
-El valor "tenantId" almacena el número de identificación de tu inquilino. Agrego los siguientes valores a la variable de objeto para indicar los códigos de color para opciones particulares:
+El valor “tenantId” almacena el número de identificación de tu inquilino. Agrego los siguientes valores a la variable de objeto para indicar los códigos de color para opciones particulares:
 
 ```javascript
 {
@@ -126,8 +127,7 @@ triggerOutputs()?['body']?['value'][0]?['tenantId']  is equal to  '<<TENANT ID>>
 
 ![Check Tenant Id](/images/bulb/checktenantid.png)
 
-Para este proyecto en particular, incorporé el dispositivo **Yeelight Colorful Bulb**, que es una bombilla inteligente asequible controlada de forma remota a través de una conexión Wi-Fi.
-Para obtener más información sobre el dispositivo, puedes utilizar las acciones de Descubrir (Discover) y Consultar (Query) del servicio Yeelight proporcionado por Xiaomi. La salida de la consulta contiene la propiedad "spectrumRGB" que debe establecerse en una variable para su uso en la siguiente acción.
+Para este proyecto en particular, incorporé el dispositivo **Yeelight Colorful Bulb**, que es una bombilla inteligente asequible controlada de forma remota a través de una conexión Wi-Fi. Para obtener más información sobre el dispositivo, puedes utilizar las acciones de Descubrir (Discover) y Consultar (Query) del servicio Yeelight proporcionado por Xiaomi. La salida de la consulta contiene la propiedad “spectrumRGB” que debe establecerse en una variable para su uso en la siguiente acción.
 
 {% include codeHeader.html %}
 <div class="powerAutomateCode" style="display:none">
@@ -138,13 +138,13 @@ Para obtener más información sobre el dispositivo, puedes utilizar las accione
 
 Para configurar la integración, necesitarás registrar una cuenta con Xiaomi y conectar la Yeelight Colorful Bulb. Debido a preocupaciones de seguridad, utilizo una conexión separada establecida exclusivamente para productos de Xiaomi. Una vez que la bombilla esté conectada a tu cuenta de Xiaomi, debes iniciar sesión en la misma cuenta para establecer la conexión dentro de cada acción basada en Xiaomi en la vista del creador de Power Automate.
 
-* Verifica si el parámetro "value" no está vacío: en etapas posteriores, utilizamos el primer elemento del array *value*. Para evitar errores, comprobamos si *value* no está vacío.
+* Verifica si el parámetro “value” no está vacío: en etapas posteriores, utilizamos el primer elemento del array *value*. Para evitar errores, comprobamos si *value* no está vacío.
 
 ```javascript
 length(triggerOutputs()?['body']?['value']) is not equal to 0
 ```
 
-* Establece el color de la bombilla en función de la actividad del usuario identificada: utiliza la acción "Switch" para sobrescribir la variable "varNewBulbColor" con el indicador de actividad del usuario.
+* Establece el color de la bombilla en función de la actividad del usuario identificada: utiliza la acción “Switch” para sobrescribir la variable “varNewBulbColor” con el indicador de actividad del usuario.
 
 {% include codeHeader.html %}
 <div class="powerAutomateCode" style="display:none">
@@ -310,10 +310,10 @@ El proceso de creación de un Conector Personalizado para MS Graph se describe [
 ![Effect](/images/bulb/effect.png)
 
 ## Problemas conocidos
- * Por razones no identificadas, la suscripción tiende a activar el flujo varias veces. He probado algunas soluciones alternativas, pero hasta ahora ninguna de ellas ha tenido éxito. Si alguien tiene alguna idea, por favor avísenme.
+ * Por razones desconocidas, la suscripción tiende a activar el flujo varias veces. He probado algunas soluciones alternativas, pero hasta ahora ninguna de ellas ha tenido éxito. Si alguien tiene alguna idea, por favor házmela saber.
 
 ![TooManyRequests](/images/bulb/TooManyRequests.png)
 
-* Cambiar el color de la bombilla devuelve el siguiente error. Sin embargo, el color se cambia correctamente y no se observan otros problemas.
+* Al cambiar el color de la bombilla muestra el siguiente error. Sin embargo, el color cambia correctamente y no se observan otros problemas.
 
 ![Error](/images/bulb/ChangeColorError.png)
