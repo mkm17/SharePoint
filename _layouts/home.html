@@ -11,12 +11,6 @@ selected_language: "{{ page.url | extract_language }}"
   {{ content }}
 
   {% assign selectedLanguage = selected_language | default: "en" %}
-
-  <script>
-    console.log("{{ selected_language }}");
-    console.log("{{ page.url }}");
-    console.log("{{ selectedLanguage }}");
-  </script>
   
   {% if site.paginate %}
   {% assign posts = paginator.posts | where_exp: "post", "post.language == selectedLanguage" | paginate: paginate %}

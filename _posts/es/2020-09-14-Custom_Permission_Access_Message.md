@@ -41,7 +41,7 @@ Todo el proceso de envío de solicitudes de acceso se maneja en la lista de Soli
 
 #### La solución que cumple con todos los requisitos se puede lograr en unos pocos pasos:
 
-- Ingresar a la interfaz de *Configuración de solicitud* de acceso y habilitar la opción *Permitir solicitude*s de acceso. Seleccionar una cuenta para recibir mensajes estándar. De lo contrario, la función de solicitudes de acceso estará desactivada.
+- Ingresar a la interfaz de *Configuración de solicitud* de acceso y habilitar la opción *Permitir solicitudes* de acceso. Seleccionar una cuenta para recibir mensajes estándar. De lo contrario, la función de solicitudes de acceso estará desactivada.
 
 ![Configuración de solicitudes de acceso](/images/accessRequestsSettings.jpg)
 
