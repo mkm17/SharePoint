@@ -7,6 +7,8 @@ image: "/images/powerAutomateExtension/header.png"
 language: en
 ---
 
+Co-Author: Olga Staszek-Kornet [LinkedIn](https://www.linkedin.com/in/olgastaszek-microsoft365)
+
 Have you ever had any issue with managing actions in **Power Automate**? Who hasn't? Here comes the tool I have created to make my work in Power Automate easier. It proves to optimize the following scenarios:
 - [**1. Recording all HTTP requests from SharePoint**](#1-recording-all-http-requests-from-sharepoint)
 - [**2. Duplicating actions in between tenants and environments**](#2-duplicating-actions-in-between-tenants-and-environments)
@@ -89,5 +91,4 @@ If you would like to install the extension manually - please unpack the *[Applic
 The tool was meant to ease my daily pains with reproducing steps throughout various workflows. I based it on the current implementation of the Power Automate maker experience and any updates to the interface or underlying processes may cause the tool to stop working. 
 The code is available on [GitHub](https://github.com/mkm17/powerautomate-actions-extension/tree/main). You are welcome to use it for your personal efficiency and share your feedback in [Issues section](https://github.com/mkm17/powerautomate-actions-extension/issues).
 
-<br />
 <br />

@@ -24,7 +24,7 @@ En caso de enviar una solicitud para obtener acceso a una lista o elemento espec
 
 ![Mensaje de solicitud](/images/RequestMessage3.jpg)
 
-Todo el proceso de envío de solicitudes de acceso se maneja en la lista de *Solicitudes de acceso* predeterminada, oculta en un sitio.
+Todo el proceso de envío de solicitudes de acceso se maneja en la lista de Solicitudes de acceso predeterminada, oculta en un sitio.
 
 > Puede ocurrir que la lista de *Solicitudes de acceso* no esté disponible en un sitio. Para asegurarse de que sea accesible, un usuario con permisos insuficientes para el sitio o alguno de los componentes secundarios debe emitir la solicitud de acceso.
 
@@ -38,14 +38,16 @@ Todo el proceso de envío de solicitudes de acceso se maneja en la lista de *Sol
 - Se debe tener la opción de agregar a un usuario a cualquiera de los dos grupos personalizados predefinidos.
 - Posibilidad de publicar mensajes en la aplicación MS Teams.
 
+
 #### La solución que cumple con todos los requisitos se puede lograr en unos pocos pasos:
 
-- Ingresar a la interfaz de *Configuración de solicitud de acceso* y habilitar la opción *Permitir solicitudes de acceso*. Seleccionar una cuenta para recibir mensajes estándar. De lo contrario, la función de solicitudes de acceso estará desactivada.
+- Ingresar a la interfaz de *Configuración de solicitud* de acceso y habilitar la opción *Permitir solicitude*s de acceso. Seleccionar una cuenta para recibir mensajes estándar. De lo contrario, la función de solicitudes de acceso estará desactivada.
 
 ![Configuración de solicitudes de acceso](/images/accessRequestsSettings.jpg)
 
 - Crear un flujo de trabajo de Power Automate o Logic Apps que recibirá una solicitud HTTP.
 - Agregar un receptor de eventos PnP a la lista de Solicitudes de acceso usando el siguiente código:
+
 ```
 Add-PnPEventReceiver -List "Access Requests" -Name "TestEventReceiver" -Url "<LogicAppURL>" -EventReceiverType ItemAdded -
 Synchronization Synchronous
@@ -431,11 +433,12 @@ En la siguiente parte del flujo de decisión, puedes manejar la solicitud recibi
 
 - Almacenar datos sobre la solicitud de acceso en una lista personalizada.
 - Generar mensajes mejorados de Adaptive Card con la decisión tomada en MS Outlook o MS Teams.
-- Introducir una ruta de aprobación de varias etapas. 
+- Introducir una ruta de aprobación de varias etapas.
+as. 
 
 ## Realizar una limpieza
 
-Una vez implementado el nuevo proceso, debemos eliminar todos los elementos adicionales en la lista predeterminada de Solicitudes de acceso. Para hacerlo, necesitamos agregar acciones de eliminación (Delete) al flujo creado inicialmente, utilizando las propiedades *ListId*, *ListItemId* y *WebUrl* del desencadenador de flujo establecido.: 
+Una vez implementado el nuevo proceso, debemos eliminar todos los elementos adicionales en la lista predeterminada de Solicitudes de acceso. Para hacerlo, necesitamos agregar acciones de eliminación (Delete) al flujo creado inicialmente, utilizando las propiedades *ListId*, *ListItemId* y *WebUrl* del desencadenador de flujo establecido.
 
 ```
 body('ConvertTojson')?['s:Envelope']?['s:Body']?['ProcessEvent']?['properties']?['ItemEventProperties']
@@ -466,4 +469,4 @@ body('ConvertTojson')?['s:Envelope']?['s:Body']?['ProcessEvent']?['properties']?
 
 Autor: Michał Kornet [LinkedIn](https://www.linkedin.com/in/micha%C5%82-kornet-sharepoint-dev/)
 
-Co-Autor: Olga Staszek [LinkedIn](https://www.linkedin.com/in/olga-staszek-2ba909b2/)
+Coautora: Olga Staszek [LinkedIn](https://www.linkedin.com/in/olgastaszek-microsoft365)

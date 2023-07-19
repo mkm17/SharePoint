@@ -8,6 +8,9 @@ language: es
 permalink: /2023/05/24/es/Power_Automate_Actions_Chrome_Extension.html
 ---
 
+Coautora: Olga Staszek-Kornet [LinkedIn](https://www.linkedin.com/in/olgastaszek-microsoft365/)
+
+
 ¿Alguna vez has tenido problemas al gestionar acciones en **Power Automate**? ¡Quién no los ha tenido! Aquí tienes una herramienta que he creado para facilitar mi trabajo en Power Automate. Esta herramienta ha demostrado mucha utilidad ya que optimiza los siguientes escenarios:
 
 - [**1. Registro de todas las solicitudes HTTP desde SharePoint**](#1-registro-de-todas-las-solicitudes-http-desde-sharepoint)
@@ -78,4 +81,5 @@ Si deseas instalar la extensión manualmente, descomprime el archivo zip *[Appli
 La herramienta fue creada para facilitar las dificultades que experimentaba en  mis tareas diarias al reproducir pasos en varios flujos de trabajo. Está basada en la implementación actual de la experiencia del creador de Power Automate y cualquier actualización en la interfaz o en los procesos subyacentes puede hacer que la herramienta deje de funcionar. El código está disponible en [GitHub](https://github.com/mkm17/powerautomate-actions-extension/tree/main). Eres bienvenido/a a utilizarlo para mejorar tu eficiencia personal y compartir tus comentarios en la sección de [Issues](https://github.com/mkm17/powerautomate-actions-extension/issues).
 
 ---
+
 

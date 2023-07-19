@@ -8,6 +8,9 @@ language: es
 permalink: /2023/04/26/es/Bulb_Presence.html
 ---
 
+Coautora: Olga Staszek-Kornet [LinkedIn](https://www.linkedin.com/in/olgastaszek-microsoft365)
+
+
 ¿Alguna vez te has preguntado lo fácil que es en **Power Automate** conectarse a dispositivos externos?
 
 En este artículo, comparto mi idea de un sistema para notificar visualmente el estado de disponibilidad de los participantes en Teams.

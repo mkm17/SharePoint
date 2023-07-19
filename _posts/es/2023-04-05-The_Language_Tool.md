@@ -43,7 +43,7 @@ Durante mi investigación, descubrí que si bien había una [aplicación SPFx di
 
 Así, siguiendo los pasos que se enumeran a continuación, pude integrar con éxito la aplicación SPFx en varias herramientas de la suite de Microsoft Office.
 
-Para usar la aplicación de SharePoint SPFx en MS Word, debes::
+Para usar la aplicación de SharePoint SPFx en MS Word, debes:
 
 ### 1. Configurar el Manifiesto
 Reemplaza TENANT_NAME por el nombre de tu arrendatario.
@@ -199,7 +199,7 @@ Además, la propiedad *wordsToTranslate* se reemplaza con las palabras seleccion
 
 ![Obtener traducciones](/images/languageTool/getTranslations.jpg)
 
-Utilizo el siguiente código para conectarme a la API de OpenAI, obtener sugerencias y texto corregido.
+Utilice el siguiente código para conectarme a la API de OpenAI, obtener sugerencias y texto corregido.
 
 ``` javascript
 public async checkSpelling(text: string, language: string): Promise<ITextCheckResult> {

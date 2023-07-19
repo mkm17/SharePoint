@@ -7,6 +7,9 @@ image: "/images/bulb/header.png"
 language: en
 ---
 
+Co-Author: Olga Staszek-Kornet [LinkedIn](https://www.linkedin.com/in/olgastaszek-microsoft365)
+
+
 Have you ever wondered how easily **Power Automate** can connect to external devices? 
 
 In this article, I share my idea of a system to visually inform about someone's availability status in Teams.

@@ -464,4 +464,4 @@ body('ConvertTojson')?['s:Envelope']?['s:Body']?['ProcessEvent']?['properties']?
 
 Author: Michał Kornet [LinkedIn](https://www.linkedin.com/in/micha%C5%82-kornet-sharepoint-dev/)
 
-Co-Author: Olga Staszek [LinkedIn](https://www.linkedin.com/in/olga-staszek-2ba909b2/)
+Co-Author: Olga Staszek-Kornet [LinkedIn](https://www.linkedin.com/in/olgastaszek-microsoft365/)
