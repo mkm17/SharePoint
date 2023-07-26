@@ -26,7 +26,7 @@ En caso de enviar una solicitud para obtener acceso a una lista o elemento espec
 
 Todo el proceso de envío de solicitudes de acceso se maneja en la lista de Solicitudes de acceso predeterminada, oculta en un sitio.
 
-> Puede ocurrir que la lista de *Solicitudes de acceso* no esté disponible en un sitio. Para asegurarse de que sea accesible, un usuario con permisos insuficientes para el sitio o alguno de los componentes secundarios debe emitir la solicitud de acceso.
+> Puede ocurrir que la lista de *solicitudes de acceso* no esté disponible en un sitio. Para asegurarse de que sea accesible, un usuario con permisos insuficientes para el sitio o alguno de los componentes secundarios debe emitir la solicitud de acceso.
 
 ## Escenario de prueba
 
@@ -39,7 +39,7 @@ Todo el proceso de envío de solicitudes de acceso se maneja en la lista de Soli
 - Posibilidad de publicar mensajes en la aplicación MS Teams.
 
 
-#### La solución que cumple con todos los requisitos se puede lograr en unos pocos pasos:
+#### La solución que cumple con todos los requisitos se puede lograr con los siguientes pasos:
 
 - Ingresar a la interfaz de *Configuración de solicitud* de acceso y habilitar la opción *Permitir solicitudes* de acceso. Seleccionar una cuenta para recibir mensajes estándar. De lo contrario, la función de solicitudes de acceso estará desactivada.
 

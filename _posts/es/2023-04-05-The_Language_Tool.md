@@ -9,7 +9,7 @@ permalink: /2023/04/05/es/The_Language_tool.html
 ---
 
 1. [Introducción](#introducción)
-2. [Descripción de los Componentes Utilizados](#componentes-utilizados)
+2. [Descripción de los Componentes Utilizados](#descripción-de-los-componentes-utilizados)
 3. [Aplicación de MS Word](#aplicación-de-ms-word)
 4. [Conexión a los Servicios de Idiomas](#conexión-a-los-servicios-de-idiomas)
 5. [Aplicación PWA](#la-aplicación-pwa)
@@ -314,7 +314,7 @@ Utilicé el siguiente código para conectarme a la API de OpenAI y obtener tradu
 
 ## La aplicación PWA
 
-Como una ayuda adicional en mi proceso de aprendizaje de idiomas, decidí crear una aplicación de tarjetas de memoria sencilla a la que pudiera acceder fácilmente en mi teléfono. Utilicé un script de trabajador de servicio y la solución de PWA, lo que me permitió crear un acceso directo conveniente en la pantalla de inicio del móvil. El artículo [Progressive WebApp en SharePoint - la forma compatible](http://www.msclouddeveloper.com/progressive-webapp-in-sharepoint/) fue de gran ayuda en este sentido. Para ver el código completo de la extensión, consulta el [repositorio de GitHub](https://github.com/mkm17/pwa-extension).
+Como ayuda adicional en mi proceso de aprendizaje de idiomas, decidí crear una aplicación simple de tarjetas de vocabulario a la que pudiera acceder fácilmente mi teléfono. Utilicé un script service worker y la solución de PWA, lo que me permitió crear un acceso directo conveniente en la pantalla de inicio del móvil. El artículo [Progressive WebApp en SharePoint - la forma compatible](http://www.msclouddeveloper.com/progressive-webapp-in-sharepoint/) fue de gran ayuda en este sentido. Para ver el código completo de la extensión, consulta el [repositorio de GitHub](https://github.com/mkm17/pwa-extension).
 
 
 **manifest.webmanifest file**
