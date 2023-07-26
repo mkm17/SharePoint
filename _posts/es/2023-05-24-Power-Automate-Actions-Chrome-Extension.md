@@ -68,7 +68,7 @@ Con un solo botón en la Extensión para Chrome, se pueden copiar de vuelta toda
 
 ---
 
-<strong id="cómo-instalar-la-herramienta)">¿Cómo instalar la herramienta?</strong>
+<strong id="cómo-instalar-la-herramienta">¿Cómo instalar la herramienta?</strong>
 
 La herramienta se encuentra disponible en la **[Chrome Store](https://chrome.google.com/webstore/detail/power-automate-actions-ha/eoeddkppcaagdeafjfiopeldffkhjodl?hl=pl&authuser=0)**.
 
