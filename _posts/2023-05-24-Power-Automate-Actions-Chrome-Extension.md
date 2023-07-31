@@ -20,7 +20,6 @@ Have you ever had any issue with managing actions in **Power Automate**? Who has
 <br />
 <br />
 
-
 ### **1. Recording all HTTP requests from SharePoint**
 Power Automate easily integrates with the SharePoint platform. Although there are many predefined actions, some of them are still missing. In such cases, we can invoke a particular **SharePoint HTTP request** and copy headers, method, and body from the Network tab of browser developer tools. To make this cumbersome process easier, the created [**Power Automate Actions - Chrome Extension**](#how-to-install-the-tool) allows us to record all HTTP requests automatically and stores them in **“Recorded Actions”**. From there, we can straight away [**copy any action to a Power Automate workflow**](#--using-recorded-and-copied-actions-in-power-automate-workflows). The same recording works for **MS Graph** requests as well!
 
