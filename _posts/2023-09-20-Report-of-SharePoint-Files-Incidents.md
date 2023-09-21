@@ -57,6 +57,10 @@ The result of the script are two CSV files. The first one contains information a
 
 ```powershell
 
+# Use your variables
+$targetSiteUrl = "https://contoso.sharepoint.com/sites/siteExample"
+$libraryName = "Documents"
+
 $editors = New-Object PSObject
 
 function Get-DocumentLibrary {
@@ -290,7 +294,9 @@ function Get-DocumentVersionsIncidents {
     $incidents = @()
     
     #List of ediors for the file, creator is a first editor
-    $fileEditors = $document.FieldValues["Created_x0020_By"].Replace("i:0#.f|membership|", "") + ";"
+    $creator = $document.FieldValues["Created_x0020_By"].Replace("i:0#.f|membership|", "") 
+    $fileEditors = $creator + ";"
+    IncrementEditor -key $creator
 
     for ($versionIndex = 0; $versionIndex -lt $documentVersions.Count; $versionIndex++) {
         $version = $documentVersions[$versionIndex]
@@ -416,7 +422,7 @@ function CheckFiles {
     }
 }
 
-CheckFiles -SiteUrl "https://contoso.sharepoint.com/sites/siteExample" -LibraryName "Documents"
+CheckFiles -SiteUrl $targetSiteUrl -LibraryName $libraryName
 
 ```
 
