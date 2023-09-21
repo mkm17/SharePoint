@@ -9,7 +9,7 @@ language: en
 
 # Report of SharePoint Files Incidents - PowerShell Script
 
-Some time ago, I had a conversation with my friend about common problems in SharePoint. We agreed that many of these issues are related to document libraries and files that multiple people work on. Sometimes, individual actions can cause problems for the entire team's work together. Since mistakes can happen, it's a good idea to respond quickly when something goes wrong. As a result of our discussion, I embarked on a project to create a script that helps find and fix issues with files in SharePoint.
+Some time ago, I had a conversation with my friend about issues that SharePoint non-tech users commonly encountered. We found out that many of such difficulties are linked to document libraries and collaboration on files. Sometimes, individual actions can cause problems for the entire teams working together. Since human mistakes can and will happen, it's vital to respond quickly when something goes wrong. As a result of our discussion, I embarked on a project to create a script that helps find and fix issues with files in SharePoint.
 
 This script is created using PowerShell and makes use of the **PnP PowerShell** library, which is a very helpful tool for managing SharePoint environments.
 
