@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "Copy Page Sections Extension"
-date:   2100-11-22 00:00:00 +0200
+date:   2023-11-22 00:00:00 +0200
 tags: [ "SharePoint","SPFx", "Application Customizer"]
 image: "/images/fileincidentsscript/fileIncidentsScriptHeader.png"
-language: en
+language: xx
 ---
 
 # Enhancing SharePoint Online Editing Experience with Application Extension

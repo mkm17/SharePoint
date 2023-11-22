@@ -1,10 +1,10 @@
 ---
 layout: postES
 title:  "Unique Permissions SPFx Extension"
-date:   2024-07-30 00:00:00 +0200
+date:   2023-07-30 00:00:00 +0200
 tags: [ "SharePoint", "SPFx", "Field Customizer"]
 image: "/images/uniquePermissions/uniquePermissionsHeader.png"
-language: es
+language: xx
 permalink: /2023/07/30/es/Unique_Permissions_SPFx_Extension.html
 ---
 
