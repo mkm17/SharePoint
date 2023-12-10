@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "Custom SharePoint Section Templates"
-date:   2023-11-22 00:00:00 +0200
+date:   2023-12-10 00:00:00 +0200
 tags: [ "SharePoint","SPFx", "Application Customizer"]
-image: "/images/fileincidentsscript/fileIncidentsScriptHeader.png"
-language: xx
+image: "/images/sectionsExtensions/header.png"
+language: en
 ---
 
 # Enhancing the Editor Experience with Custom Section Templates - the SharePoint Extension
@@ -49,22 +49,22 @@ The solution allows to copy sections with embedded web parts, keeping their whol
 ## The process of creating and applying section templates
 
 ### Create a section template
-1. **Select a section:** Go to your SharePoint page, turn the Edit mode on, select any section you would like to save and click the "Save Section" button on the command bar of the section, in the left part of the screen.
+1. **Select a section:** Go to your SharePoint page, turn the Edit mode on, select any section you would like to save and click the "Save section" button on the command bar of the section, in the left part of the screen.
    
-   ![Copy Section Button](/images/sectionsExtensions/CopySectionButton.png)
+   ![Save Section Button](/images/sectionsExtensions/CopySectionButton.png)
 
    If any change has been applied to the page structure, save your changes and activate the Edit mode again or wait for the page to be saved automatically before copying the section to the page. Otherwise, the calculated position of the section will be faulty and influence the scope of the saved template. For the same reason, we do not currently handle this activity in the mobile view.
 
 2. **Save the selected section:** Create a new section template by adding a title (required), description, and icon name.
    
-   ![Copy Section Form](/images/sectionsExtensions/CopySectionForm.png)
+   ![Save Section Form](/images/sectionsExtensions/CopySectionForm.png)
 
 3. **Copy the JSON code** Optionally, copy the JSON code of the selected section to the clipboard. This feature can be used to add items to the global Section List or peek the elements within.
 
-   ![Copy To Clipboard](/images/sectionsExtensions/CopyToClipboard.png)
+   ![Copy to Clipboard](/images/sectionsExtensions/CopyToClipboard.png)
 
 ### Apply the template to another page
-1. **Add a section:** On the target (same or another) page, when in the Edit mode, editor can see the new "Add Section" button on the upper bar, next to the 'Save as draft', 'Undo', 'Discard changes', and the other options natively available in the page creation process.
+1. **Add a section:** On the target (same or another) page, when in the Edit mode, editor can see the new "Add section" button on the upper bar, next to the 'Save as draft', 'Undo', 'Discard changes', and the other options natively available in the page creation process.
    
    ![Add Section Button](/images/sectionsExtensions/AddSectionButton.png)
 
