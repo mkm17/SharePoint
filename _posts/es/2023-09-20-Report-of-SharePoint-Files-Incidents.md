@@ -10,17 +10,18 @@ permalink: /2023/07/30/es/Report_of_SharePoint_Files_Incidents.html
 
 # Informe de Incidentes de Archivos de SharePoint - Script de PowerShell
 
-Hace algún tiempo, tuve una conversación con mi amigo sobre los problemas que comúnmente enfrentan los usuarios no técnicos de SharePoint. Descubrimos que muchos de estos problemas están vinculados a las bibliotecas de documentos y la colaboración en archivos. A veces, las acciones individuales pueden causar problemas para los equipos que trabajan juntos. Dado que los errores humanos pueden ocurrir y ocurrirán, es vital responder rápidamente cuando algo sale mal. Como resultado de nuestra discusión, me embarqué en un proyecto para crear un script que ayude a encontrar y solucionar problemas con archivos en SharePoint.
+Hace algún tiempo, tuve una conversación con mi amigo sobre las dificultades que suelen enfrentar los usuarios no técnicos de SharePoint. Descubrimos que muchos de estos problemas están vinculados a las bibliotecas de documentos y la colaboración en archivos. A veces, las acciones individuales pueden causar problemas en los equipos que trabajan juntos. Dado que los errores humanos pueden ocurrir, es vital responder rápidamente cuando algo sale mal. Como resultado de nuestra discusión, emprendí en un proyecto para crear un script que ayude a encontrar y solucionar problemas con archivos en SharePoint.
 
-Este script está creado utilizando PowerShell y hace uso de la biblioteca **PnP PowerShell**, que es una herramienta muy útil para gestionar entornos de SharePoint.
+Este script está creado utilizando PowerShell y hace uso de la biblioteca **PnP PowerShell**, la cual es una herramienta muy útil para gestionar entornos de SharePoint.
 
-Para recopilar la información necesaria, inicialmente utilicé la **versión estándar de SharePoint**. Sin embargo, me di cuenta de que ciertos detalles cruciales, como los cambios en los nombres de archivos, estaban ausentes en los datos de versionamiento. Aunque todas las versiones conservaban el nombre final del archivo, necesitaba una visión más completa. Por lo tanto, incorporé el punto final de **actividades**, accesible a través de la **API REST de SharePoint versión 2**. Este punto final no solo completa la información faltante sobre los cambios de nombre de archivos, sino que también ofrece información valiosa sobre la historia del archivo.
+Para recopilar información necesaria, inicialmente utilicé la **versión estándar de SharePoint**. Sin embargo, me di cuenta de que ciertos detalles cruciales, como los cambios en los nombres de archivos, estaban ausentes en el versionado de datos. Aunque todas las versiones conservaban el nombre final del archivo, necesitaba una visión más completa. Por lo tanto, incorporé el punto final de **actividades**, accesible a través de la **API REST de SharePoint versión 2**. Este punto final no solo completa la información faltante sobre los cambios de nombre de archivos, sino que también ofrece información valiosa sobre la historia del archivo.
 
 ## Uso del Punto Final de Actividades
 
-Para acceder a información detallada sobre las actividades de archivos, utilizamos el punto final de **actividades**. Este punto final es accesible a través de la [**API REST de SharePoint versión 2**](https://learn.microsoft.com/en-us/sharepoint/dev/apis/sharepoint-rest-graph), que sirve como una puerta de enlace a MS Graph. Para recuperar las actividades de archivos, necesitamos una URL en el formato de OneDrive. Para obtener esta URL, podemos enviar una solicitud POST al punto final de **GetSharingInformation**. La respuesta incluirá algunas propiedades como itemUrl, que podemos utilizar para acceder a las actividades de archivos.
+Para acceder a información detallada sobre las actividades de archivos, utilizamos el punto de conexión (Endpoint) de **actividades**. Este punto de conexión es accesible a través de la [**API REST de SharePoint versión 2**](https://learn.microsoft.com/en-us/sharepoint/dev/apis/sharepoint-rest-graph), que sirve como una puerta de enlace a MS Graph. Para recuperar las actividades de archivos, necesitamos una URL en el formato de OneDrive. Para obtener esta URL, podemos enviar una solicitud POST al punto de conexión **GetSharingInformation**. La respuesta incluirá algunas propiedades como itemUrl, que podemos utilizar para acceder a las actividades de archivos.
 
-Una vez que tenemos la URL correcta, podemos realizar una solicitud **GET** al [punto final de actividades](https://learn.microsoft.com/en-us/onedrive/developer/rest-api/api/activities_list?view=odsp-graph-online). Esto se puede hacer utilizando el comando *Invoke-PnPSPRestMethod*, como se muestra en el ejemplo a continuación. El [tipo de recurso **action**](https://learn.microsoft.com/en-us/onedrive/developer/rest-api/resources/itemactivity?view=odsp-graph-online) proporciona detalles sobre la actividad. Por ejemplo, en el caso de un **cambio de nombre** de archivo, la propiedad de acción mostrará el nombre antiguo, así como la hora y el actor.
+
+Una vez que tenemos la URL correcta, podemos realizar una solicitud **GET** al [punto de conexión (Endpoint) de actividades](https://learn.microsoft.com/en-us/onedrive/developer/rest-api/api/activities_list?view=odsp-graph-online). Esto se puede hacer utilizando el comando *Invoke-PnPSPRestMethod*, como se puede constatar en el ejemplo abajo. El [tipo de recurso **action**](https://learn.microsoft.com/en-us/onedrive/developer/rest-api/resources/itemactivity?view=odsp-graph-online) proporciona detalles de la actividad. Por ejemplo, en el caso de un **cambio de nombre** del archivo, la propiedad de acción mostrará el nombre antiguo, así como la hora y el actor involucrado.
 
 ```powershell
     # Obtener solo itemUrl en formato de SharePoint api 2.0 desde la información de uso compartido del archivo
@@ -37,14 +38,14 @@ Una vez que tenemos la URL correcta, podemos realizar una solicitud **GET** al [
 
 He configurado el script para identificar los siguientes eventos:
 
-- Cambio de nombre de un archivo
-- Restaurar un archivo de la papelera de reciclaje
-- Compartir un archivo con alguien
-- Reducción del tamaño de un archivo en más del 50%
-- Mover un archivo dentro de la biblioteca
-- Desmarcar un archivo
+- Renombrar el archivo
+- Restaurar el archivo de la papelera de reciclaje
+- Compartir el archivo con alguien
+- Reducción del tamaño del archivo en más del 50%
+- Mover el archivo dentro de la biblioteca
+- Verificar el archivo
 
-Además, he añadido funciones para realizar un seguimiento de la lista de personas que editan cada archivo y exportar la lista completa de editores en la biblioteca. Esto nos permite identificar usuarios que no deberían tener derechos de edición o aquellos que editaron archivos solo ocasionalmente y luego dejaron de hacerlo. Al prestar atención a estos factores, el script ayuda a mantener un entorno colaborativo más seguro y eficiente.
+Además, he añadido funciones para llevar un registro de la lista de personas que editan cada archivo y para exportar la lista completa de editores en la biblioteca. Esto nos permite identificar usuarios que no deberían tener derechos de edición o aquellos que editaron archivos solo ocasionalmente y luego dejaron de hacerlo. Al prestar atención a estos factores, el script ayuda a mantener un entorno colaborativo más seguro y eficiente.
 
 
 ## Resultado del script
@@ -427,5 +428,3 @@ function CheckFiles {
 CheckFiles -SiteUrl $targetSiteUrl -LibraryName $libraryName
 
 ```
-
-

@@ -15,15 +15,15 @@ permalink: /2023/07/30/es/Unique_Permissions_SPFx_Extension.html
 
 ## Concepto
 
-En mi experiencia, me he encontrado con varias situaciones en las que he tenido dificultades para manejar elementos o documentos con permisos únicos. Desafortunadamente, actualmente no hay un método directo para verificar esta información desde la vista de lista. Revisar cada elemento individualmente podría ser una experiencia tediosa y frustrante. Aunque una opción es generar un informe con datos sobre los permisos, esto agrega complejidad al utilizar una herramienta diferente fuera de SharePoint.
+En mi experiencia, me he encontrado con varias situaciones en las que he tenido dificultades para manejar elementos o documentos con permisos únicos. Desafortunadamente, actualmente no hay un método directo para verificar esta información desde la vista de lista. Revisar cada elemento individualmente podría ser una experiencia tediosa y frustrante. Aunque una opción es generar un informe con datos sobre los permisos, esto añade complejidad al utilizar una herramienta diferente fuera de SharePoint.
 
-Este desafío me llevó a explorar posibilidades para una solución más eficiente. Comencé creando un simple personalizador de campos que muestra permisos únicos para los elementos. A medida que progresaba, agregué nuevas funcionalidades, culminando en el desarrollo de un personalizador de campos de ejemplo para permisos únicos.
+Este desafío me llevó a explorar posibilidades para una solución más eficiente. Comencé creando un personalizador de campos simple que muestra permisos únicos para los elementos. A medida que progresaba, agregué nuevas funcionalidades, culminando en el desarrollo de un personalizador de campos de muestra para permisos únicos.
 
-Con este personalizador, ahora puedes ver y gestionar fácilmente los permisos únicos directamente desde la vista de lista, simplificando el proceso y mejorando la experiencia del usuario. Ya no será necesario navegar a través de múltiples interfaces o generar informes separados. Este personalizador simplifica la tarea de manejar elementos o documentos con permisos únicos, convirtiéndose en una adición valiosa a tu flujo de trabajo.
+Con este personalizador, ahora puedes ver y gestionar fácilmente los permisos únicos directamente desde la vista de lista, simplificando el proceso y mejorando la experiencia del usuario. Ya no será necesario navegar a través de múltiples interfaces ni generar informes separados. Este personalizador simplifica la tarea de manejar elementos o documentos con permisos únicos, convirtiéndose en una aportación valiosa a tu flujo de trabajo.
 
 ## Funcionalidades
 
-La solución permite una manera sencilla de gestionar permisos únicos en elementos de la lista. Proporciona un personalizador de campos que se puede utilizar para mostrar los permisos del usuario actual, información sobre la singularidad de los permisos para un elemento y también varias opciones útiles que son fácilmente accesibles desde la columna.
+La solución permite una manera sencilla de gestionar permisos únicos en los  elementos de la lista. Ofrece un personalizador de campo que se puede utilizar para mostrar los permisos del usuario actual, información sobre la singularidad de los permisos para un elemento y también una serie de opciones útiles que son fácilmente accesibles desde la columna.
 
 ![react-field-unique-permissions](/images/uniquePermissions/checkUserPermission.gif)
   
@@ -39,7 +39,7 @@ Todos los usuarios verán íconos que indican la singularidad de los permisos pa
 
 #### Mostrar permisos del usuario elegido
 
-Para mostrar los permisos del usuario elegido, debes hacer clic en el ícono en la parte superior de la cinta y elegir el nombre del usuario. Luego, todos los elementos se actualizarán y verás los permisos del usuario seleccionado.
+Para mostrar los permisos del usuario elegido, debes hacer clic en el ícono en la parte superior de la cinta y elegir el nombre del usuario. Luego, todos los elementos se actualizarán y podrás ver los permisos del usuario seleccionado.
 
 ![check-user-permissions](/images/uniquePermissions/checkUserPermission.gif)
 
