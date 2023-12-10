@@ -3,7 +3,7 @@ layout: post
 title:  "Custom SharePoint Section Templates"
 date:   2023-12-10 00:00:00 +0200
 tags: [ "SharePoint","SPFx", "Application Customizer"]
-image: "/images/sectionsExtensions/header.png"
+image: "/images/sectionsExtensions/Header.png"
 language: en
 ---
 
