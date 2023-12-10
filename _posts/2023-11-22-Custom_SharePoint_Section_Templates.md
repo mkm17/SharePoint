@@ -11,7 +11,7 @@ language: xx
 
 ## Introduction
 
-This feature has been developed in association with Olga, the Digital Collaboration consultant and Microsoft expert, privately my wife. She is the originator of the whole concept and the author of the article below, while I am the author of the code. The solution is available on [GitHub...](
+This feature has been developed in association with Olga, the Digital Collaboration consultant and Microsoft expert, privately my wife. She is the originator of the whole concept and the author of the article below, while I am the author of the code. The solution is available on [GitHub...](https://github.com/mkm17/react-application-page-sections)
 
 SharePoint Online is a powerful platform for collaboration and content management. Microsoft works hard to bring this superb tool to the new era of content creation and information processing with some groundbreaking upgrades on the horizon, like [Copilot in SharePoint](https://www.microsoft.com/en-ww/microsoft-365/roadmap?filters=SharePoint&searchterms=124840), [the brand new brand center](https://www.microsoft.com/en-ww/microsoft-365/roadmap?filters=SharePoint&searchterms=124838), or [simultaneous co-authoring on SharePoint pages](https://www.microsoft.com/en-ww/microsoft-365/roadmap?filters=SharePoint&searchterms=124853), just to name a few. Even though other enhancements and extra features are delivered to SharePoint Online on a quite regular basis lately, content creators still find themselves wishing for additional, key to their daily business functions.
 
@@ -99,4 +99,4 @@ For the global section list, it is advisable to grant the read-only access to al
 
 Our SharePoint Online extension to create custom page section templates is a valuable addition for organizations and users looking to enhance their SharePoint editing experience. By simplifying the process of section creation and providing a systematic approach to page development, this extension contributes to a more efficient and organized SharePoint environment.
 
-To learn more or get started with the SharePoint Online Application Extension, visit [our Github profile...]().
+To learn more or get started with the SharePoint Online Application Extension, visit [our Github profile.](https://github.com/mkm17/react-application-page-sections).
