@@ -4,7 +4,7 @@ title:  "Informe de Incidentes de Archivos de SharePoint - Script de PowerShell"
 date:   2023-09-20 00:00:00 +0200
 tags: [ "SharePoint", "PowerShell"]
 image: "/images/fileincidentsscript/fileIncidentsScriptHeader.png"
-language: xx
+language: es
 permalink: /2023/07/30/es/Report_of_SharePoint_Files_Incidents.html
 ---
 
