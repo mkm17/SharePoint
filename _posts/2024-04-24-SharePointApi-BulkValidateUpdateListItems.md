@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "SharePoint Api - BulkValidateUpdateListItems"
-date:   2024-04-22 00:00:00 +0200
+date:   2024-04-23 00:00:00 +0200
 tags: ["SharePoint", "SharePointApi"]
 image: "/images/sharepointapi/BulkValidateUpdateListItems/header.png"
 language: en
@@ -9,13 +9,13 @@ language: en
 
 ## How to update multiple items using SharePoint REST API?
 
-You can answer the following question using different methods. Of course, one of the methods is to use batching and methods like `/items/update` or `AddValidateUpdateItem`.
+You can answer the following question using different methods. Of course, one of them is to use batching and  well-known endpoints like `/items/(id)` or `/items/(id)ValidateUpdateItem`.
 
-But did you know that there is another method to achieve the same effect? Let’s imagine a scenario where you need to update the same value in selected items. For example, giving a user the possibility to select multiple items and change the status, or to approve multiple items at the same time.
+But did you know that there is yet another method to achieve the same effect? Let’s imagine a scenario where you need to update the same value in selected items. For example, giving a user the possibility to select multiple items and change the status, or to approve multiple items at the same time.
 
-SharePoint exposes a [BulkValidateUpdateListItems](https://learn.microsoft.com/en-us/openspecs/sharepoint_protocols/ms-csomspt/ebc47581-36e4-457b-8045-a4cf1f4da501) endpoint which expects a body similar to the ValidateUpdateListItems.
+SharePoint exposes a [BulkValidateUpdateListItems](https://learn.microsoft.com/en-us/openspecs/sharepoint_protocols/ms-csomspt/ebc47581-36e4-457b-8045-a4cf1f4da501) endpoint which expects a body similar to the [ValidateUpdateListItems](https://learn.microsoft.com/en-us/openspecs/sharepoint_protocols/ms-csomspt/652ab52f-8f47-4eec-95fd-743af5ee38cc).
 
-I have compared three REST API methods to update multiple items. For each method, I have taken 4 different items in the same list to update the same property. 
+I have compared these three REST API methods to update multiple items. For each method, I have taken 4 different items in the same list to update the same property. 
 
 ![Calls Comparison](/images/sharepointapi/BulkValidateUpdateListItems/CallsComparison.png)
 
@@ -32,7 +32,7 @@ As you can see, the execution time looks similar for all methods.
 
 Now, let's check an example of the code to approve many items at the same time. A real-case scenario could be to approve multiple items simultaneously.
 
-Replace contoso, TargetSite, and TargetList with your values.
+Replace *contoso*, *TargetSite*, and *TargetList* with your values.
 
 **URL:**
 
@@ -40,7 +40,7 @@ Replace contoso, TargetSite, and TargetList with your values.
  https://<contoso>.sharepoint.com/sites/<TargetSite>/_api/web/GetList(@a1)/BulkValidateUpdateListItems()?@a1=%27%2Fsites%2F<TargetSite>%2FLists%2F<TargetList>%27
 ```
 
-Replace the itemIds with the items you want to update. The formValues should contain the field you want to update. In this case, the field is _ModerationStatus, and the value is 0 (Approved).
+Provide ids of the items you want to update to the *itemIds* parameter. The *formValues* should contain the field you want to update. In this case, the field is _ModerationStatus, and the value is 0 (Approved).
 
 **Body:**
 
@@ -57,5 +57,53 @@ Replace the itemIds with the items you want to update. The formValues should con
   ],
   "bNewDocumentUpdate":false,
   "checkInComment":null
+}
+```
+
+
+**An example of result**
+```json
+{
+  "d": {
+    "BulkValidateUpdateListItems": {
+      "__metadata": {
+        "type": "Collection(SP.ListItemFormUpdateValue)"
+      },
+      "results": [
+        {
+          "ErrorCode": 0,
+          "ErrorMessage": null,
+          "FieldName": "_ModerationStatus",
+          "FieldValue": "0",
+          "HasException": false,
+          "ItemId": 1
+        },
+        {
+          "ErrorCode": 0,
+          "ErrorMessage": "You cannot perform this action on a checked out document.",
+          "FieldName": null,
+          "FieldValue": null,
+          "HasException": true,
+          "ItemId": 2
+        },
+        {
+          "ErrorCode": 0,
+          "ErrorMessage": null,
+          "FieldName": "_ModerationStatus",
+          "FieldValue": "0",
+          "HasException": false,
+          "ItemId": 3
+        },
+        {
+          "ErrorCode": 0,
+          "ErrorMessage": null,
+          "FieldName": "_ModerationStatus",
+          "FieldValue": "0",
+          "HasException": false,
+          "ItemId": 4
+        }
+      ]
+    }
+  }
 }
 ```
