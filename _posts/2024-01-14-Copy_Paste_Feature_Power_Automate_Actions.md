@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Extended Copy/Paste feature for the new PowerAutomate editor - Power Automate Actions"
+title:  "Extended Copy/Paste feature for the new PowerAutomate editor"
 date:   2024-01-14 00:00:00 +0200
 tags: ["Power Automate", "SharePoint", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
