@@ -5,6 +5,7 @@ date:   2023-12-10 00:00:00 +0200
 tags: [ "SharePoint","SPFx", "Application Customizer"]
 image: "/images/sectionsExtensions/Header.png"
 language: es
+permalink: /2023/12/09/Custom_SharePoint_Section_Templates.html
 ---
 
 # Mejorando la Experiencia del Editor con Plantillas Personalizadas de Sección - la Extensión de SharePoint

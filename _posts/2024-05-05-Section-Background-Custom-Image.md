@@ -2,7 +2,7 @@
 layout: post
 title:  "Customized Section Background"
 date:   2024-05-04 00:00:00 +0200
-tags: ["SharePoint", ]
+tags: ["SharePoint"]
 image: "/images/sectionBackground/image/header.png"
 language: en
 ---

@@ -5,6 +5,7 @@ date:   2024-04-23 00:00:00 +0200
 tags: ["SharePoint", "SharePointApi"]
 image: "/images/sharepointapi/BulkValidateUpdateListItems/header.png"
 language: es
+permalink: /2024/04/22/SharePointApi-BulkValidateUpdateListItems.html
 ---
 
 ## ¿Cómo actualizar múltiples elementos usando la API REST de SharePoint?
