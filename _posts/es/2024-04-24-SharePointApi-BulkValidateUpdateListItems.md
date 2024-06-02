@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "API de SharePoint - BulkValidateUpdateListItems"
-date:   2024-04-23 00:00:00 +0200
+date:   2025-04-23 00:00:00 +0200
 tags: ["SharePoint", "SharePointApi"]
 image: "/images/sharepointapi/BulkValidateUpdateListItems/header.png"
 language: es
-permalink: /2024/04/22/SharePointApi-BulkValidateUpdateListItems.html
+permalink: /2024/04/22/es/SharePointApi-BulkValidateUpdateListItems.html
 ---
 
 ## ¿Cómo actualizar múltiples elementos usando la API REST de SharePoint?

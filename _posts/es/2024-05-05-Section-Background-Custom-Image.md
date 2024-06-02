@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "Fondo de Sección Personalizado"
-date:   2024-05-04 00:00:00 +0200
+date:   2025-05-04 00:00:00 +0200
 tags: ["SharePoint"]
 image: "/images/sectionBackground/image/header.png"
 language: es
-permalink: /2024/05/03/Section-Background-Custom-Image.html
+permalink: /2024/05/03/es/Section-Background-Custom-Image.html
 ---
 
 ## ¿Hay alguna manera de establecer una imagen personalizada como fondo de sección en SharePoint Online?
