@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Create a SharePoint Page based on a Template Page Using MS Graph Pages API"
-date:   2024-06-29 00:00:00 +0200
+date:   2024-06-01 00:00:00 +0200
 tags: ["SharePoint", "MSGraph"]
 image: "/images/sectionsExtensions/Header.png"
 language: en
