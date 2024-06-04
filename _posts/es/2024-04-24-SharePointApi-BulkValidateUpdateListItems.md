@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "API de SharePoint - BulkValidateUpdateListItems"
-date:   2025-04-23 00:00:00 +0200
+date:   2024-04-23 00:00:00 +0200
 tags: ["SharePoint", "SharePointApi"]
 image: "/images/sharepointapi/BulkValidateUpdateListItems/header.png"
 language: es

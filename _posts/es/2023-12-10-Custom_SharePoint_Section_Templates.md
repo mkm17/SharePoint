@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Plantillas Personalizadas de Sección en SharePoint"
-date:   2025-12-10 00:00:00 +0200
+date:   2024-12-10 00:00:00 +0200
 tags: [ "SharePoint","SPFx", "Application Customizer"]
 image: "/images/sectionsExtensions/Header.png"
 language: es

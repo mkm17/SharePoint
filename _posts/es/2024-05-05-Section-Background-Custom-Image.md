@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Fondo de Sección Personalizado"
-date:   2025-05-04 00:00:00 +0200
+date:   2024-05-04 00:00:00 +0200
 tags: ["SharePoint"]
 image: "/images/sectionBackground/image/header.png"
 language: es
