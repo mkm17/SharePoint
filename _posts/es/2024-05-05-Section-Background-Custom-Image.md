@@ -8,13 +8,14 @@ language: es
 permalink: /2024/05/03/es/Section-Background-Custom-Image.html
 ---
 
-## ¿Hay alguna manera de establecer una imagen personalizada como fondo de sección en SharePoint Online?
+## ¿Existe alguna manera de establecer una imagen personalizada como fondo de sección en SharePoint Online?
 
-En la nueva actualización de SharePoint Online, ahora puedes establecer fondos adicionales predefinidos para secciones de página, además de los 4 colores de tema que estaban disponibles antes. Pero, ¿qué pasa si quieres usar tu propia imagen?
+En la nueva actualización de SharePoint Online, ahora puedes establecer fondos adicionales predefinidos para secciones de página, además de los 4 colores de tema que estaban disponibles anteriormente. Pero, ¿qué pasa si quieres usar tu propia imagen?
 
-Por defecto, tal opción no es posible desde la experiencia del usuario en este momento. Sin embargo, hay una solución para lograrlo. Aquí te mostramos cómo hacerlo con [CLI para M365](https://pnp.github.io/cli-microsoft365/).
+Por defecto, tal opción en este momento no es posible desde la experiencia del usuario. Sin embargo, hay una solución para lograrlo. Aquí te mostramos cómo hacerlo con
+[CLI para M365](https://pnp.github.io/cli-microsoft365/).
 
-Hace algún tiempo, exploré la posibilidad de establecer colores de fondo estándar para secciones utilizando el parámetro *zoneEmphasis* en [el comando de añadir sección de página](https://pnp.github.io/cli-microsoft365/cmd/spo/page/page-section-add/). Ahora, al examinar cómo se definen internamente los nuevos fondos, descubrí que la nueva configuración trae algunas posibilidades extra y una de ellas es permitir especificar tu propia URL de imagen.
+Hace algún tiempo, exploré la posibilidad de establecer colores de fondo estándar para secciones utilizando el parámetro zoneEmphasis en [el comando de añadir sección de página](https://pnp.github.io/cli-microsoft365/cmd/spo/page/page-section-add/). Ahora, al examinar cómo se definen internamente los nuevos fondos, descubrí que la nueva configuración trae algunas posibilidades adicionales y una de ellas es permitir especificar la URL de tu propia imagen.
 
 ### Explicación paso a paso
 #### 1. Selecciona el último fondo de sección predefinido para una sección de página seleccionada.
@@ -47,11 +48,11 @@ Debe verse así:
 
 #### 5. Modifica la cadena JSON para lograr el resultado deseado.
 
-Copia y pega el resultado presentado en un valor JSON en cualquier editor de texto y reemplaza la cadena *\\"* por el signo *"* sign, y elimina los primeros y últimos signos " para obtener un JSON correcto.
+Copia y pega el resultado presentado en un valor JSON en cualquier editor de texto y reemplaza la cadena *\\"* por el signo *"* sign, y elimina los primeros y últimos signos " para obtener un JSON válido.
 
-![JSON correcto](/images/sectionBackground/image/extractJson.png)
+![JSON válido](/images/sectionBackground/image/extractJson.png)
 
-Nota que la definición del fondo de la sección no es solo un color o *zoneEmphasis*, como en los 'antiguos' fondos de sección, sino un web part con un tipo de control *14* y datos regulares de web part
+Ten en cuenta que la definición del fondo de la sección no es solo un color o*zoneEmphasis*, como en los fondos de sección 'antiguos' fondos de sección,  sino un web part con un tipo de control *14* y datos de web part regulares.
 
 #### 6. Define un fondo de sección personalizado.
 
@@ -94,7 +95,7 @@ En los datos, localiza un valor que defina la imagen. Las propiedades a cambiar 
 
 #### 7. Ejecuta el comando.
 
-Añade el signo ' al principio y al final de la nueva cadena JSON y úsalo en el parámetro *--content* del siguiente comando:
+Agrega el signo ‘ al principio y al final de la nueva cadena JSON y úsalo en el parámetro *–content* del siguiente comando::
 
 ``` powershell
 m365 spo page set --name "TargetPage.aspx" --webUrl https://contoso.sharepoint.com/sites/TargetSite --content 'the new string'

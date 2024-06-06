@@ -8,16 +8,16 @@ language: es
 permalink: /2024/01/13/es/Copy_Paste_Feature_Power_Automate_Actions.html
 ---
 
-Hace algún tiempo, se introdujo el nuevo **editor de Power Automate**. Trajo algunas nuevas funciones y mejoras importantes. Una adición notable fue la función de **Copilot**, diseñada para acelerar el proceso de creación de nuevos flujos. Sin embargo, algunas de las opciones presentadas anteriormente faltaban en el punto inicial. Una de esas características fue la funcionalidad de **copiar/pegar** para acciones, introducida de manera limitada en una versión posterior del editor. Rápidamente se demostró insuficiente para los usuarios más avanzados. Después de leer muchos comentarios, decidí explorar la posibilidad de extender el método actual utilizado en **el nuevo editor de Power Automate**. El resultado es la versión actualizada de la **[Extensión de Acciones de Power Automate](https://chrome.google.com/webstore/detail/power-automate-actions-ha/eoeddkppcaagdeafjfiopeldffkhjodl?hl=pl&authuser=0)**.
+Hace algún tiempo, se presentó el nuevo **editor de Power Automate**. Este trajo algunas nuevas funciones y mejoras importantes. Una adición destacada fue la función de **Copilot**, diseñada para acelerar el proceso de creación de nuevos flujos. Sin embargo, algunas de las opciones presentadas anteriormente faltaban en el punto inicial. Una de esas características fue la funcionalidad de **copiar/pegar** para acciones, introducida de manera limitada en una versión posterior del editor. Rápidamente resultó insuficiente para los usuarios más avanzados. Después de leer muchos comentarios, decidí explorar la posibilidad de extender el método actual utilizado en **el nuevo editor de Power Automate**. El resultado es la versión actualizada de la **[Extensión de Acciones de Power Automate](https://chrome.google.com/webstore/detail/power-automate-actions-ha/eoeddkppcaagdeafjfiopeldffkhjodl?hl=pl&authuser=0)**.
 
 Para obtener más información sobre la solución personalizada, consulta mi artículo anterior sobre la [Extensión de Acciones de Power Automate](https://michalkornet.com/2023/05/23/Power-Automate-Actions-Chrome-Extension.html).
 
-[**¡Vea cómo instalarla ahora!**](#how-to-install-the-tool) 
+[**¡Mira cómo instalarlo ahora!**](#how-to-install-the-tool) 
 <br />
 <br />
 
 ### **Función Extendida de Copiar/Pegar para el nuevo editor de PowerAutomate**
-Esta nueva función no solo mejora la funcionalidad de **copiar/pegar**, sino que también permite a los usuarios almacenar acciones copiadas para uso futuro. Además, proporciona la capacidad de seleccionar acciones específicas que deben copiarse en el editor.
+Función de **Copiar/Pegar** extendida para el nuevo editor de Power Automate Esta nueva función no solo mejora la funcionalidad de copiar/pegar, sino que también permite a los usuarios almacenar acciones copiadas para uso futuro. Además, proporciona la capacidad de seleccionar acciones específicas que deben copiarse en el editor.
 
 ![Copiar Pegar en el nuevo editor](/images/copyPastePowerAutomateExtension/CopyPasteExample.gif)
 
@@ -35,9 +35,8 @@ Si desea instalar la extensión manualmente, descomprima el archivo zip *[Applic
 
 **Descargo de responsabilidad**
 
-Tenga en cuenta que en el nuevo editor el formato de las acciones almacenadas cambió, limitando el rango de características de la extensión disponibles en este modo. Seguiré investigando la posibilidad de mapear el nuevo formato al antiguo, habilitando la funcionalidad completa de la extensión en ambos **editores de Power Automate**.
+Ten en cuenta que en el nuevo editor, el formato de las acciones almacenadas ha cambiado, lo que limita el alcance de las características de la extensión disponibles en este modo. Seguiré investigando la posibilidad de mapear el nuevo formato al antiguo, lo que permitiría la funcionalidad completa de la extensión en ambos  **editores de Power Automate**.
 
-La herramienta fue diseñada para aliviar mis dolores diarios al reproducir pasos a lo largo de varios flujos de trabajo. La basé en la implementación actual de la experiencia del creador de Power Automate y cualquier actualización de la interfaz o procesos subyacentes puede causar que la herramienta deje de funcionar. 
-El código está disponible en [GitHub](https://github.com/mkm17/powerautomate-actions-extension/tree/main). Estás invitado a usarlo para tu eficiencia personal y compartir tus comentarios en la [sección de Issues](https://github.com/mkm17/powerautomate-actions-extension/issues).
+La herramienta fue diseñada para aliviar mis dolores diarios al reproducir pasos en varios flujos de trabajo. Me basé en la implementación actual de la experiencia de Power Automate y cualquier actualización en la interfaz o procesos subyacentes puede hacer que la herramienta deje de funcionar. El código está disponible en [GitHub](https://github.com/mkm17/powerautomate-actions-extension/tree/main). Eres bienvenido a usarlo para mejorar tu eficiencia personal y compartir tus comentarios en la [sección de Issues.](https://github.com/mkm17/powerautomate-actions-extension/issues).
 
 <br />
