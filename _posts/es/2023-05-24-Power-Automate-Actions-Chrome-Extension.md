@@ -2,7 +2,7 @@
 layout: postES
 title: "Power Automate Actions - Extensión para Chrome"
 date: 2023-05-24 00:00:00 +0200
-tags: ["Power Automate", "SharePoint", "MS Graph", "Extensión para Chrome"]
+tags: ["Power Automate", "SharePoint", "MSGraph", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: es
 permalink: /2023/05/24/es/Power_Automate_Actions_Chrome_Extension.html

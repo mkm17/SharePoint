@@ -2,7 +2,7 @@
 layout: postES
 title:  "Mi Plataforma de Aprendizaje de Idiomas"
 date:   2023-04-05 00:00:00 +0200
-tags: ["SharePoint", "SPFx", "Office365", "OfficeJS", "MS Word", "OpenAI", "ChatGPT" ]
+tags: ["SharePoint", "SPFx", "OfficeJS", "MS Word", "OpenAI", "ChatGPT" ]
 image: "/images/languageTool/header.png"
 language: es
 permalink: /2023/04/05/es/The_Language_tool.html

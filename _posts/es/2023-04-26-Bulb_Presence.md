@@ -2,7 +2,7 @@
 layout: postES
 title:  "Indicar estado de presencia usando la bombilla en Microsoft Teams"
 date:   2023-04-26 00:00:00 +0200
-tags: ["Power Automate", "Xiaomi Yeelight", "MS Graph"]
+tags: ["Power Automate", "Xiaomi Yeelight", "MSGraph"]
 image: "/images/bulb/header.png"
 language: es
 permalink: /2023/04/26/es/Bulb_Presence.html

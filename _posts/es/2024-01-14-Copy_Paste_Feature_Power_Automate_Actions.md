@@ -2,7 +2,7 @@
 layout: post
 title:  "Función Extendida de Copiar/Pegar para el nuevo editor de PowerAutomate"
 date:   2024-01-14 00:00:00 +0200
-tags: ["Power Automate", "SharePoint", "Extensión de Chrome"]
+tags: ["Power Automate", "SharePoint", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: es
 permalink: /2024/01/13/es/Copy_Paste_Feature_Power_Automate_Actions.html

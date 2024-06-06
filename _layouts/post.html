@@ -38,7 +38,7 @@ selected_language: "{{ page.url | extract_language }}"
     <div class="post-tags">
         <strong>Tags:</strong>
         {% for tag in page.tags %}
-        <a href="/tags/{{ tag }}">{{ tag }}</a>
+        <a href="/tags/{{ tag | slugify }}">{{ tag }}</a>
         {% endfor %}
     </div>
     </br>
@@ -53,7 +53,7 @@ selected_language: "{{ page.url | extract_language }}"
     <div class="post-tags">
         <strong>Tags:</strong>
         {% for tag in page.tags %}
-        <a href="/tags/{{ tag }}">{{ tag }}</a>
+        <a href="/tags/{{ tag | slugify }}">{{ tag }}</a>
         {% endfor %}
     </div>
     {% endif %}
