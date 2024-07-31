@@ -34,6 +34,18 @@ Now, let's check an example of the code to approve many items at the same time. 
 
 Replace *contoso*, *TargetSite*, and *TargetList* with your values.
 
+
+## Usage
+
+Example to be used in Power Automate flow: 
+
+  {% include codeHeader.html %}
+<div class="powerAutomateCode" style="display:none">
+{"id":"0eb4e4a9-0ef6-498f-ba47-c113ad8705e8","brandColor":"#036C70","connectionReferences":{"shared_sharepointonline":{"connection":{"id":"/providers/Microsoft.PowerApps/apis/shared_sharepointonline/connections/ec614f7d51d84ccdb6ad7756232951f9"}}},"connectorDisplayName":"SharePoint","icon":"https://connectoricons-prod.azureedge.net/u/jayawan/releases/v1.0.1697/1.0.1697.3786/sharepointonline/icon.png","isTrigger":false,"operationName":"BulkValidateUpdateListItems","operationDefinition":{"type":"OpenApiConnection","inputs":{"host":{"connectionName":"shared_sharepointonline","operationId":"HttpRequest","apiId":"/providers/Microsoft.PowerApps/apis/shared_sharepointonline"},"parameters":{"dataset":"https://contoso.sharepoint.com/sites/SiteName","parameters/method":"POST","parameters/uri":"_api/web/lists/getByTitle('ListName')/BulkValidateUpdateListItems","parameters/headers":{"content-type":"application/json;odata=verbose;charset=utf-8","accept":"application/json"},"parameters/body":"{\n  \"itemIds\":[1,2],\n  \"formValues\":[\n    {\n        \"FieldName\":\"Title\",\n        \"FieldValue\":\"TitleChange\",\n        \"HasException\":false,\n        \"ErrorMessage\":null\n    }\n  ],\n  \"bNewDocumentUpdate\":false,\n  \"checkInComment\":null\n}"},"authentication":{"type":"Raw","value":"@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"}},"runAfter":{}}}
+</div>
+
+<br/>
+
 **URL:**
 
 ```
