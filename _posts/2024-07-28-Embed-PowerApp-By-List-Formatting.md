@@ -3,7 +3,7 @@ layout: post
 title:  "Embed dedicated Power Apps view using the SharePoint list formatting"
 date:   2024-08-03 00:00:00 +0200
 tags: ["SharePoint", "CanvasApp"]
-image: "/images/embededPowerApp/Header.png"
+image: "/images/embededPowerApp/header.png"
 language: en
 ---
 
