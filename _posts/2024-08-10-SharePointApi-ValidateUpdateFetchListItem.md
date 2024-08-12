@@ -3,7 +3,7 @@ layout: post
 title:  "SharePoint Api - ValidateUpdateFetchListItem"
 date:   2024-08-12 00:00:00 +0200
 tags: ["SharePoint", "SharePointApi"]
-image: "/images/sharepointapi/validateUpdateFetchListItem/header.png"
+image: "/images/sharepointapi/ValidateUpdateFetchListItem/header.png"
 language: en
 ---
 
@@ -13,7 +13,7 @@ After some tests with [customRowAction](https://learn.microsoft.com/en-us/sharep
 
 The difference starts in the request results:
 
-![Calls Comparison](/images/sharepointapi/validateUpdateFetchListItem/CallsComparison.png)
+![Calls Comparison](/images/sharepointapi/ValidateUpdateFetchListItem/CallsComparison.png)
 
 
 As you can observe, the `ValidateUpdateFetchListItem` request also provides full information about the changed item in the `UpdatedData` property of the result.
