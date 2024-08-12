@@ -9,7 +9,7 @@ language: en
 
 ## How ValidateUpdateFetchListItem type of update works?
 
-After some tests with [customRowAction](https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/formatting-syntax-reference#customrowaction) in column formatting, I have noticed that there is another endpoint similar to `/items/(id)/ValidateUpdateItem` named `/items/(id)/ValidateUpdateFetchListItem`, which is used in the `setValue` method. Both use the same request body and have the same effect — updating an item.
+After some tests with [customRowAction](https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/formatting-syntax-reference#customrowaction) in column formatting, I have noticed that there is another endpoint similar to `/items/(id)/ValidateUpdateListItem` named `/items/(id)/ValidateUpdateFetchListItem`, which is used in the `setValue` method. Both use the same request body and have the same effect — updating an item.
 
 The difference starts in the request results:
 

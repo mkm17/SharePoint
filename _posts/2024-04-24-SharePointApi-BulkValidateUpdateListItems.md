@@ -9,11 +9,11 @@ language: en
 
 ## How to update multiple items using SharePoint REST API?
 
-You can answer the following question using different methods. Of course, one of them is to use batching and  well-known endpoints like `/items/(id)` or `/items/(id)ValidateUpdateItem`.
+You can answer the following question using different methods. Of course, one of them is to use batching and  well-known endpoints like `/items/(id)` or `/items/(id)ValidateUpdateListItem`.
 
 But did you know that there is yet another method to achieve the same effect? Let’s imagine a scenario where you need to update the same value in selected items. For example, giving a user the possibility to select multiple items and change the status, or to approve multiple items at the same time.
 
-SharePoint exposes a [BulkValidateUpdateListItems](https://learn.microsoft.com/en-us/openspecs/sharepoint_protocols/ms-csomspt/ebc47581-36e4-457b-8045-a4cf1f4da501) endpoint which expects a body similar to the [ValidateUpdateListItems](https://learn.microsoft.com/en-us/openspecs/sharepoint_protocols/ms-csomspt/652ab52f-8f47-4eec-95fd-743af5ee38cc).
+SharePoint exposes a [BulkValidateUpdateListItems](https://learn.microsoft.com/en-us/openspecs/sharepoint_protocols/ms-csomspt/ebc47581-36e4-457b-8045-a4cf1f4da501) endpoint which expects a body similar to the [ValidateUpdateListItem](https://learn.microsoft.com/en-us/openspecs/sharepoint_protocols/ms-csomspt/652ab52f-8f47-4eec-95fd-743af5ee38cc).
 
 I have compared these three REST API methods to update multiple items. For each method, I have taken 4 different items in the same list to update the same property. 
 
@@ -23,7 +23,7 @@ The results are as follows:
 
 | Method                      | Run 1 | Run 2 | Run 3 | Run 4 | Run 5 | Average Execution Time |
 | --------------------------- | ----- | ----- | ----- | ----- | ----- | ---------------------- |
-| ValidateUpdateListItems     | 0.645 | 0.692 | 0.472 | 0.418 | 0.496 | 0.545 seconds          |
+| ValidateUpdateListItem      | 0.645 | 0.692 | 0.472 | 0.418 | 0.496 | 0.545 seconds          |
 | Update                      | 0.665 | 0.733 | 0.914 | 0.455 | 0.499 | 0.653 seconds          |
 | BulkValidateUpdateListItems | 0.510 | 0.696 | 0.861 | 0.334 | 0.473 | 0.575 seconds          |
 
