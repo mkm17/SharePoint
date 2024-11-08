@@ -15,21 +15,30 @@ The new version of the extension (1.0.6) includes new features to help you work 
 
 ![Recorded Actions](/images/powerAutomateExtension/Version106/MsGraphActions.gif)
 
+<br />
+
 In this version, you can record all actions from the Microsoft Graph Explorer page. As you may know, Power Automate offers special HTTP actions to interact with Microsoft Graph, instead of the default HTTP action. The tool now automatically detects the type of endpoint used and saves the correct action to the clipboard.
 
-![HTTP Actions](/images/powerAutomateExtension/Version106/HTTPActions.png)
+![HTTP Actions](/images/powerAutomateExtension/Version106/HttpActions.PNG)
 
 
 There are also improvements in the recording function. In the previous version, recordings were not saved, so they were lost after refreshing the page. This issue is now fixed.
 
 Additionally, some small improvements have been made to the UI.
 
+<br />
+<br />
+
 **Full Change Log:**
+<br />
 1.0.6
 - Added support for HTTP Microsoft Graph actions.
 - Enabled recording of actions on Microsoft Graph Explorer and Classic SharePoint pages.
 - Enhanced persistence of recorded actions.
 - Fixed scrolling for actions.
+- 
+<br />
+<br />
 
  **[Power Automate Actions Extension](https://chrome.google.com/webstore/detail/power-automate-actions-ha/eoeddkppcaagdeafjfiopeldffkhjodl?hl=pl&authuser=0)**.
 
