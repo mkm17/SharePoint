@@ -24,7 +24,7 @@ There are also improvements in the recording function. In the previous version, 
 
 Additionally, some small improvements have been made to the UI.
 
-** Full Change Log: **
+**Full Change Log:**
 1.0.6
 - Added support for HTTP Microsoft Graph actions.
 - Enabled recording of actions on Microsoft Graph Explorer and Classic SharePoint pages.
