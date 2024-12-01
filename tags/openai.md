@@ -2,5 +2,5 @@
 layout: tag
 title: "Posts tagged with OpenAI"
 tag: "OpenAI"
-permalink: /tags/OpenAI/
+permalink: /tags/openai/
 ---
