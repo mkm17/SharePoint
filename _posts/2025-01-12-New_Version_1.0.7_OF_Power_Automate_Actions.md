@@ -14,7 +14,7 @@ language: en
 The new version of the extension (1.0.7) introduces features to enhance navigation through the tool.
 Now, the extension displays messages in a notification banner.
 
-![Recorded Actions](/images/powerAutomateExtension/Version107/NotificationBar.png)
+![Recorded Actions](/images/powerAutomateExtension/version107/NotificationBar.png)
 
 <br />
 
@@ -22,7 +22,7 @@ Also in this version, you can paste recorded actions into the new Power Automate
 
 When a user pastes actions, they will be stored within a single "Scope" action. Unfortunately, we cannot configure all action settings automatically, so the user must manually set the correct connection for each pasted action. Please see the example below.
 
-![HTTP Actions](/images/powerAutomateExtension/Version107/PasteActions.gif)
+![HTTP Actions](/images/powerAutomateExtension/version107/PasteActions.gif)
 
 
 <br />

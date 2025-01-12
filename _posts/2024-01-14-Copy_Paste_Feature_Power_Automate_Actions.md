@@ -7,6 +7,8 @@ image: "/images/powerAutomateExtension/header.png"
 language: en
 ---
 
+Obsolete functionality. Please refer to this [article](https://michalkornet.com/2025/01/12/New_Version_1.0.7_OF_Power_Automate_Actions.html).
+
 Some time ago, the new **Power Automate editor** was introduced. It brought a few new features and major improvements. A noteworthy addition was the **Copilot** feature, designed to expedite the creation process of new flows. However, some of the previously featured options were missing at the initial point. Such a feature was the **copy/paste** functionality for actions, introduced in a constrained form in a later version of the editor. It quickly turned out insufficient to more advanced users. After reading many comments, I decided to explore the possibility of extending the current method used in **the new Power Automate editor**. The result is the updated version of the **[Power Automate Actions Extension](https://chrome.google.com/webstore/detail/power-automate-actions-ha/eoeddkppcaagdeafjfiopeldffkhjodl?hl=pl&authuser=0)**.
 
 To get more information regarding the custom solution, check my previous article on the [Power Automate Actions Extension](https://michalkornet.com/2023/05/23/Power-Automate-Actions-Chrome-Extension.html).
