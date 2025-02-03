@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Get All Parent Flows which use a specific Child Flow"
-date:   2025-02-05 00:00:00 +0200
+date:   2025-02-04 00:00:00 +0200
 tags: ["Power Automate"]
 image: "/images/getAllParentFlows/header.png"
 language: en
