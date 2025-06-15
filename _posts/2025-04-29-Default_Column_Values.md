@@ -8,7 +8,7 @@ language: en
 ---
 
 ### Update 2025-06-16
-The article has been updated to include information about setting the configuration when the Default Column Values setting is not initially enabled on the library. This is important because the client_LocationBasedDefaults.html file alone is not enough to make it work [Update](#set-default-column-initially).
+The article has been updated to include information about setting the configuration when the Default Column Values setting is not initially enabled on the library. This is important because the client_LocationBasedDefaults.html file alone is not enough to make it work [Update](#set-default-column-setting-initially).
 
 ## Change Default Column Values
 
