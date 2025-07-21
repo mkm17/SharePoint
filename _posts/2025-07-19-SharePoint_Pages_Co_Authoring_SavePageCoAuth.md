@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "SharePoint Pages co-Authoring - SavePageCoAuth"
+title:  "SharePoint Pages co-Authoring - SavePageCoAuth endpoint"
 date:   2025-07-19 00:00:00 +0200
 tags: ["SharePoint", "SharePointApi"]
-image: "/images/sharepointapi/coAuthoringIssue/header.png"
+image: "/images/coAuthoringIssue/header.png"
 language: en
 ---
 
