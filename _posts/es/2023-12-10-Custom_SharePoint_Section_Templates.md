@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: postES
 title:  "Plantillas Personalizadas de Sección en SharePoint"
 date:   2024-12-10 00:00:00 +0200
 tags: [ "SharePoint","SPFx", "Application Customizer"]

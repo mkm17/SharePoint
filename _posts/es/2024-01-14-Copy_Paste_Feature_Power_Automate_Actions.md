@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: postES
 title:  "Función Extendida de Copiar/Pegar para el nuevo editor de PowerAutomate"
 date:   2024-01-14 00:00:00 +0200
 tags: ["Power Automate", "SharePoint", "Chrome Extension"]

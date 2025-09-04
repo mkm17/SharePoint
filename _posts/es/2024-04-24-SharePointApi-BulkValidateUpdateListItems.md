@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: postES
 title:  "API de SharePoint - BulkValidateUpdateListItems"
 date:   2024-04-23 00:00:00 +0200
 tags: ["SharePoint", "SharePointApi"]

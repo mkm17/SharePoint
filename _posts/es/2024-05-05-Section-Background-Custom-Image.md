@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: postES
 title:  "Fondo de Sección Personalizado"
 date:   2024-05-04 00:00:00 +0200
 tags: ["SharePoint"]
