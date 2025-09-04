@@ -645,3 +645,20 @@ p {
     max-width: 100px;
   }
 }
+
+/* Flag Icon Styles */
+.flag-icon {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  vertical-align: middle;
+}
+
+.flag-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.page-link:hover .flag-icon {
+  border-color: #999;
+}
