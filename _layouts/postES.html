@@ -40,7 +40,21 @@ selected_language: "{{ page.url | extract_language }}"
         <div class="post-tags">
             <strong>Tags:</strong>
             {% for tag in page.tags %}
-            <a href="/tags/{{ tag | slugify  }}">{{ tag }}</a>
+            {% assign tag_slug = tag | slugify %}
+            {% case tag %}
+              {% when "SharePoint" %}
+                <a href="/es/tags/sharepoint/">{{ tag }}</a>
+              {% when "SPFx" %}
+                <a href="/es/tags/spfx/">{{ tag }}</a>
+              {% when "Power Automate" %}
+                <a href="/es/tags/power-automate/">{{ tag }}</a>
+              {% when "Chrome Extension" %}
+                <a href="/es/tags/chrome-extension/">{{ tag }}</a>
+              {% when "SharePointApi" %}
+                <a href="/es/tags/sharepointapi/">{{ tag }}</a>
+              {% else %}
+                <a href="/tags/{{ tag_slug }}">{{ tag }}</a>
+            {% endcase %}
             {% endfor %}
         </div>
         </br>
@@ -55,7 +69,21 @@ selected_language: "{{ page.url | extract_language }}"
         <div class="post-tags">
             <strong>Tags:</strong>
             {% for tag in page.tags %}
-            <a href="/tags/{{ tag | slugify }}">{{ tag }}</a>
+            {% assign tag_slug = tag | slugify %}
+            {% case tag %}
+              {% when "SharePoint" %}
+                <a href="/es/tags/sharepoint/">{{ tag }}</a>
+              {% when "SPFx" %}
+                <a href="/es/tags/spfx/">{{ tag }}</a>
+              {% when "Power Automate" %}
+                <a href="/es/tags/power-automate/">{{ tag }}</a>
+              {% when "Chrome Extension" %}
+                <a href="/es/tags/chrome-extension/">{{ tag }}</a>
+              {% when "SharePointApi" %}
+                <a href="/es/tags/sharepointapi/">{{ tag }}</a>
+              {% else %}
+                <a href="/tags/{{ tag_slug }}">{{ tag }}</a>
+            {% endcase %}
             {% endfor %}
         </div>
         {% endif %}
