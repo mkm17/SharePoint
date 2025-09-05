@@ -17,6 +17,10 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .post {
+    width: 100%;
+  }
+
   .post-item {
     display: flex;
     flex-direction: column;
@@ -88,7 +92,13 @@ p {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  font-family:
+    "Segoe UI",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Roboto",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 /* Profile Section */
@@ -117,10 +127,17 @@ p {
   margin-left: auto;
   opacity: 0.6;
   transition: opacity 0.2s ease;
+  z-index: 1001;
+  position: relative;
 }
 
 .author-profile-section:hover .persona-trigger {
   opacity: 1;
+}
+
+.site-nav {
+  z-index: 1001;
+  position: relative;
 }
 
 .persona-icon {
@@ -369,7 +386,9 @@ p {
 .banner-link {
   display: block;
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -382,7 +401,7 @@ p {
 
 .achievement-banner {
   width: 100%;
-  height: 100px;
+  height: 115px;
   object-fit: cover;
   display: block;
   border-radius: 4px;
@@ -441,42 +460,65 @@ p {
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
+  .post {
+    width: 100%;
+  }
+
   .author-profile-section {
     padding: 16px;
   }
-  
+
   .modern-profile-image {
     width: 56px;
     height: 56px;
     margin-right: 12px;
   }
-  
+
   .author-name {
     font-size: 16px;
   }
-  
+
   .author-bio-section,
   .achievements-section,
   .quick-nav-section {
     padding: 12px 16px;
   }
-  
+
   .banner-grid {
-    gap: 10px;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: space-between;
   }
-  
+
+  .banner-link {
+    flex: 1;
+    max-width: calc(50% - 4px);
+  }
+
   .achievement-banner {
-    height: 70px;
+    height: 80px;
+    width: 100%;
   }
-  
+
   .nav-links {
     gap: 2px;
   }
-  
+
   .nav-link {
     padding: 6px 8px;
   }
-  
+
+  /* Extra small screens - make banners even smaller */
+  @media (max-width: 480px) {
+    .banner-grid {
+      gap: 6px;
+    }
+
+    .achievement-banner {
+      height: 40px;
+    }
+  }
+
   /* Mobile Persona Card Adjustments */
   .persona-card {
     position: fixed;
@@ -488,47 +530,47 @@ p {
     max-width: none;
     border-radius: 12px;
   }
-  
+
   .persona-card.show {
     transform: translateY(-50%);
   }
-  
+
   .persona-header {
     padding: 20px;
   }
-  
+
   .persona-avatar {
     width: 56px;
     height: 56px;
   }
-  
+
   .persona-name {
     font-size: 18px;
   }
-  
+
   .persona-title {
     font-size: 16px;
   }
-  
+
   .persona-company {
     font-size: 14px;
   }
-  
+
   .contact-item {
     padding: 12px;
     font-size: 16px;
   }
-  
+
   .contact-icon {
     font-size: 18px;
     width: 28px;
     margin-right: 12px;
   }
-  
+
   .persona-status {
     padding: 16px 20px;
   }
-  
+
   .status-text {
     font-size: 14px;
   }
@@ -541,14 +583,14 @@ p {
   border-radius: 8px;
   padding: 20px;
   margin: 20px 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .author-header h3 {
   color: #333;
   margin-bottom: 15px;
   font-size: 1.2em;
-  border-bottom: 2px solid #007ACC;
+  border-bottom: 2px solid #007acc;
   padding-bottom: 5px;
 }
 
@@ -563,14 +605,16 @@ p {
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #007ACC;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid #007acc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .profile-image:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .author-content p {
@@ -609,7 +653,7 @@ p {
   max-width: 120px;
   height: auto;
   border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .author-links {
@@ -619,7 +663,7 @@ p {
 }
 
 .read-more-link {
-  color: #007ACC;
+  color: #007acc;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9em;
@@ -635,12 +679,12 @@ p {
     padding: 15px;
     margin: 15px 0;
   }
-  
+
   .profile-image {
     width: 70px;
     height: 70px;
   }
-  
+
   .author-badge {
     max-width: 100px;
   }
@@ -656,7 +700,7 @@ p {
 
 .flag-icon:hover {
   transform: scale(1.1);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .page-link:hover .flag-icon {
