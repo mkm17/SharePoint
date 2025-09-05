@@ -6,7 +6,7 @@ permalink: /about/
 
 Hello, my name is Michał and I am a SharePoint Developer and Microsoft MVP. I am passionate about exploring the vast possibilities of the Microsoft 365 (M365) platform, as well as leveraging SharePoint and Office apps to help organizations maximize their productivity and collaboration.
 
-I am part of the [**Accelerator 365 by Reply team**](https://accelerator365.com/), where I focus on building innovative solutions and driving digital transformation initiatives using Microsoft technologies.
+I am part of the [**Accelerator 365 by Reply team**](https://accelerator365.com?utm_source=michalkornet&utm_medium=partners&utm_campaign=mk_blog_footer), where I focus on building innovative solutions and driving digital transformation initiatives using Microsoft technologies.
 
 ## Awards & Recognition
 
@@ -14,5 +14,5 @@ I am part of the [**Accelerator 365 by Reply team**](https://accelerator365.com/
 
 ## Company Products
 
-[![Accelerator 365 Products](./images/acceleratorLogo.PNG)](https://accelerator365.com/)
+[![Accelerator 365 Products](./images/Accelerator365logo-red.png)](https://accelerator365.com/)
 
