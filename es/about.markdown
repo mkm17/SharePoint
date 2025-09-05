@@ -14,5 +14,5 @@ Soy parte del [**equipo de Accelerator 365 by Reply**](https://accelerator365.co
 
 ## Productos de la Empresa
 
-[![Productos de Accelerator 365](../images/Accelerator365logo-red.png)](https://accelerator365.com/)
+[![Productos de Accelerator 365](../images/Accelerator365banner-MKblog.png)](https://accelerator365.com/)
 

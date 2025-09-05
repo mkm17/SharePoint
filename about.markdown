@@ -14,5 +14,5 @@ I am part of the [**Accelerator 365 by Reply team**](https://accelerator365.com?
 
 ## Company Products
 
-[![Accelerator 365 Products](./images/Accelerator365logo-red.png)](https://accelerator365.com/)
+[![Accelerator 365 Products](./images/Accelerator365banner-MKblog.png)](https://accelerator365.com/)
 
