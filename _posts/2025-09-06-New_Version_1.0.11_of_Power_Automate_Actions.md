@@ -15,6 +15,8 @@ The new version of the extension (1.0.11) introduces a feature to save actions a
 
 ![Favorite Actions](/images/powerAutomateExtension/version111/Favoritefeature.gif)
 
+User can add recorded or copied action to favorites by clicking the star icon next to the action name. The action will then be saved in the "Favorites" tab. User can safely remove all recorded actions without losing favorite ones.
+
 <br />
 <br />
 
