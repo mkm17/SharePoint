@@ -1,45 +1,282 @@
 <style>
-    #cookie-notice {padding: 0.5rem 1rem; display: none; text-align: center; position: fixed; bottom: 0; width: calc(100% - 2rem); background: #222; color: rgba(255,255,255,0.8);}
-    #cookie-notice a {display: inline-block; cursor: pointer; margin-left: 0.5rem;}
+    .cookie-consent-banner {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        max-width: 480px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        border: 1px solid #e1e5e9;
+        padding: 24px;
+        display: none;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+        z-index: 10000;
+        transform: translateY(100px);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    
+    .cookie-consent-banner.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    .cookie-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+    
+    .cookie-icon {
+        font-size: 24px;
+        margin-right: 8px;
+    }
+    
+    .cookie-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #323130;
+        margin: 0;
+    }
+    
+    .cookie-description {
+        font-size: 14px;
+        color: #605e5c;
+        line-height: 1.5;
+        margin: 0 0 20px 0;
+    }
+    
+    .cookie-actions {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .cookie-btn {
+        padding: 10px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+    
+    .cookie-btn-accept {
+        background: #0078d4;
+        color: #ffffff;
+    }
+    
+    .cookie-btn-accept:hover {
+        background: #106ebe;
+        color: #ffffff;
+        text-decoration: none;
+    }
+    
+    .cookie-btn-settings {
+        background: #f3f2f1;
+        color: #323130;
+        border: 1px solid #d1d1d1;
+    }
+    
+    .cookie-btn-settings:hover {
+        background: #edebe9;
+        color: #323130;
+        text-decoration: none;
+    }
+    
+    .cookie-btn-decline {
+        background: transparent;
+        color: #605e5c;
+        padding: 10px 8px;
+    }
+    
+    .cookie-btn-decline:hover {
+        color: #323130;
+        text-decoration: underline;
+    }
+    
+    /* Mobile optimizations */
     @media (max-width: 767px) {
-        #cookie-notice span {display: block; padding-top: 3px; margin-bottom: 1rem;}
-        #cookie-notice a {position: relative; bottom: 4px;}
+        .cookie-consent-banner {
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            max-width: none;
+            padding: 20px;
+        }
+        
+        .cookie-actions {
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .cookie-btn {
+            width: 100%;
+            justify-content: center;
+            padding: 12px 16px;
+        }
+        
+        .cookie-title {
+            font-size: 16px;
+        }
+        
+        .cookie-description {
+            font-size: 13px;
+        }
+    }
+    
+    /* Large screens positioning */
+    @media (min-width: 768px) {
+        .cookie-consent-banner {
+            left: auto;
+            right: 20px;
+            bottom: 20px;
+        }
     }
 </style>
-<div id="cookie-notice"><span>We would like to use third party cookies and scripts to improve the functionality of this website.</span><a id="cookie-notice-accept" class="btn btn-primary btn-sm">Approve</a><a href="/privacy" class="btn btn-primary btn-sm">More info</a></div>
+
+<div id="cookie-notice" class="cookie-consent-banner">
+    <div class="cookie-header">
+        <span class="cookie-icon">🍪</span>
+        <h3 class="cookie-title">We use cookies</h3>
+    </div>
+    <p class="cookie-description">
+        We use essential cookies for site functionality and analytics cookies to understand how you interact with our content. 
+        You can accept all cookies or decline non-essential ones.
+    </p>
+    <div class="cookie-actions">
+        <button id="cookie-notice-accept" class="cookie-btn cookie-btn-accept">
+            <span>✓</span> Accept All
+        </button>
+        <button id="cookie-notice-decline" class="cookie-btn cookie-btn-decline">
+            Essential Only
+        </button>
+    </div>
+</div>
+
 <script>
-    function createCookie(name,value,days) {
+    function createCookie(name, value, days) {
         var expires = "";
         if (days) {
             var date = new Date();
-            date.setTime(date.getTime() + (days*24*60*60*1000));
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
             expires = "; expires=" + date.toUTCString();
         }
-        document.cookie = name + "=" + value + expires + "; path=/";
+        document.cookie = name + "=" + value + expires + "; path=/; SameSite=Lax";
     }
+    
     function readCookie(name) {
         var nameEQ = name + "=";
         var ca = document.cookie.split(';');
-        for(var i=0;i < ca.length;i++) {
+        for (var i = 0; i < ca.length; i++) {
             var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1,c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
         }
         return null;
     }
-    function eraseCookie(name) {
-        createCookie(name,"",-1);
+    
+    function showCookieBanner() {
+        var banner = document.getElementById('cookie-notice');
+        banner.style.display = 'block';
+        // Trigger animation after display
+        setTimeout(function() {
+            banner.classList.add('show');
+        }, 10);
     }
-
-    if(readCookie('cookie-notice-dismissed')=='true') {
-
-    } else {
-        document.getElementById('cookie-notice').style.display = 'block';
+    
+    function hideCookieBanner() {
+        var banner = document.getElementById('cookie-notice');
+        banner.classList.remove('show');
+        setTimeout(function() {
+            banner.style.display = 'none';
+        }, 300);
     }
-    document.getElementById('cookie-notice-accept').addEventListener("click",function() {
-        createCookie('cookie-notice-dismissed','true',31);
-        document.getElementById('cookie-notice').style.display = 'none';
-        location.reload();
+    
+    // Check if user has already made a choice
+    if (readCookie('cookie-notice-dismissed') !== 'true') {
+        // Show banner after page load
+        window.addEventListener('load', function() {
+            setTimeout(showCookieBanner, 1000);
+        });
+    }
+    
+    // Accept all cookies
+    document.getElementById('cookie-notice-accept').addEventListener("click", function() {
+        createCookie('cookie-notice-dismissed', 'true', 365);
+        hideCookieBanner();
+        // You can add analytics tracking here
+        console.log('Cookies accepted');
     });
-
+    
+    // Decline cookies (optional - only essential cookies)
+    document.getElementById('cookie-notice-decline').addEventListener("click", function() {
+        createCookie('cookie-notice-dismissed', 'declined', 365);
+        
+        // Disable non-essential cookies and tracking
+        disableNonEssentialCookies();
+        
+        hideCookieBanner();
+        console.log('Cookies declined - only essential cookies will be used');
+    });
+    
+    function disableNonEssentialCookies() {
+        // Clear any existing non-essential cookies
+        var cookiesToClear = ['_ga', '_gid', '_gat', '_fbp', '_fbc', 'hubspotutk'];
+        cookiesToClear.forEach(function(cookieName) {
+            eraseCookie(cookieName);
+        });
+        
+        // Set a flag to prevent future non-essential cookie setting
+        window.cookiesDeclined = true;
+        
+        // Disable Google Analytics if present
+        if (typeof gtag !== 'undefined') {
+            gtag('consent', 'update', {
+                'analytics_storage': 'denied',
+                'ad_storage': 'denied',
+                'personalization_storage': 'denied'
+            });
+        }
+        
+        // Disable other tracking scripts
+        if (typeof ga !== 'undefined') {
+            ga('set', 'sendHitTask', null);
+        }
+    }
+    
+    function eraseCookie(name) {
+        createCookie(name, "", -1);
+        // Also try with different path and domain combinations
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname + ";";
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + window.location.hostname + ";";
+    }
+    
+    
+    // Check user's previous choice and respect it
+    function checkCookieConsent() {
+        var consent = readCookie('cookie-notice-dismissed');
+        if (consent === 'declined') {
+            disableNonEssentialCookies();
+        }
+    }
+    
+    // Apply user's previous choice immediately
+    checkCookieConsent();
+    
+    // Keyboard accessibility
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.getElementById('cookie-notice').style.display === 'block') {
+            hideCookieBanner();
+        }
+    });
 </script>
