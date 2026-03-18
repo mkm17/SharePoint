@@ -3,7 +3,7 @@ layout: post
 title:  "SharePoint Api - Cache"
 date:   2026-03-12 00:00:00 +0200
 tags: ["SharePoint", "SharePointApi"]
-image: "/images/sharepointapi/Cache/header.png"
+image: "/images/sharepointapi/spCacheApi/header.png"
 language: en
 ---
 
