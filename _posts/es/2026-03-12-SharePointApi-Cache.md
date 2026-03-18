@@ -3,7 +3,7 @@ layout: postES
 title:  "SharePoint Api - Caché"
 date:   2026-03-12 00:00:00 +0200
 tags: ["SharePoint", "SharePointApi"]
-image: "/images/sharepointapi/Cache/header.png"
+image: "/images/sharepointapi/spCacheApi/header.png"
 language: es
 permalink: /2026/03/12/es/SharePointApi-Cache.html
 ---
@@ -12,13 +12,13 @@ permalink: /2026/03/12/es/SharePointApi-Cache.html
 
 Cuando revisas los registros de llamadas de la API de SharePoint, notarás que algunos de los endpoints más invocados son `ReadCacheOrCreate` y `ReadCacheOrCreate2`.
 
-![Resultado de la pestaña de red](/images/spCacheApi/networkTab.png)
+![Resultado de la pestaña de red](/images/sharepointapi/spCacheApi/networkTab.png)
 
 Revisar los detalles de la solicitud y la respuesta no explica de inmediato para qué se usan estas APIs, pero sí da pistas útiles sobre dónde buscar más información.
 
-![Payload de la solicitud](/images/spCacheApi/payload.png)
+![Payload de la solicitud](/images/sharepointapi/spCacheApi/payload.png)
 
-![Resultado de la solicitud](/images/spCacheApi/Result.png)
+![Resultado de la solicitud](/images/sharepointapi/spCacheApi/Result.png)
 
 <br/>
 
@@ -45,10 +45,10 @@ Es probable que existan varias listas ocultas usadas para almacenar datos relaci
 Ambas listas usan carpetas para agrupar información.
 
 En la lista `PersonalCacheLibrary`, podemos encontrar información sobre el uso de plantillas de página y la caché de web parts.
-![PersonalCacheLibrary](/images/spCacheApi/personalcacheLibrary.png)
+![PersonalCacheLibrary](/images/sharepointapi/spCacheApi/personalcacheLibrary.png)
 
 En `SharePointHomeList`, podemos ver información sobre el uso de web parts, algunas configuraciones de la aplicación y `FRE_Cached_Data`, que incluye detalles como si cierta información mostrada en un sitio fue descartada por el usuario.
-![SharePointHomeList](/images/spCacheApi/sharepointhomelist.png)
+![SharePointHomeList](/images/sharepointapi/spCacheApi/sharepointhomelist.png)
 
 ## Uso
 

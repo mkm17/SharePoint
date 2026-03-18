@@ -11,13 +11,13 @@ language: en
 
 When you check SharePoint API logs, you can often see two endpoints: `ReadCacheOrCreate` and `ReadCacheOrCreate2`.
 
-![Network tab result](/images/spCacheApi/networkTab.png)
+![Network tab result](/images/sharepointapi/spCacheApi/networkTab.png)
 
 Request and response details do not clearly explain their purpose at first, but they give useful hints.
 
-![Request payload](/images/spCacheApi/payload.png)
+![Request payload](/images/sharepointapi/spCacheApi/payload.png)
 
-![Request result](/images/spCacheApi/Result.png)
+![Request result](/images/sharepointapi/spCacheApi/Result.png)
 
 <br/>
 
@@ -49,12 +49,12 @@ These lists are the source used by this API.
 Both lists use folders to group data.
 
 In `PersonalCacheLibrary`, you can find data about page template usage and web part cache.
-![PersonalCacheLibrary](/images/spCacheApi/personalcacheLibrary.png)
+![PersonalCacheLibrary](/images/sharepointapi/spCacheApi/personalcacheLibrary.png)
 
 In `SharePointHomeList`, you can find web part usage, some app settings, and `FRE_Cached_Data`.
 
 `FRE_Cached_Data` includes details such as whether the user dismissed some information shown on the tenant.
-![SharePointHomeList](/images/spCacheApi/sharepointhomelist.png)
+![SharePointHomeList](/images/sharepointapi/spCacheApi/sharepointhomelist.png)
 
 ## Usage
 
