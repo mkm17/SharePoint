@@ -3,7 +3,8 @@ layout: post
 title:  "Hybrid Input for Fast Match Data Entry"
 date:   2026-05-04 00:00:00 +0200
 tags: ["SharePoint", "SPFx", "React"]
-image: "/images/hybridInput/header.png"
+image: "/images/matchApp/header.png"
+description: "How combining keyboard shortcuts, mouse clicks, and voice commands makes manual match event data entry fast enough to keep up with live gameplay."
 language: en
 ---
 
@@ -16,7 +17,7 @@ I noticed this while working on a small side project for my amateur **6v6 footba
 
 The question was: how do you make that process as fast as possible?
 
-![App overview](/images/matchApp/mainView.PNG)
+![App overview](/images/matchApp/mainView.png)
 
 <br/>
 
@@ -27,7 +28,7 @@ The obvious approach would be a form — dropdowns for action type, player, pitc
 The **human becomes the bottleneck** in the pipeline.
 
 
-![Standard form approach](/images/matchApp/standardForm.PNG)
+![Standard form approach](/images/matchApp/standardForm.png)
 
 <br/>
 
@@ -56,7 +57,7 @@ For example:
 | `P` | Pass |
 | `L` | Ball loss |
 
-![Keyboard shortcut mapping](/images/matchApp/keyboardShortcuts.PNG)
+![Keyboard shortcut mapping](/images/matchApp/keyboardShortcuts.png)
 
 <br/>
 
@@ -64,7 +65,7 @@ For example:
 
 The app includes an SVG pitch map divided into zones. A single click registers the location of the shot.
 
-![Pitch map with zones](/images/matchApp/pitchMap.PNG)
+![Pitch map with zones](/images/matchApp/pitchMap.png)
 
 <br/>
 
@@ -72,7 +73,7 @@ The app includes an SVG pitch map divided into zones. A single click registers t
 
 For situations where both hands are busy (or the user simply prefers it), the app supports voice commands using the **Web Speech API** built into modern browsers. Saying the action name — for example *"goal"* or *"shot"* — pre-fills the action type field, and then moves focus to the next fields such as player and pitch zone.
 
-![Voice input feature](/images/matchApp/voiceInput.PNG)
+![Voice input feature](/images/matchApp/voiceInput.png)
 
 <br/>
 
@@ -103,7 +104,7 @@ The same result can also be achieved by mixing all three methods freely, since e
 
 Using this approach, I could watch a match replay at normal speed and register events without stopping the video often. After the match, the collected data shows useful information about team performance — for example, which zones were used most, where ball losses happened, and how often the team played forward versus backward. In my tests I have collected around 600 events per match. Without hybrid approach that task would be very time consuming.
 
-![Match data results](/images/matchApp/results.PNG)
+![Match data results](/images/matchApp/results.png)
 
 <br/>
 

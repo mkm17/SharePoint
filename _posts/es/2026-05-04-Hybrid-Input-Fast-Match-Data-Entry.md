@@ -3,7 +3,7 @@ layout: postES
 title: "Entrada Híbrida para el Registro Rápido de Eventos de Partido"
 date: 2026-05-04 00:00:00 +0200
 tags: ["SharePoint", "SPFx", "React"]
-image: "/images/hybridInput/header.png"
+image: "/images/matchApp/header.png"
 description: "Cómo combinar atajos de teclado, clics del ratón y comandos de voz permite registrar eventos de partido manualmente a la velocidad del juego en directo."
 language: es
 permalink: /2026/05/04/es/Hybrid-Input-Fast-Match-Data-Entry.html
@@ -18,7 +18,7 @@ Me di cuenta de esto mientras trabajaba en un pequeño proyecto personal para mi
 
 La pregunta era: ¿cómo hacer ese proceso lo más rápido posible?
 
-![App overview](/images/matchApp/mainView.PNG)
+![App overview](/images/matchApp/mainView.png)
 
 <br/>
 
@@ -28,7 +28,7 @@ El enfoque obvio sería un formulario — desplegables para el tipo de acción, 
 
 **El humano se convierte en el cuello de botella** del proceso.
 
-![Standard form approach](/images/matchApp/standardForm.PNG)
+![Standard form approach](/images/matchApp/standardForm.png)
 
 <br/>
 
@@ -57,7 +57,7 @@ Por ejemplo:
 | `P` | Pase |
 | `L` | Pérdida de balón |
 
-![Keyboard shortcut mapping](/images/matchApp/keyboardShortcuts.PNG)
+![Keyboard shortcut mapping](/images/matchApp/keyboardShortcuts.png)
 
 <br/>
 
@@ -65,7 +65,7 @@ Por ejemplo:
 
 La aplicación incluye un mapa del campo en SVG dividido en zonas. Un solo clic registra la ubicación del tiro.
 
-![Pitch map with zones](/images/matchApp/pitchMap.PNG)
+![Pitch map with zones](/images/matchApp/pitchMap.png)
 
 <br/>
 
@@ -73,7 +73,7 @@ La aplicación incluye un mapa del campo en SVG dividido en zonas. Un solo clic 
 
 Para situaciones en las que ambas manos están ocupadas (o el usuario simplemente lo prefiere), la aplicación admite comandos de voz mediante la **Web Speech API** integrada en los navegadores modernos. Pronunciar el nombre de la acción — por ejemplo *"gol"* o *"tiro"* — rellena automáticamente el campo del tipo de acción y desplaza el foco a los campos siguientes, como jugador y zona del campo.
 
-![Voice input feature](/images/matchApp/voiceInput.PNG)
+![Voice input feature](/images/matchApp/voiceInput.png)
 
 <br/>
 
@@ -103,7 +103,7 @@ El mismo resultado también se puede conseguir combinando libremente los tres m�
 
 Con este enfoque pude ver la repetición de un partido a velocidad normal y registrar eventos sin tener que detener el vídeo con frecuencia. Tras el partido, los datos recopilados muestran información útil sobre el rendimiento del equipo — por ejemplo, qué zonas se utilizaron más, dónde se produjeron las pérdidas de balón y con qué frecuencia el equipo jugó hacia adelante frente a hacia atrás. En mis pruebas recopilé alrededor de 600 eventos por partido. Sin el enfoque híbrido, esa tarea habría sido muy costosa en tiempo.
 
-![Match data results](/images/matchApp/results.PNG)
+![Match data results](/images/matchApp/results.png)
 
 <br/>
 
