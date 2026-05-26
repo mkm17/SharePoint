@@ -5,6 +5,7 @@ date:   2023-12-10 00:00:00 +0200
 tags: [ "SharePoint","SPFx", "Application Customizer"]
 image: "/images/sectionsExtensions/Header.png"
 language: en
+description: "SPFx Application Customizer that adds custom, reusable page section templates to SharePoint Online, overcoming the limitation of only 6 built-in options."
 ---
 
 # Enhancing the Editor Experience with Custom Section Templates - the SharePoint Extension

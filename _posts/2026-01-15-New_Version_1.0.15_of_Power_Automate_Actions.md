@@ -5,6 +5,7 @@ date:   2026-01-04 00:00:00 +0200
 tags: ["Power Automate", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: en
+description: "Power Automate Actions extension v1.0.15: Predefined Actions feature — set team-wide action templates and guidelines to speed up workflow development."
 ---
 
 [**See how to install it now!**](#how-to-install-the-tool) 

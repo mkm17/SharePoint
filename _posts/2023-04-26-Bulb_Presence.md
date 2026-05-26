@@ -5,6 +5,7 @@ date:   2023-04-26 00:00:00 +0200
 tags: ["Power Automate", "Xiaomi Yeelight", "MSGraph"]
 image: "/images/bulb/header.png"
 language: en
+description: "Use Power Automate and MS Graph presence subscriptions to change a Xiaomi Yeelight bulb color based on your Microsoft Teams availability status."
 ---
 
 Co-Author: Olga Staszek-Kornet [LinkedIn](https://www.linkedin.com/in/olgastaszek-microsoft365)

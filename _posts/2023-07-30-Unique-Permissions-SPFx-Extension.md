@@ -5,6 +5,7 @@ date:   2023-07-30 00:00:00 +0200
 tags: [ "SharePoint", "SPFx", "Field Customizer"]
 image: "/images/uniquePermissions/uniquePermissionsHeader.png"
 language: en
+description: "SPFx field customizer that displays and manages SharePoint items with unique permissions directly from the list view — no extra tools needed."
 ---
 
 ### Table of Contents

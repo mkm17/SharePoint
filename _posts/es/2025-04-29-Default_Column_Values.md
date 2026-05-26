@@ -6,6 +6,7 @@ tags: ["SharePoint", "SharePointApi"]
 image: "/images/sharepointapi/ChangeDefaultColumnValues/header.png"
 language: es
 permalink: /2025/04/29/es/Default_Column_Values.html
+description: "Automatiza los Valores de Columna Predeterminados de SharePoint para carpetas y subcarpetas mediante la API REST, sin usar la interfaz de usuario."
 ---
 
 ### Actualización 2025-06-16

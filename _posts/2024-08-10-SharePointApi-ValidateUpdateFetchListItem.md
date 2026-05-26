@@ -5,6 +5,7 @@ date:   2024-08-12 00:00:00 +0200
 tags: ["SharePoint", "SharePointApi"]
 image: "/images/sharepointapi/ValidateUpdateFetchListItem/header.png"
 language: en
+description: "Discover the SharePoint REST API ValidateUpdateFetchListItem endpoint: same body as ValidateUpdateListItem but also returns the full updated item in UpdatedData."
 ---
 
 ## How ValidateUpdateFetchListItem type of update works?

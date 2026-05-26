@@ -6,6 +6,7 @@ tags: [ "SharePoint", "PowerShell"]
 image: "/images/fileincidentsscript/fileIncidentsScriptHeader.png"
 language: es
 permalink: /2023/07/30/es/Report_of_SharePoint_Files_Incidents.html
+description: "Script PowerShell con PnP PowerShell y la API REST de SharePoint para detectar y reportar incidentes de renombrado, movimiento y eliminación de archivos."
 ---
 
 # Informe de Incidentes de Archivos de SharePoint - Script de PowerShell

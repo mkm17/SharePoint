@@ -5,6 +5,7 @@ date:   2025-02-04 00:00:00 +0200
 tags: ["Power Automate"]
 image: "/images/getAllParentFlows/header.png"
 language: en
+description: "PowerShell script using CLI for M365 to find all Power Automate parent flows that use a specific child flow — useful for complex multi-flow solutions."
 ---
 
 Recently, I was involved in a project where I had to make a change to a solution's flows. As the solution was quite complex, including many flows and Parent-Child relationships, I needed to find all Parent Flows that use a specific Child Flow.

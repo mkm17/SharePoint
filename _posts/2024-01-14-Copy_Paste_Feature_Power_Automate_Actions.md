@@ -5,6 +5,7 @@ date:   2024-01-14 00:00:00 +0200
 tags: ["Power Automate", "SharePoint", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: en
+description: "Extending the limited copy/paste feature in the new Power Automate editor with the Power Automate Actions Chrome extension to store and reuse actions."
 ---
 
 Obsolete functionality. Please refer to this [article](https://michalkornet.com/2025/01/12/New_Version_1.0.7_OF_Power_Automate_Actions.html).

@@ -5,6 +5,7 @@ date:   2025-09-27 00:00:00 +0200
 tags: ["Power Automate", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: en
+description: "Power Automate Actions extension v1.0.12: search actions across all tabs by title, and view action details including configuration and JSON structure."
 ---
 
 [**See how to install it now!**](#how-to-install-the-tool) 

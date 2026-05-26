@@ -6,6 +6,7 @@ tags: ["Power Automate", "MSGraph", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: es
 permalink: /2024/11/08/es/New_Version_1.0.6_OF_Power_Automate_Actions.html
+description: "Power Automate Actions v1.0.6: registra peticiones de MS Graph Explorer, detección automática del tipo de acción HTTP y grabaciones persistentes."
 ---
 
 [**¡Ve cómo instalarlo ahora!**](#cómo-instalar-la-herramienta) 

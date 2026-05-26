@@ -6,6 +6,7 @@ tags: ["Power Automate", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: es
 permalink: /2025/10/26/es/New_Version_1.0.13_of_Power_Automate_Actions.html
+description: "Power Automate Actions v1.0.13: panel de ajustes para anular la detección de tipo de página, limitar el tiempo de grabación y alternar la barra de búsqueda."
 ---
 
 [**¡Descubre cómo instalarla ahora!**](#how-to-install-the-tool) 

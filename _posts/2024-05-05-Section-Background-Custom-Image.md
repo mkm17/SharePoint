@@ -5,6 +5,7 @@ date:   2024-05-04 00:00:00 +0200
 tags: ["SharePoint"]
 image: "/images/sectionBackground/image/header.png"
 language: en
+description: "How to set a custom image as a SharePoint Online page section background using CLI for M365 — beyond the 4 predefined theme colors."
 ---
 
 ## Is there a way to set a custom image as a section background in SharePoint Online?

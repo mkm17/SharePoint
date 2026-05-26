@@ -6,6 +6,7 @@ tags: ["Power Automate", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: es
 permalink: /2026/02/01/es/New_Version_1.0.16_of_Power_Automate_Actions.html
+description: "Power Automate Actions v1.0.16: panel lateral para grabación en tiempo real y acciones predefinidas para operaciones de SharePoint no incluidas por defecto."
 ---
 
 [**¡Descubre cómo instalarla ahora!**](#how-to-install-the-tool) 

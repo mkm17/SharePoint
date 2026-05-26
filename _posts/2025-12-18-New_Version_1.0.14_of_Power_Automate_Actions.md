@@ -5,6 +5,7 @@ date:   2025-12-17 00:00:00 +0200
 tags: ["Power Automate", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: en
+description: "Power Automate Actions extension v1.0.14: export and import favorite actions to a file for backup, sharing with team members, or creating reusable templates."
 ---
 
 [**See how to install it now!**](#how-to-install-the-tool) 

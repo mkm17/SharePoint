@@ -5,6 +5,7 @@ date:   2020-09-14 00:00:00 +0200
 tags: ["Power Automate", "SharePoint", "Adaptive Cards"]
 image: "/images/header.png"
 language: en
+description: "Learn how to replace the default SharePoint access request message with custom Adaptive Cards and Power Automate to give site owners better control."
 ---
 
 ## Out of the box feature 

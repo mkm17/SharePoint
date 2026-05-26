@@ -5,6 +5,7 @@ date:   2025-09-27 00:00:00 +0200
 tags: ["Power Automate", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: en
+description: "Power Automate Actions extension v1.0.13: new settings panel to override page type detection, limit recording time, and toggle the search bar."
 ---
 
 [**See how to install it now!**](#how-to-install-the-tool) 

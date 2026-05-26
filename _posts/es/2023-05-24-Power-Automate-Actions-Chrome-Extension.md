@@ -6,6 +6,7 @@ tags: ["Power Automate", "SharePoint", "MSGraph", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: es
 permalink: /2023/05/24/es/Power_Automate_Actions_Chrome_Extension.html
+description: "Extensión de Chrome que registra peticiones HTTP de SharePoint y MS Graph, duplica acciones de Power Automate entre tenants y copia acciones de blogs."
 ---
 
 Coautora: Olga Staszek-Kornet [LinkedIn](https://www.linkedin.com/in/olgastaszek-microsoft365/)

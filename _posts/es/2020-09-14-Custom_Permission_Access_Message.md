@@ -6,6 +6,7 @@ tags: ["Power Automate", "SharePoint", "Adaptive Cards"]
 image: "/images/header.png"
 language: es
 permalink: /2020/09/14/es/Custom_Permission_Access_Message.html
+description: "Cómo reemplazar el mensaje de solicitud de acceso de SharePoint con Adaptive Cards personalizadas y Power Automate para dar mayor control a los propietarios."
 ---
 
 ## Función integrada

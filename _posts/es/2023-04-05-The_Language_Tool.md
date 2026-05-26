@@ -6,6 +6,7 @@ tags: ["SharePoint", "SPFx", "OfficeJS", "MS Word", "OpenAI", "ChatGPT" ]
 image: "/images/languageTool/header.png"
 language: es
 permalink: /2023/04/05/es/The_Language_tool.html
+description: "Cómo creé una plataforma de aprendizaje de idiomas con SPFx, complemento MS Word y OpenAI para analizar textos y hacer seguimiento del vocabulario."
 ---
 
 1. [Introducción](#introducción)

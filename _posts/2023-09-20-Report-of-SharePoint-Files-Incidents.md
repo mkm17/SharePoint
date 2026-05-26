@@ -5,6 +5,7 @@ date:   2023-09-20 00:00:00 +0200
 tags: [ "SharePoint", "PowerShell"]
 image: "/images/fileincidentsscript/fileIncidentsScriptHeader.png"
 language: en
+description: "PowerShell script using PnP PowerShell and the SharePoint REST API activities endpoint to detect and report file rename, move, and deletion incidents."
 ---
 
 # Report of SharePoint Files Incidents - PowerShell Script

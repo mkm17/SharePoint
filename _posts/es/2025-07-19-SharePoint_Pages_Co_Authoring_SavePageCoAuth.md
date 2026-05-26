@@ -6,6 +6,7 @@ tags: ["SharePoint", "SharePointApi"]
 image: "/images/coAuthoringIssue/header.png"
 language: es
 permalink: /2025/07/19/es/SharePoint_Pages_Co_Authoring_SavePageCoAuth.html
+description: "Solución al error SPFileLockException al guardar páginas de SharePoint con coautoría activada: usa el endpoint SavePageCoAuth en lugar de savepage."
 ---
 
 ## Coautoría de Páginas de SharePoint

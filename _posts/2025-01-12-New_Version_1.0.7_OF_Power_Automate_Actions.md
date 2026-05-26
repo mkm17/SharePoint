@@ -5,6 +5,7 @@ date:   2025-01-12 00:00:00 +0200
 tags: ["Power Automate", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: en
+description: "Power Automate Actions extension v1.0.7: paste recorded actions into the new editor as a Scope action, plus notification banner improvements."
 ---
 
 [**See how to install it now!**](#how-to-install-the-tool) 

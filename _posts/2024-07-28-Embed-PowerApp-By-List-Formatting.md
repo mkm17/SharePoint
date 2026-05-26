@@ -5,6 +5,7 @@ date:   2024-08-03 00:00:00 +0200
 tags: ["SharePoint", "CanvasApp"]
 image: "/images/embededPowerApp/header.png"
 language: en
+description: "Use SharePoint list formatting customRowAction embed to display a dedicated Canvas Power App per list item — no SPFx field customizer needed."
 ---
 
 In the today's blog post, I would like to share a handy finding about a powerful setting behind the SharePoint list formatting feature.

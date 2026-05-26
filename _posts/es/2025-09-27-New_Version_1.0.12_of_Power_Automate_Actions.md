@@ -6,6 +6,7 @@ tags: ["Power Automate", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: es
 permalink: /2025/09/27/es/New_Version_1.0.12_of_Power_Automate_Actions.html
+description: "Power Automate Actions v1.0.12: busca acciones en todas las pestañas por título y consulta los detalles de cada acción, incluyendo configuración y JSON."
 ---
 
 [**¡Descubre cómo instalarla ahora!**](#how-to-install-the-tool) 

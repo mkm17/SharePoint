@@ -5,6 +5,7 @@ date:   2023-05-24 00:00:00 +0200
 tags: ["Power Automate", "SharePoint", "MSGraph", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: en
+description: "Chrome extension that records SharePoint and MS Graph HTTP requests, duplicates Power Automate actions between tenants, and copies actions from community blogs."
 ---
 
 Co-Author: Olga Staszek-Kornet [LinkedIn](https://www.linkedin.com/in/olgastaszek-microsoft365)

@@ -6,6 +6,7 @@ tags: [ "SharePoint","SPFx", "Application Customizer"]
 image: "/images/sectionsExtensions/Header.png"
 language: es
 permalink: /2023/12/09/es/Custom_SharePoint_Section_Templates.html
+description: "Personalizador de aplicación SPFx que añade plantillas de sección personalizadas a SharePoint Online, superando la limitación de solo 6 opciones integradas."
 ---
 
 # Mejorando la Experiencia del Editor con Plantillas Personalizadas de Sección - la Extensión de SharePoint

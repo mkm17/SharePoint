@@ -6,6 +6,7 @@ tags: ["SharePoint", "SharePointApi"]
 image: "/images/sharepointapi/ValidateUpdateFetchListItem/header.png"
 language: es
 permalink: /2024/08/10/es/SharePointApi_ValidateUpdateFetchListItem.html
+description: "El endpoint SharePoint ValidateUpdateFetchListItem: mismo cuerpo que ValidateUpdateListItem pero devuelve el elemento completo actualizado en UpdatedData."
 ---
 
 ## ¿Cómo funciona el tipo de actualización ValidateUpdateFetchListItem?

@@ -6,6 +6,7 @@ tags: ["Power Automate", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: es
 permalink: /2025/12/18/es/New_Version_1.0.14_of_Power_Automate_Actions.html
+description: "Power Automate Actions v1.0.14: exporta e importa acciones favoritas a un archivo para respaldo, compartir con el equipo o crear plantillas reutilizables."
 ---
 
 [**¡Descubre cómo instalarla ahora!**](#how-to-install-the-tool) 

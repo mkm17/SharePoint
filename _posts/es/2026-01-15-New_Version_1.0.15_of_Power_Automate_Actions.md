@@ -6,6 +6,7 @@ tags: ["Power Automate", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: es
 permalink: /2026/01/15/es/New_Version_1.0.15_of_Power_Automate_Actions.html
+description: "Power Automate Actions v1.0.15: Acciones Predefinidas para crear plantillas de equipo y directrices que aceleran el desarrollo de flujos de trabajo."
 ---
 
 [**¡Descubre cómo instalarla ahora!**](#how-to-install-the-tool) 

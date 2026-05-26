@@ -6,6 +6,7 @@ tags: ["SharePoint"]
 image: "/images/sectionBackground/image/header.png"
 language: es
 permalink: /2024/05/03/es/Section-Background-Custom-Image.html
+description: "Cómo usar una imagen personalizada como fondo de sección en SharePoint Online con CLI for M365, más allá de los 4 colores de tema predefinidos."
 ---
 
 ## ¿Existe alguna manera de establecer una imagen personalizada como fondo de sección en SharePoint Online?

@@ -5,6 +5,7 @@ date:   2024-11-08 00:00:00 +0200
 tags: ["Power Automate", "MSGraph", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: en
+description: "Power Automate Actions extension v1.0.6: record MS Graph Explorer requests, auto-detect HTTP action type, and persist recordings across page refreshes."
 ---
 
 [**See how to install it now!**](#how-to-install-the-tool) 

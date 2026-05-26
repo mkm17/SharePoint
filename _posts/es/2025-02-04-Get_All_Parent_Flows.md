@@ -6,6 +6,7 @@ tags: ["Power Automate"]
 image: "/images/getAllParentFlows/header.png"
 language: es
 permalink: /2025/02/04/es/Get_All_Parent_Flows.html
+description: "Script PowerShell con CLI for M365 para encontrar todos los flujos padre de Power Automate que utilizan un flujo hijo específico en soluciones complejas."
 ---
 
 Recientemente, estuve involucrado en un proyecto donde tuve que hacer un cambio a los flujos de una solución. Como la solución era bastante compleja, incluyendo muchos flujos y relaciones Padre-Hijo, necesitaba encontrar todos los Flujos Padre que usan un Flujo Hijo específico.

@@ -5,6 +5,7 @@ date:   2024-07-13 00:00:00 +0200
 tags: ["SharePoint", "QuickFinding"]
 image: "/images/sharePointPageTranslations/Header.png"
 language: en
+description: "Discover how SharePoint stores page language preferences in the siteLangPref cookie and how to control multilingual page translation behaviour."
 ---
 
 # SharePoint page translation

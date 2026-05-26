@@ -5,6 +5,7 @@ date:   2024-04-23 00:00:00 +0200
 tags: ["SharePoint", "SharePointApi"]
 image: "/images/sharepointapi/BulkValidateUpdateListItems/header.png"
 language: en
+description: "Explore the SharePoint REST API BulkValidateUpdateListItems endpoint: how it compares to batching and ValidateUpdateListItem when updating multiple items."
 ---
 
 ## How to update multiple items using SharePoint REST API?

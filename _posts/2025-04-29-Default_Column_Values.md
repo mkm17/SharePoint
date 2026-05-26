@@ -5,6 +5,7 @@ date:   2025-04-29 00:00:00 +0200
 tags: ["SharePoint", "SharePointApi"]
 image: "/images/sharepointapi/ChangeDefaultColumnValues/header.png"
 language: en
+description: "How to automate SharePoint Default Column Values for folders and subfolders via the REST API, enabling programmatic setup without the UI."
 ---
 
 ### Update 2025-06-16

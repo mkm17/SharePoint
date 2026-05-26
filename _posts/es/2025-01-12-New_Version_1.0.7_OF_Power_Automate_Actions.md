@@ -6,6 +6,7 @@ tags: ["Power Automate", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: es
 permalink: /2025/01/12/es/New_Version_1.0.7_OF_Power_Automate_Actions.html
+description: "Power Automate Actions v1.0.7: pega acciones grabadas en el nuevo editor como acción Scope y mejoras en la barra de notificaciones."
 ---
 
 [**¡Ve cómo instalarlo ahora!**](#cómo-instalar-la-herramienta) 

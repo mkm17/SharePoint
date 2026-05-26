@@ -6,6 +6,7 @@ tags: ["SharePoint", "CanvasApp"]
 image: "/images/embededPowerApp/header.png"
 language: es
 permalink: /2024/07/28/es/Embed_PowerApp_By_List_Formatting.html
+description: "Usa customRowAction embed en el formato de lista de SharePoint para mostrar una Canvas App de Power Apps por elemento, sin necesidad de un personalizador SPFx."
 ---
 
 En la publicación de blog de hoy, me gustaría compartir un hallazgo útil sobre una configuración poderosa detrás de la función de formato de lista de SharePoint.

@@ -6,6 +6,7 @@ tags: ["Power Automate", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: es
 permalink: /2025/09/06/es/New_Version_1.0.11_of_Power_Automate_Actions.html
+description: "Power Automate Actions v1.0.11: guarda acciones frecuentes como favoritos con un icono de estrella y corrección de pegado en el nuevo editor de PA."
 ---
 
 [**¡Descubre cómo instalarla ahora!**](#how-to-install-the-tool) 

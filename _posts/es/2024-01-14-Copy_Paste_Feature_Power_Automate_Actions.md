@@ -6,6 +6,7 @@ tags: ["Power Automate", "SharePoint", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: es
 permalink: /2024/01/13/es/Copy_Paste_Feature_Power_Automate_Actions.html
+description: "Cómo extender la limitada función de copiar/pegar del nuevo editor de Power Automate con la extensión Chrome Power Automate Actions para reutilizar acciones."
 ---
 
 Hace algún tiempo, se presentó el nuevo **editor de Power Automate**. Este trajo algunas nuevas funciones y mejoras importantes. Una adición destacada fue la función de **Copilot**, diseñada para acelerar el proceso de creación de nuevos flujos. Sin embargo, algunas de las opciones presentadas anteriormente faltaban en el punto inicial. Una de esas características fue la funcionalidad de **copiar/pegar** para acciones, introducida de manera limitada en una versión posterior del editor. Rápidamente resultó insuficiente para los usuarios más avanzados. Después de leer muchos comentarios, decidí explorar la posibilidad de extender el método actual utilizado en **el nuevo editor de Power Automate**. El resultado es la versión actualizada de la **[Extensión de Acciones de Power Automate](https://chrome.google.com/webstore/detail/power-automate-actions-ha/eoeddkppcaagdeafjfiopeldffkhjodl?hl=pl&authuser=0)**.

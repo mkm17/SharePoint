@@ -6,6 +6,7 @@ tags: [ "SharePoint", "SPFx", "Field Customizer"]
 image: "/images/uniquePermissions/uniquePermissionsHeader.png"
 language: es
 permalink: /2023/07/30/es/Unique_Permissions_SPFx_Extension.html
+description: "Personalizador de campo SPFx que muestra y gestiona elementos de SharePoint con permisos únicos directamente desde la vista de lista."
 ---
 
 # Tabla de Contenidos

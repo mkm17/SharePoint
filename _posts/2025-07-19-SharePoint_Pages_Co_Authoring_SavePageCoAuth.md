@@ -5,6 +5,7 @@ date:   2025-07-19 00:00:00 +0200
 tags: ["SharePoint", "SharePointApi"]
 image: "/images/coAuthoringIssue/header.png"
 language: en
+description: "Fix for the SPFileLockException error when saving SharePoint pages with co-authoring enabled — use the SavePageCoAuth endpoint instead of savepage."
 ---
 
 ## SharePoint Pages Co-Authoring

@@ -5,6 +5,7 @@ date:   2026-02-01 00:00:00 +0200
 tags: ["Power Automate", "Chrome Extension"]
 image: "/images/powerAutomateExtension/header.png"
 language: en
+description: "Power Automate Actions extension v1.0.16: side panel display for live action recording, plus default predefined actions for missing SharePoint operations."
 ---
 
 [**See how to install it now!**](#how-to-install-the-tool) 

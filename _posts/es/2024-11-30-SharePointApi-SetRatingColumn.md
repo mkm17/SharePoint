@@ -6,6 +6,7 @@ tags: ["SharePoint", "SharePointApi"]
 image: "/images/sharepointapi/SetRating/header.png"
 language: es
 permalink: /2024/11/30/es/SharePointApi_SetRatingColumn.html
+description: "Crea y actualiza una columna de Calificación en SharePoint con el endpoint SetListRating de la API REST — un tipo de columna multiusuario con reglas propias."
 ---
 
 ## ¿Alguna vez has pensado en cómo actualizar una columna de calificación en SharePoint usando API?

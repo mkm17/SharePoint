@@ -5,6 +5,7 @@ date:   2026-03-12 00:00:00 +0200
 tags: ["SharePoint", "SharePointApi"]
 image: "/images/sharepointapi/spCacheApi/header.png"
 language: en
+description: "Deep dive into the SharePoint API ReadCacheOrCreate and ReadCacheOrCreate2 endpoints — how they work and how to use them for performance optimization."
 ---
 
 ## Introduction

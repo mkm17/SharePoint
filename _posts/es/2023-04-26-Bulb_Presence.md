@@ -6,6 +6,7 @@ tags: ["Power Automate", "Xiaomi Yeelight", "MSGraph"]
 image: "/images/bulb/header.png"
 language: es
 permalink: /2023/04/26/es/Bulb_Presence.html
+description: "Usa Power Automate y suscripciones de presencia de MS Graph para cambiar el color de una bombilla Xiaomi Yeelight según tu estado de disponibilidad en Teams."
 ---
 
 Coautora: Olga Staszek-Kornet [LinkedIn](https://www.linkedin.com/in/olgastaszek-microsoft365)

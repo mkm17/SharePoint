@@ -6,6 +6,7 @@ tags: ["SharePoint", "QuickFinding"]
 image: "/images/sharePointPageTranslations/Header.png"
 language: es
 permalink: /2024/07/14/es/SharePoint_Page_Translation.html
+description: "Cómo SharePoint almacena las preferencias de idioma de página en la cookie siteLangPref y cómo controlar la traducción de páginas multilingüe."
 ---
 
 # Traducción de páginas de SharePoint

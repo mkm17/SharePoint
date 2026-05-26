@@ -6,6 +6,7 @@ tags: ["SharePoint", "MSGraph"]
 image: "/images/sectionsExtensions/Header.png"
 language: es
 permalink: /2024/05/29/es/Create_Page_From_Template_MS_Graph_Pages_Api.html
+description: "Guía paso a paso para crear una página de SharePoint desde una plantilla personalizada usando la API de Páginas de Microsoft Graph."
 ---
 
 # Cómo Crear una Página de SharePoint Basada en una Página Plantilla Usando MS Graph Pages API

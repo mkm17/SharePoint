@@ -5,6 +5,7 @@ date:   2024-11-30 00:00:00 +0200
 tags: ["SharePoint", "SharePointApi"]
 image: "/images/sharepointapi/SetRating/header.png"
 language: en
+description: "Learn how to create and update a SharePoint Rating column via the REST API SetListRating endpoint — a special multi-user averaged column type with unique rules."
 ---
 
 ## Have you ever thought about how to update a rating column in SharePoint using API?

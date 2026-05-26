@@ -6,6 +6,7 @@ tags: ["SharePoint", "SharePointApi"]
 image: "/images/sharepointapi/BulkValidateUpdateListItems/header.png"
 language: es
 permalink: /2024/04/22/es/SharePointApi-BulkValidateUpdateListItems.html
+description: "Explora el endpoint SharePoint BulkValidateUpdateListItems: comparativa con batching y ValidateUpdateListItem para actualizar múltiples elementos."
 ---
 
 ## ¿Cómo actualizar múltiples elementos usando la API REST de SharePoint?

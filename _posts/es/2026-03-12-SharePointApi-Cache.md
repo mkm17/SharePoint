@@ -6,6 +6,7 @@ tags: ["SharePoint", "SharePointApi"]
 image: "/images/sharepointapi/spCacheApi/header.png"
 language: es
 permalink: /2026/03/12/es/SharePointApi-Cache.html
+description: "Análisis profundo de los endpoints ReadCacheOrCreate y ReadCacheOrCreate2 de la API de SharePoint: cómo funcionan y cómo usarlos para optimizar el rendimiento."
 ---
 
 ## Introducción

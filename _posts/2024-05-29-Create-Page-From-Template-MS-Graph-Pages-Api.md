@@ -5,6 +5,7 @@ date:   2024-06-01 00:00:00 +0200
 tags: ["SharePoint", "MSGraph"]
 image: "/images/sectionsExtensions/Header.png"
 language: en
+description: "Step-by-step guide to creating a SharePoint page from a custom template using the Microsoft Graph Pages API and template item unique IDs."
 ---
 
 # How to Create a SharePoint Page Based on a Template Page Using MS Graph Pages API
