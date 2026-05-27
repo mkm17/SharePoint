@@ -32,9 +32,12 @@ selected_language: "{{ page.url | extract_language }}"
       <li class="post-item">
         <div class="post-image">
           {%- if post.image -%}
-          <a href="{{ post.url | relative_url }}">
-            <img class="image-class" src="{{post.image}}">
-            </img>
+          <a href="{{ post.url | relative_url }}" aria-label="{{ post.title | escape }}">
+            {%- if forloop.first -%}
+            <img class="image-class" src="{{post.image}}" alt="{{ post.title | escape }}" fetchpriority="high">
+            {%- else -%}
+            <img class="image-class" src="{{post.image}}" alt="{{ post.title | escape }}" loading="lazy">
+            {%- endif -%}
           </a>
           {%- endif -%}
         </div>

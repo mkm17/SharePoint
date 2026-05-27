@@ -332,7 +332,7 @@ p {
   display: inline-flex;
   align-items: center;
   background: #deecf9;
-  color: #0078d4;
+  color: #005a9e;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 12px;
@@ -705,4 +705,25 @@ p {
 
 .page-link:hover .flag-icon {
   border-color: #999;
+}
+
+/* Contrast fixes (WCAG AA) */
+.post-meta,
+.post-meta time {
+  color: #767676; /* 4.54:1 on white – minimum WCAG AA pass */
+}
+
+.site-footer {
+  color: #595959; /* ~7:1 on white */
+}
+
+.site-footer a,
+.site-footer a:visited {
+  color: #005a9e; /* accessible blue */
+}
+
+.site-footer .p-name,
+.site-footer .u-email,
+.site-footer .footer-col-wrapper {
+  color: #595959;
 }

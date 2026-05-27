@@ -30,8 +30,7 @@ selected_language: "{{ page.url | extract_language }}"
                 {%- endif -%}
             </p>
             {%- if page.image -%}
-            <img class="image-class" src="{{page.image}}">
-            </img>
+            <img class="image-class" src="{{page.image}}" alt="{{ page.title | escape }}" fetchpriority="high">
             {%- endif -%}
         </header>
 
